@@ -21,13 +21,13 @@ const t: Record<Lang, {
 }> = {
   EN: {
     badge: 'Only 1 plot available · Owners not in a rush',
-    hook: '4.5 Rai of prime land. Soi 112, Hua Hin.',
-    sub: '4.5 Rai · Flat · Chanote · Mountain views · Water connected · Soi 112',
+    hook: '4 Rai 2 Ngan of prime land. Soi 112, Hua Hin.',
+    sub: '4 Rai 2 Ngan · Flat · Chanote · Mountain views · Water connected · Soi 112',
     price: '฿ 2,300,000',
     priceLabel: 'per rai · Total ฿ 10,350,000 · ≈ €270,000',
-    total: 'Total (4.5 rai): ฿ 10,350,000 — approx. €270,000',
+    total: 'Total (4 rai 2 ngan): ฿ 10,350,000 — approx. €270,000',
     cta: '📲 WhatsApp 080-140-6745',
-    plotTitle: 'The land — 4.5 rai, Soi 112, Hua Hin',
+    plotTitle: 'The land — 4 rai 2 ngan, Soi 112, Hua Hin',
     lifestyleTitle: 'The life you\'ve been designing.',
     lifestyleSub: 'Live music every night. Golf at sunrise. Fresh seafood by the ocean. A warm, genuinely international community of people who chose the good life — and found it in Hua Hin.',
     neighbourTitle: 'The address that says everything.',
@@ -39,11 +39,11 @@ const t: Record<Lang, {
   },
   NL: {
     badge: 'Slechts 1 perceel · Eigenaren hebben geen haast',
-    hook: '4,5 Rai topgrond. Soi 112, Hua Hin.',
-    sub: '4,5 Rai · Vlak · Chanote · Bergzicht · Water aanwezig · Soi 112',
+    hook: '4 Rai 2 Ngan topgrond. Soi 112, Hua Hin.',
+    sub: '4 Rai 2 Ngan · Vlak · Chanote · Bergzicht · Water aanwezig · Soi 112',
     price: '฿ 2.300.000',
     priceLabel: 'per rai · Totaal ฿ 10.350.000 · ≈ €270.000',
-    total: 'Totaal (4,5 rai): ฿ 10.350.000 — ca. €270.000',
+    total: 'Totaal (4 rai 2 ngan): ฿ 10.350.000 — ca. €270.000',
     cta: '📲 WhatsApp 080-140-6745',
     plotTitle: 'Het perceel.',
     lifestyleTitle: 'Het leven dat je al lang ontwerpt.',
@@ -57,11 +57,11 @@ const t: Record<Lang, {
   },
   TH: {
     badge: 'มีเพียง 1 แปลง · เจ้าของไม่รีบขาย',
-    hook: 'ที่ดิน 4.5 ไร่ ทำเลทอง ซอย 112 หัวหิน',
-    sub: '4.5 ไร่ · ราบเรียบ · โฉนด · วิวเขา · มีน้ำประปา · ซอย 112',
+    hook: 'ที่ดิน 4 ไร่ 2 งาน ทำเลทอง ซอย 112 หัวหิน',
+    sub: '4 ไร่ 2 งาน · ราบเรียบ · โฉนด · วิวเขา · มีน้ำประปา · ซอย 112',
     price: '฿ 2,300,000',
     priceLabel: 'ต่อไร่ · รวม ฿ 10,350,000 · ≈ €270,000',
-    total: 'รวม (4.5 ไร่): ฿ 10,350,000',
+    total: 'รวม (4 ไร่ 2 งาน): ฿ 10,350,000',
     cta: '📲 WhatsApp 080-140-6745',
     plotTitle: 'ที่ดิน',
     lifestyleTitle: 'ชีวิตที่คุณออกแบบมานาน',
@@ -75,11 +75,11 @@ const t: Record<Lang, {
   },
   DE: {
     badge: 'Nur 1 Grundstück · Eigentümer ohne Zeitdruck',
-    hook: '4,5 Rai Topgrundstück. Soi 112, Hua Hin.',
-    sub: '4,5 Rai · Eben · Chanote · Bergblick · Wasser vorhanden · Soi 112',
+    hook: '4 Rai 2 Ngan Topgrundstück. Soi 112, Hua Hin.',
+    sub: '4 Rai 2 Ngan · Eben · Chanote · Bergblick · Wasser vorhanden · Soi 112',
     price: '฿ 2.300.000',
     priceLabel: 'pro Rai · Gesamt ฿ 10.350.000 · ≈ €270.000',
-    total: 'Gesamt (4,5 Rai): ฿ 10.350.000 — ca. €270.000',
+    total: 'Gesamt (4 Rai 2 Ngan): ฿ 10.350.000 — ca. €270.000',
     cta: '📲 WhatsApp 080-140-6745',
     plotTitle: 'Das Grundstück.',
     lifestyleTitle: 'Das Leben, das Sie schon lange entwerfen.',
@@ -94,7 +94,7 @@ const t: Record<Lang, {
 }
 
 const specs = [
-  { icon: '📐', en: '4.5 Rai · 7,200 m²', nl: '4,5 Rai · 7.200 m²', th: '4.5 ไร่ · 7,200 ตร.ม.', de: '4,5 Rai · 7.200 m²' },
+  { icon: '📐', en: '4 Rai 2 Ngan · 7,200 m²', nl: '4 Rai 2 Ngan · 7.200 m²', th: '4 ไร่ 2 งาน · 7,200 ตร.ม.', de: '4 Rai 2 Ngan · 7.200 m²' },
   { icon: '📜', en: 'Chanote NS.4J — ready to transfer', nl: 'Chanote NS.4J — overdraagbaar', th: 'โฉนด น.ส.4จ — พร้อมโอน', de: 'Chanote NS.4J — übertragbar' },
   { icon: '🏔️', en: 'Panoramic mountain views', nl: 'Panoramisch bergzicht', th: 'วิวเขาพาโนรามา', de: 'Panoramablick Berge' },
   { icon: '🚧', en: 'Completely flat — build ready', nl: 'Volledig vlak — bebouwbaar', th: 'ราบเรียบ พร้อมก่อสร้าง', de: 'Vollkommen eben' },
@@ -103,10 +103,10 @@ const specs = [
 ]
 
 const whyPoints: Record<Lang, string[]> = {
-  EN: ['Chanote title deed — strongest in Thailand', 'Flat terrain — zero prep costs', 'Water connected', 'Soi 112 luxury corridor — Botanica, La Felice, Mali Prestige', '4.5 rai in one piece — rare at this size', 'Below market price vs every comparable plot'],
-  NL: ['Chanote akte — sterkste in Thailand', 'Volledig vlak — geen egalisatiekosten', 'Water aanwezig', 'Soi 112 luxecorridor — Botanica, La Felice, Mali Prestige', '4,5 rai in één stuk — zeldzaam', 'Goedkoper dan elk vergelijkbaar perceel'],
-  TH: ['โฉนดที่ดิน — แข็งแกร่งที่สุดในไทย', 'ราบเรียบ — ไม่มีค่าใช้จ่ายเพิ่ม', 'มีน้ำประปา', 'ซอย 112 — Botanica, La Felice, Mali Prestige', '4.5 ไร่ในแปลงเดียว — หายาก', 'ราคาต่ำกว่าทุกแปลงที่เทียบได้'],
-  DE: ['Chanote-Titel — stärkster in Thailand', 'Ebenes Gelände — keine Vorbereitungskosten', 'Wasseranschluss vorhanden', 'Soi 112 — Botanica, La Felice, Mali Prestige', '4,5 Rai am Stück — selten', 'Günstiger als jedes vergleichbare Grundstück'],
+  EN: ['Chanote title deed — strongest in Thailand', 'Flat terrain — zero prep costs', 'Water connected', 'Soi 112 luxury corridor — Botanica, La Felice, Mali Prestige', '4 rai 2 ngan in one piece — rare at this size', 'Below market price vs every comparable plot'],
+  NL: ['Chanote akte — sterkste in Thailand', 'Volledig vlak — geen egalisatiekosten', 'Water aanwezig', 'Soi 112 luxecorridor — Botanica, La Felice, Mali Prestige', '4 rai 2 ngan in één stuk — zeldzaam', 'Goedkoper dan elk vergelijkbaar perceel'],
+  TH: ['โฉนดที่ดิน — แข็งแกร่งที่สุดในไทย', 'ราบเรียบ — ไม่มีค่าใช้จ่ายเพิ่ม', 'มีน้ำประปา', 'ซอย 112 — Botanica, La Felice, Mali Prestige', '4 ไร่ 2 งานในแปลงเดียว — หายาก', 'ราคาต่ำกว่าทุกแปลงที่เทียบได้'],
+  DE: ['Chanote-Titel — stärkster in Thailand', 'Ebenes Gelände — keine Vorbereitungskosten', 'Wasseranschluss vorhanden', 'Soi 112 — Botanica, La Felice, Mali Prestige', '4 Rai 2 Ngan am Stück — selten', 'Günstiger als jedes vergleichbare Grundstück'],
 }
 
 export default function Home() {

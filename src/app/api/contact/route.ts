@@ -69,7 +69,7 @@ export async function POST(req: NextRequest) {
             <div style="background: #0d1120; border: 1px solid #1e2a4a; border-radius: 12px; padding: 20px; margin-bottom: 32px;">
               <p style="margin: 0 0 12px; color: #94a3b8; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Your enquiry summary</p>
               <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
-                <tr><td style="padding: 6px 0; color: #64748b; width: 100px;">Plot</td><td style="padding: 6px 0; color: #e2e8f0;">4.5 Rai · Soi 112, Thap Tai, Hua Hin</td></tr>
+                <tr><td style="padding: 6px 0; color: #64748b; width: 100px;">Plot</td><td style="padding: 6px 0; color: #e2e8f0;">4 Rai 2 Ngan · Soi 112, Thap Tai, Hua Hin</td></tr>
                 <tr><td style="padding: 6px 0; color: #64748b;">Price</td><td style="padding: 6px 0; color: #e2e8f0;">฿ 2,300,000 per rai · Total ฿ 10,350,000</td></tr>
                 <tr><td style="padding: 6px 0; color: #64748b;">Title deed</td><td style="padding: 6px 0; color: #e2e8f0;">Chanote (NS.4J) — ready to transfer</td></tr>
                 <tr><td style="padding: 6px 0; color: #64748b; vertical-align: top;">Message</td><td style="padding: 6px 0; color: #e2e8f0;">${message || '—'}</td></tr>
