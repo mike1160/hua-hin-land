@@ -20,7 +20,7 @@ const t: Record<Lang, {
   whyTitle: string, mapTitle: string, finalHook: string, urgency: string
 }> = {
   EN: {
-    badge: 'Only 1 plot available · Owners not in a rush',
+    badge: 'Thap Tai, Soi 112 · Hua Hin · Chanote Title Deed',
     hook: '4 Rai 2 Ngan of prime land. Soi 112, Hua Hin.',
     sub: '4 Rai 2 Ngan · Flat · Chanote · Mountain views · Water connected · Soi 112',
     price: '฿ 2,300,000',
@@ -34,11 +34,11 @@ const t: Record<Lang, {
     neighbourSub: 'Botanica Hua Hin — a completed luxury villa development — chose this exact corridor. That benchmark confirms what discerning buyers already know about Soi 112.',
     whyTitle: 'Why this plot. Why now.',
     mapTitle: 'Find it.',
-    finalHook: 'One plot. No pressure. No deadline.',
-    urgency: 'The owners are in no rush — the land appreciates either way. When the right buyer appears, transfer happens within days. There is only one of these.',
+    finalHook: 'Prime land. Soi 112. Hua Hin.',
+    urgency: 'A rare opportunity to acquire flat, buildable Chanote land in Hua Hin\'s most prestigious villa corridor. The plot is ready to transfer — contact us to arrange a viewing.',
   },
   NL: {
-    badge: 'Slechts 1 perceel · Eigenaren hebben geen haast',
+    badge: 'Thap Tai, Soi 112 · Hua Hin · Chanote Eigendomsakte',
     hook: '4 Rai 2 Ngan topgrond. Soi 112, Hua Hin.',
     sub: '4 Rai 2 Ngan · Vlak · Chanote · Bergzicht · Water aanwezig · Soi 112',
     price: '฿ 2.300.000',
@@ -52,11 +52,11 @@ const t: Record<Lang, {
     neighbourSub: 'Botanica Hua Hin — een afgerond luxe villaproject — koos exact deze corridor. Dat bevestigt wat veeleisende kopers al weten over Soi 112.',
     whyTitle: 'Waarom dit perceel. Waarom nu.',
     mapTitle: 'Vind het.',
-    finalHook: 'Eén perceel. Geen druk. Geen deadline.',
-    urgency: 'De eigenaren hebben geen haast — het land stijgt hoe dan ook in waarde. Komt de juiste koper, dan gaat de overdracht binnen dagen. Er is er maar één.',
+    finalHook: 'Topgrond. Soi 112. Hua Hin.',
+    urgency: 'Een zeldzame kans om een plat, bebouwbaar Chanote-perceel te verwerven in Hua Hin\'s meest prestigieuze villacorridor. Het perceel is overdraagbaar — neem contact op voor een bezichtiging.',
   },
   TH: {
-    badge: 'มีเพียง 1 แปลง · เจ้าของไม่รีบขาย',
+    badge: 'ทับใต้ ซอย 112 · หัวหิน · โฉนดที่ดิน',
     hook: 'ที่ดิน 4 ไร่ 2 งาน ทำเลทอง ซอย 112 หัวหิน',
     sub: '4 ไร่ 2 งาน · ราบเรียบ · โฉนด · วิวเขา · มีน้ำประปา · ซอย 112',
     price: '฿ 2,300,000',
@@ -70,11 +70,11 @@ const t: Record<Lang, {
     neighbourSub: 'Botanica Hua Hin — โครงการวิลล่าหรูที่เสร็จสมบูรณ์แล้ว — เลือกทำเลนี้พอดี นั่นคือการยืนยันว่าซอย 112 คือที่ที่ผู้ซื้อชั้นนำเลือก',
     whyTitle: 'ทำไมแปลงนี้ ทำไมตอนนี้',
     mapTitle: 'ค้นหาที่ตั้ง',
-    finalHook: 'แปลงเดียว ไม่มีแรงกดดัน ไม่มีกำหนดเวลา',
-    urgency: 'เจ้าของไม่รีบขาย ที่ดินมีแต่จะราคาขึ้น เมื่อผู้ซื้อที่เหมาะสมมา โอนได้ภายในไม่กี่วัน มีเพียงแปลงเดียวเท่านั้น',
+    finalHook: 'ที่ดินทำเลทอง ซอย 112 หัวหิน',
+    urgency: 'โอกาสหายากในการได้ครอบครองที่ดินโฉนดราบเรียบพร้อมก่อสร้างในทำเลวิลล่าหรูที่ดีที่สุดของหัวหิน พร้อมโอน — ติดต่อเราเพื่อนัดชมที่ดิน',
   },
   DE: {
-    badge: 'Nur 1 Grundstück · Eigentümer ohne Zeitdruck',
+    badge: 'Thap Tai, Soi 112 · Hua Hin · Chanote Eigentumsrecht',
     hook: '4 Rai 2 Ngan Topgrundstück. Soi 112, Hua Hin.',
     sub: '4 Rai 2 Ngan · Eben · Chanote · Bergblick · Wasser vorhanden · Soi 112',
     price: '฿ 2.300.000',
@@ -88,8 +88,8 @@ const t: Record<Lang, {
     neighbourSub: 'Botanica Hua Hin — ein fertiggestelltes Luxus-Villaprojekt — wählte genau diesen Korridor. Das bestätigt, was anspruchsvolle Käufer über Soi 112 bereits wissen.',
     whyTitle: 'Warum dieses Grundstück. Warum jetzt.',
     mapTitle: 'Finden Sie es.',
-    finalHook: 'Ein Grundstück. Kein Druck. Keine Frist.',
-    urgency: 'Die Eigentümer haben keine Eile — das Land steigt so oder so im Wert. Kommt der richtige Käufer, erfolgt die Übertragung innerhalb von Tagen. Es gibt nur dieses eine.',
+    finalHook: 'Erstklassiges Land. Soi 112. Hua Hin.',
+    urgency: 'Eine seltene Gelegenheit, ein ebenes, bebaubares Chanote-Grundstück im prestigiösesten Villakorridor von Hua Hin zu erwerben. Das Grundstück ist übertragungsbereit — kontaktieren Sie uns für eine Besichtigung.',
   },
 }
 
@@ -452,6 +452,74 @@ export default function Home() {
                 <p className="text-white/80">{w}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-6 bg-[#0d1120]">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-4xl font-display font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent" style={{fontFamily: 'Playfair Display, serif'}}>
+            {lang === 'NL' ? 'Ontwikkelingsmogelijkheden.' :
+             lang === 'TH' ? 'ศักยภาพการพัฒนา' :
+             lang === 'DE' ? 'Entwicklungsmöglichkeiten.' :
+             'Development potential.'}
+          </h2>
+          <p className="text-white/50 mb-10 leading-relaxed">
+            {lang === 'NL' ? '4 rai 2 ngan in één stuk biedt uitzonderlijke flexibiliteit voor ontwikkeling.' :
+             lang === 'TH' ? '4 ไร่ 2 งานในแปลงเดียวให้ความยืดหยุ่นสูงสำหรับการพัฒนา' :
+             lang === 'DE' ? '4 Rai 2 Ngan in einem Stück bietet außergewöhnliche Flexibilität für die Entwicklung.' :
+             '4 Rai 2 Ngan in one piece offers exceptional flexibility for development.'}
+          </p>
+          <div className="grid md:grid-cols-3 gap-5">
+
+            <div className="relative overflow-hidden rounded-2xl border border-yellow-500/30 hover:border-yellow-400/60 transition-all duration-300" style={{background: 'linear-gradient(135deg, rgba(120,80,0,0.35) 0%, rgba(80,40,0,0.55) 100%)'}}>
+              <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-500" style={{background: 'radial-gradient(circle at 50% 0%, rgba(250,200,50,0.15) 0%, transparent 65%)'}} />
+              <div className="relative p-6">
+                <div className="text-3xl mb-3">🏡</div>
+                <h3 className="text-white font-semibold text-lg mb-2">
+                  {lang === 'NL' ? 'Wonen & winst' : lang === 'TH' ? 'อยู่เองและคืนทุน' : lang === 'DE' ? 'Wohnen & Gewinn' : 'Live & profit'}
+                </h3>
+                <p className="text-white/60 text-sm leading-relaxed">
+                  {lang === 'NL' ? 'Bouw uw villa op 1 rai. Verkoop de resterende percelen. Poolvilla\'s op Soi 112 starten bij ฿15M+. Uw grondkosten per perceel onder ฿2,5M.' :
+                   lang === 'TH' ? 'สร้างวิลล่าบน 1 ไร่ แบ่งขายอีก 3 แปลง พูลวิลล่าในซอย 112 ราคาเริ่ม ฿15ล.+ ต้นทุนที่ดินต่อแปลงไม่ถึง ฿2.5ล.' :
+                   lang === 'DE' ? 'Bauen Sie Ihre Villa auf 1 Rai. Verkaufen Sie die restlichen Parzellen. Pool-Villen in Soi 112 ab ฿15M+.' :
+                   'Build your villa on 1 rai. Sell the remaining plots. Pool villas on Soi 112 start at ฿15M+. Your land cost per plot under ฿2.5M.'}
+                </p>
+              </div>
+            </div>
+
+            <div className="relative overflow-hidden rounded-2xl border border-green-500/30 hover:border-green-400/60 transition-all duration-300" style={{background: 'linear-gradient(135deg, rgba(6,60,40,0.35) 0%, rgba(3,40,20,0.55) 100%)'}}>
+              <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-500" style={{background: 'radial-gradient(circle at 50% 0%, rgba(52,211,153,0.15) 0%, transparent 65%)'}} />
+              <div className="relative p-6">
+                <div className="text-3xl mb-3">🏗️</div>
+                <h3 className="text-white font-semibold text-lg mb-2">
+                  {lang === 'NL' ? 'Boutique ontwikkeling' : lang === 'TH' ? 'โครงการวิลล่าบูติค' : lang === 'DE' ? 'Boutique-Entwicklung' : 'Boutique development'}
+                </h3>
+                <p className="text-white/60 text-sm leading-relaxed">
+                  {lang === 'NL' ? 'Ontwikkel 4–5 luxe poolvilla\'s voor verkoop of vakantieverhuur. Huurrendementen in Hua Hin gemiddeld 6–10% per jaar.' :
+                   lang === 'TH' ? 'พัฒนา 4–5 พูลวิลล่าหรูสำหรับขายหรือปล่อยเช่า ผลตอบแทนเฉลี่ย 6–10% ต่อปี' :
+                   lang === 'DE' ? 'Entwickeln Sie 4–5 Luxus-Poolvillen zum Verkauf oder zur Ferienvermietung. Mietrenditen in Hua Hin durchschnittlich 6–10%.' :
+                   'Develop 4–5 luxury pool villas for sale or holiday rental. Rental yields in Hua Hin average 6–10% per year.'}
+                </p>
+              </div>
+            </div>
+
+            <div className="relative overflow-hidden rounded-2xl border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300" style={{background: 'linear-gradient(135deg, rgba(70,20,100,0.35) 0%, rgba(40,10,70,0.55) 100%)'}}>
+              <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-500" style={{background: 'radial-gradient(circle at 50% 0%, rgba(167,139,250,0.15) 0%, transparent 65%)'}} />
+              <div className="relative p-6">
+                <div className="text-3xl mb-3">🌴</div>
+                <h3 className="text-white font-semibold text-lg mb-2">
+                  {lang === 'NL' ? 'Privaat landgoed' : lang === 'TH' ? 'บ้านส่วนตัวขนาดใหญ่' : lang === 'DE' ? 'Privates Anwesen' : 'Private estate'}
+                </h3>
+                <p className="text-white/60 text-sm leading-relaxed">
+                  {lang === 'NL' ? 'Behoud het volledige perceel. Hoofdvilla, gastenverblijf, groot zwembad, tropische tuin — alles met onbelemmerd bergzicht.' :
+                   lang === 'TH' ? 'เก็บทั้งแปลง บ้านหลัก บ้านพักแขก สระว่ายน้ำ สวนเขตร้อน พร้อมวิวเขาโล่งกว้าง' :
+                   lang === 'DE' ? 'Behalten Sie das gesamte Grundstück. Hauptvilla, Gästehaus, großer Pool, tropischer Garten — alles mit unverbautem Bergblick.' :
+                   'Keep the full plot. Main villa, guest house, large pool, tropical gardens — all with unobstructed mountain views.'}
+                </p>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
