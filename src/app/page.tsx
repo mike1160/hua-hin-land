@@ -1,6 +1,12 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+
+declare global {
+  interface Window {
+    turnstileCallback: (token: string) => void
+  }
+}
 
 const PHONE = '66801406745'
 
@@ -109,20 +115,41 @@ export default function Home() {
   const [slideIndex, setSlideIndex] = useState(0)
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' })
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
+  const [turnstileToken, setTurnstileToken] = useState<string>('')
   const c = t[lang]
+
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js'
+    script.async = true
+    document.head.appendChild(script)
+
+    window.turnstileCallback = (token: string) => {
+      setTurnstileToken(token)
+    }
+
+    return () => {
+      document.head.removeChild(script)
+    }
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (!turnstileToken) {
+      alert('Please complete the security check')
+      return
+    }
     setFormStatus('sending')
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, lang }),
+        body: JSON.stringify({ ...formData, lang, turnstileToken }),
       })
       if (res.ok) {
         setFormStatus('sent')
         setFormData({ name: '', email: '', phone: '', message: '' })
+        setTurnstileToken('')
       } else {
         setFormStatus('error')
       }
@@ -653,6 +680,12 @@ export default function Home() {
                   {formStatus === 'error' && (
                     <p className="text-red-400 text-xs">Something went wrong. Please try WhatsApp instead.</p>
                   )}
+                  <div
+                    className="cf-turnstile"
+                    data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                    data-callback="turnstileCallback"
+                    data-theme="dark"
+                  ></div>
                   <button
                     type="submit"
                     disabled={formStatus === 'sending'}
