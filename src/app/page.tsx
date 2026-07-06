@@ -370,17 +370,17 @@ export default function Home() {
             <p className="text-white/70 text-xl leading-relaxed mb-12">{c.lifestyleSub}</p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {[
-                { icon: '🌅', label: lang === 'NL' ? 'Ideaal voor gepensioneerden' : lang === 'TH' ? 'เหมาะสำหรับผู้เกษียณ' : lang === 'DE' ? 'Ideal für Rentner' : 'Perfect for retirees' },
-                { icon: '🎵', label: lang === 'NL' ? 'Livemuziek elke avond' : lang === 'TH' ? 'ดนตรีสดทุกคืน' : lang === 'DE' ? 'Live-Musik jeden Abend' : 'Live music every night' },
-                { icon: '⛳', label: lang === 'NL' ? '3 golfbanen · 20 min' : lang === 'TH' ? '3 สนามกอล์ฟ · 20 นาที' : lang === 'DE' ? '3 Golfplätze · 20 Min.' : '3 golf courses · 20 min' },
-                { icon: '🏖️', label: lang === 'NL' ? 'Strand · 12 min' : lang === 'TH' ? 'หาด · 12 นาที' : lang === 'DE' ? 'Strand · 12 Min.' : 'Beach · 12 min' },
-                { icon: '🌍', label: lang === 'NL' ? 'Echt internationaal' : lang === 'TH' ? 'นานาชาติแท้จริง' : lang === 'DE' ? 'Wirklich international' : 'Genuinely international' },
-                { icon: '🏥', label: lang === 'NL' ? 'Ziekenhuis · 15 min' : lang === 'TH' ? 'โรงพยาบาล · 15 นาที' : lang === 'DE' ? 'Krankenhaus · 15 Min.' : 'Hospital · 15 min' },
+                { icon: '🌅', label: lang === 'NL' ? 'Ideaal voor gepensioneerden' : lang === 'TH' ? 'เหมาะสำหรับผู้เกษียณ' : lang === 'DE' ? 'Ideal für Rentner' : 'Perfect for retirees', href: '/life/retirees' },
+                { icon: '🎵', label: lang === 'NL' ? 'Livemuziek elke avond' : lang === 'TH' ? 'ดนตรีสดทุกคืน' : lang === 'DE' ? 'Live-Musik jeden Abend' : 'Live music every night', href: '/life/entertainment' },
+                { icon: '⛳', label: lang === 'NL' ? '3 golfbanen · 20 min' : lang === 'TH' ? '3 สนามกอล์ฟ · 20 นาที' : lang === 'DE' ? '3 Golfplätze · 20 Min.' : '3 golf courses · 20 min', href: '/life/golf' },
+                { icon: '🏖️', label: lang === 'NL' ? 'Strand · 12 min' : lang === 'TH' ? 'หาด · 12 นาที' : lang === 'DE' ? 'Strand · 12 Min.' : 'Beach · 12 min', href: '/life/nature' },
+                { icon: '🌍', label: lang === 'NL' ? 'Echt internationaal' : lang === 'TH' ? 'นานาชาติแท้จริง' : lang === 'DE' ? 'Wirklich international' : 'Genuinely international', href: '/life/schools' },
+                { icon: '🏥', label: lang === 'NL' ? 'Ziekenhuis · 15 min' : lang === 'TH' ? 'โรงพยาบาล · 15 นาที' : lang === 'DE' ? 'Krankenhaus · 15 Min.' : 'Hospital · 15 min', href: '/life/health' },
               ].map((item, i) => (
-                <div key={i} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-all">
+                <a key={i} href={item.href} className="block bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 hover:border-white/20 transition-all">
                   <div className="text-2xl mb-2">{item.icon}</div>
                   <p className="text-white/80 text-sm font-medium">{item.label}</p>
-                </div>
+                </a>
               ))}
             </div>
           </div>
@@ -609,9 +609,9 @@ export default function Home() {
             </div>
 
             {/* Contact form */}
-            <div className="bg-gradient-to-br from-blue-950/30 to-purple-950/20 border border-blue-900/30 rounded-2xl p-6">
-              <p className="text-blue-400 text-xs uppercase tracking-widest font-medium mb-1">Get in touch</p>
-              <h3 className="text-white text-xl font-semibold mb-4">Request more information</h3>
+            <div className="bg-gradient-to-br from-blue-900/40 to-purple-900/30 border border-blue-500/40 rounded-2xl p-6 backdrop-blur-sm">
+              <p className="text-blue-300 text-xs uppercase tracking-widest font-medium mb-1">Get in touch</p>
+              <h3 className="text-white text-xl font-semibold mb-4 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">Request more information</h3>
               {formStatus === 'sent' ? (
                 <div className="text-center py-8">
                   <div className="text-4xl mb-3">✅</div>
@@ -626,7 +626,7 @@ export default function Home() {
                     required
                     value={formData.name}
                     onChange={e => setFormData({...formData, name: e.target.value})}
-                    className="w-full bg-white/5 border border-blue-900/30 rounded-xl px-4 py-3 text-white placeholder-white/30 text-sm focus:outline-none focus:border-blue-500/60 transition-colors"
+                    className="w-full bg-white/10 border border-blue-500/30 rounded-xl px-4 py-3 text-white placeholder-white/50 text-sm focus:outline-none focus:border-blue-400 focus:bg-white/15 transition-all"
                   />
                   <input
                     type="email"
@@ -634,21 +634,21 @@ export default function Home() {
                     required
                     value={formData.email}
                     onChange={e => setFormData({...formData, email: e.target.value})}
-                    className="w-full bg-white/5 border border-blue-900/30 rounded-xl px-4 py-3 text-white placeholder-white/30 text-sm focus:outline-none focus:border-blue-500/60 transition-colors"
+                    className="w-full bg-white/10 border border-blue-500/30 rounded-xl px-4 py-3 text-white placeholder-white/50 text-sm focus:outline-none focus:border-blue-400 focus:bg-white/15 transition-all"
                   />
                   <input
                     type="tel"
                     placeholder="Phone / WhatsApp (optional)"
                     value={formData.phone}
                     onChange={e => setFormData({...formData, phone: e.target.value})}
-                    className="w-full bg-white/5 border border-blue-900/30 rounded-xl px-4 py-3 text-white placeholder-white/30 text-sm focus:outline-none focus:border-blue-500/60 transition-colors"
+                    className="w-full bg-white/10 border border-blue-500/30 rounded-xl px-4 py-3 text-white placeholder-white/50 text-sm focus:outline-none focus:border-blue-400 focus:bg-white/15 transition-all"
                   />
                   <textarea
                     placeholder="Your message or question..."
                     rows={3}
                     value={formData.message}
                     onChange={e => setFormData({...formData, message: e.target.value})}
-                    className="w-full bg-white/5 border border-blue-900/30 rounded-xl px-4 py-3 text-white placeholder-white/30 text-sm focus:outline-none focus:border-blue-500/60 transition-colors resize-none"
+                    className="w-full bg-white/10 border border-blue-500/30 rounded-xl px-4 py-3 text-white placeholder-white/50 text-sm focus:outline-none focus:border-blue-400 focus:bg-white/15 transition-all resize-none"
                   />
                   {formStatus === 'error' && (
                     <p className="text-red-400 text-xs">Something went wrong. Please try WhatsApp instead.</p>
@@ -656,11 +656,11 @@ export default function Home() {
                   <button
                     type="submit"
                     disabled={formStatus === 'sending'}
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 disabled:opacity-50 text-white font-semibold py-3 rounded-xl transition-all text-sm"
+                    className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-400 hover:to-purple-500 disabled:opacity-50 text-white font-bold py-3.5 rounded-xl transition-all text-sm shadow-lg shadow-purple-900/40"
                   >
                     {formStatus === 'sending' ? 'Sending...' : 'Send message →'}
                   </button>
-                  <p className="text-white/20 text-xs text-center">Or WhatsApp directly: 080-140-6745</p>
+                  <p className="text-white/40 text-xs text-center">Or WhatsApp directly: 080-140-6745</p>
                 </form>
               )}
             </div>
