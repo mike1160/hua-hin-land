@@ -11,20 +11,15 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/life/schools/page": [
+    "/privacy/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/life/schools/page.js"
+      "static/chunks/app/privacy/page.js"
     ],
-    "/life/retirees/page": [
+    "/disclaimer/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/life/retirees/page.js"
-    ],
-    "/life/entertainment/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/life/entertainment/page.js"
+      "static/chunks/app/disclaimer/page.js"
     ]
   }
 }

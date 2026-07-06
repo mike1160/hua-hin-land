@@ -28,7 +28,7 @@ export async function POST(req: NextRequest) {
 
     // Email to owner
     await resend.emails.send({
-      from: 'Hua Hin Land <onboarding@resend.dev>',
+      from: 'Hua Hin Land <noreply@hua-hin-land.com>',
       to: 'kleinjansmike@gmail.com',
       reply_to: email,
       subject: `New enquiry — Hua Hin Land Soi 112 [${lang}]`,
@@ -51,7 +51,7 @@ export async function POST(req: NextRequest) {
 
     // Auto-reply to enquirer
     await resend.emails.send({
-      from: 'Hua Hin Land <onboarding@resend.dev>',
+      from: 'Hua Hin Land <noreply@hua-hin-land.com>',
       to: email,
       subject: `Thank you for your enquiry — Hua Hin Land Soi 112`,
       html: `
