@@ -132,8 +132,8 @@ export default function Home() {
   }
 
   const slides = [
-    { src: '/photo1.jpg', caption: 'The plot — flat terrain, mountain backdrop' },
     { src: '/photo2.jpg', caption: 'Golden hour on the land' },
+    { src: '/photo1.jpg', caption: 'The plot — flat terrain, mountain backdrop' },
     { src: '/photo3.jpg', caption: 'Aerial view of the area' },
     { src: '/photo4.jpg', caption: "Bird's eye — the full plot" },
     { src: '/photo5.jpg', caption: 'Direct concrete road access' },
@@ -690,20 +690,54 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="py-10 px-6 border-t border-[#1e2a4a] bg-[#07080f]">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-white/50 text-sm text-center md:text-left">
-            Thap Tai, Soi 112, Hua Hin, Prachuap Khiri Khan 77110, Thailand<br/>
-            <span className="text-white/30">080-140-6745 · kleinjansmike@gmail.com</span>
-          </p>
-          <div className="flex items-center gap-4 text-white/30 text-xs">
-            <a href="/privacy" className="hover:text-white/60 transition-colors">Privacy Policy</a>
-            <span>·</span>
-            <a href="/disclaimer" className="hover:text-white/60 transition-colors">Disclaimer</a>
-            <span>·</span>
-            <a href="https://allesis.nl" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">
-              Webdesign by <span className="text-blue-400/60">Allesis.nl</span>
+      <footer className="bg-[#07080f]">
+        {/* Donation banner */}
+        <div className="border-t border-purple-900/30 bg-gradient-to-r from-purple-950/40 via-blue-950/30 to-purple-950/40">
+          <div className="max-w-5xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-center md:text-left">
+              <p className="text-white font-semibold text-lg mb-1">
+                {lang === 'NL' ? '🐾 Geef hoop aan straathonden in Thailand' :
+                 lang === 'TH' ? '🐾 มอบความหวังให้น้องหมาจรจัดในไทย' :
+                 lang === 'DE' ? '🐾 Gib Straßenhunden in Thailand Hoffnung' :
+                 '🐾 Give hope to street dogs in Thailand'}
+              </p>
+              <p className="text-white/50 text-sm">
+                {lang === 'NL' ? 'Steun Saved Souls Foundation — elke bijdrage telt' :
+                 lang === 'TH' ? 'สนับสนุน Saved Souls Foundation — ทุกบาทมีความหมาย' :
+                 lang === 'DE' ? 'Unterstütze die Saved Souls Foundation — jeder Beitrag zählt' :
+                 'Support Saved Souls Foundation — every donation makes a difference'}
+              </p>
+            </div>
+            <a
+              href="https://www.savedsouls-foundation.org/en/donate"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-shrink-0 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-bold px-8 py-3 rounded-2xl transition-all hover:scale-105 shadow-lg shadow-purple-900/40 text-sm whitespace-nowrap"
+            >
+              {lang === 'NL' ? '❤️ Doneer nu' :
+               lang === 'TH' ? '❤️ บริจาคเลย' :
+               lang === 'DE' ? '❤️ Jetzt spenden' :
+               '❤️ Donate now'}
             </a>
+          </div>
+        </div>
+
+        {/* Main footer */}
+        <div className="border-t border-[#1e2a4a] py-10 px-6">
+          <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-white/50 text-sm text-center md:text-left">
+              Thap Tai, Soi 112, Hua Hin, Prachuap Khiri Khan 77110, Thailand<br/>
+              <span className="text-white/30 text-xs">080-140-6745</span>
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-3 text-white/30 text-xs">
+              <a href="/privacy" className="hover:text-white/60 transition-colors">Privacy Policy</a>
+              <span>·</span>
+              <a href="/disclaimer" className="hover:text-white/60 transition-colors">Disclaimer</a>
+              <span>·</span>
+              <a href="https://allesis.nl" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">
+                Webdesign by <span className="text-blue-400/60 hover:text-blue-400">Allesis.nl</span>
+              </a>
+            </div>
           </div>
         </div>
       </footer>

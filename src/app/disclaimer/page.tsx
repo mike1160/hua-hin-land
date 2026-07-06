@@ -15,7 +15,7 @@ export default function Disclaimer() {
           <h2 className="text-white text-xl font-semibold">No liability</h2>
           <p>We accept no liability for any loss or damage arising from reliance on the information provided on this website.</p>
           <h2 className="text-white text-xl font-semibold">Contact</h2>
-          <p>Mike Kleinjans · kleinjansmike@gmail.com · 080-140-6745</p>
+          <p>Contact us via WhatsApp: 080-140-6745</p>
         </div>
       </div>
     </main>

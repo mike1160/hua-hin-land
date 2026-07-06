@@ -13,11 +13,11 @@ export default function Privacy() {
           <h2 className="text-white text-xl font-semibold">Data retention</h2>
           <p>Enquiry data is retained for a maximum of 12 months after the property is sold, after which it is permanently deleted.</p>
           <h2 className="text-white text-xl font-semibold">Your rights (GDPR)</h2>
-          <p>Under GDPR you have the right to access, correct or delete your personal data. To exercise these rights, contact us at kleinjansmike@gmail.com.</p>
+          <p>Under GDPR you have the right to access, correct or delete your personal data. To exercise these rights, contact us via WhatsApp: 080-140-6745.</p>
           <h2 className="text-white text-xl font-semibold">Cookies</h2>
           <p>This website does not use tracking cookies or analytics. No personal data is collected through cookies.</p>
           <h2 className="text-white text-xl font-semibold">Contact</h2>
-          <p>Mike Kleinjans · kleinjansmike@gmail.com · 080-140-6745</p>
+          <p>Contact us via WhatsApp: 080-140-6745</p>
         </div>
       </div>
     </main>

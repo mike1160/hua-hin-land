@@ -1,6 +1,6 @@
 {
   "/page": "app/page.js",
-  "/life/schools/page": "app/life/schools/page.js",
+  "/life/entertainment/page": "app/life/entertainment/page.js",
   "/life/retirees/page": "app/life/retirees/page.js",
-  "/life/entertainment/page": "app/life/entertainment/page.js"
+  "/life/schools/page": "app/life/schools/page.js"
 }
