@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
     await resend.emails.send({
       from: 'Hua Hin Land <onboarding@resend.dev>',
       to: 'kleinjansmike@gmail.com',
-      replyTo: email,
+      reply_to: email,
       subject: `New enquiry — Hua Hin Land Soi 112 [${lang}]`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0d1120; color: #f0f4ff; padding: 32px; border-radius: 12px;">
