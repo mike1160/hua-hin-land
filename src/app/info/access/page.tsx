@@ -1,3 +1,5 @@
+import DisclaimerFooter from '../../../components/DisclaimerFooter'
+
 export default function AccessPage() {
   return (
     <main className="min-h-screen bg-[#07080f] text-white">
@@ -40,6 +42,9 @@ export default function AccessPage() {
           </ul>
           <p className="text-white/50 text-xs mt-4 italic">The loudest thing you&apos;ll hear most mornings is birdsong from the national park.</p>
         </div>
+      </div>
+      <div className="max-w-3xl mx-auto px-6 pb-12">
+        <DisclaimerFooter />
         <div className="text-center pt-4">
           <a href="/" className="text-blue-400 hover:text-blue-300 transition-colors text-sm">← Back to the land listing</a>
         </div>

@@ -1,0 +1,271 @@
+import type { DisclaimerPageContent } from './types'
+
+export const enContent: DisclaimerPageContent = {
+  backLink: '← Back to listing',
+  title: 'Legal Disclaimer & Important Notices',
+  subtitle: 'Please read this disclaimer carefully before using this website or making any decisions based on information contained herein.',
+  lastUpdated: 'Last updated: July 2026 · Applies to all languages and versions of this website',
+  sections: [
+    {
+      title: '1. Acceptance of Terms',
+      paragraphs: [
+        'By accessing and using this website (hua-hin-land.com), you acknowledge that you have read, understood, and agree to be bound by this disclaimer in its entirety. If you do not agree with any part of this disclaimer, you must immediately cease using this website.',
+        'This disclaimer applies equally to all language versions of this website (English, Dutch, Thai, German, and any future translations). In the event of any inconsistency between language versions, the English version shall prevail.',
+      ],
+    },
+    {
+      title: '2. Nature of Information — No Professional Advice',
+      paragraphs: [
+        'The information published on this website is provided for general informational and marketing purposes only.',
+        'Nothing on this website constitutes, or should be construed as:',
+        'The website owner is a private individual and is not a licensed lawyer, financial advisor, tax consultant, real estate agent, or property valuer in Thailand or any other jurisdiction. Any information provided reflects personal knowledge and publicly available sources only.',
+        'You should not rely on any information on this website as a substitute for professional legal, financial, or property advice. Always seek independent professional advice before making any decision relating to property purchase, investment, or development in Thailand.',
+      ],
+      lists: [{
+        items: [
+          'Legal advice of any kind',
+          'Financial, investment, or tax advice',
+          'Real estate brokerage services',
+          'A formal property valuation or appraisal',
+          'An offer, option, reservation, or pre-sale agreement of any kind',
+          'A recommendation to buy, invest in, or develop the property',
+        ],
+      }],
+    },
+    {
+      title: '3. No Representations or Warranties',
+      paragraphs: [
+        'To the maximum extent permitted by applicable law — including but not limited to the Thai Civil and Commercial Code (B.E. 2466/1923, as amended) — the website owner makes no representations or warranties of any kind, whether express, implied, statutory, or otherwise, including without limitation:',
+        'The property is offered on an "as is, where is" basis. All statements about the property\'s condition, size, title, location, and features must be independently verified by the buyer prior to any transaction.',
+      ],
+      lists: [{
+        items: [
+          'That the information on this website is accurate, complete, current, or error-free',
+          'That the property described is fit for any particular purpose',
+          'That any development, subdivision, or construction on the property is legally permissible under current Thai zoning law',
+          'That the property is free of any encumbrances, liens, disputes, or third-party claims not disclosed on this website',
+          'That the asking price represents fair market value',
+        ],
+      }],
+    },
+    {
+      title: '4. Limitation of Liability',
+      paragraphs: [
+        'To the fullest extent permitted by the laws of the Kingdom of Thailand and any other applicable jurisdiction, the website owner, his representatives, and associated parties shall not be liable for any loss or damage of any nature whatsoever, including but not limited to:',
+        'This limitation of liability applies regardless of whether such loss was foreseeable and regardless of the legal basis of the claim (contract, tort, negligence, or otherwise).',
+        'Nothing in this disclaimer excludes or limits liability for fraud, wilful misconduct, or any liability that cannot be excluded or limited under applicable law.',
+      ],
+      lists: [{
+        items: [
+          'Direct loss, including financial loss arising from reliance on information on this website',
+          'Indirect or consequential loss, including loss of profit, loss of opportunity, or loss of investment',
+          'Loss arising from errors, omissions, or inaccuracies in the information provided',
+          'Loss arising from changes in Thai law, tax regulations, Land Department procedures, or government policy',
+          'Loss arising from decisions made based on comparable market data, development scenarios, or yield projections published on this website',
+          'Loss arising from third-party content, external links, or referenced sources',
+          'Any loss arising from translation errors or inconsistencies between language versions of this website',
+        ],
+      }],
+    },
+    {
+      title: '5. Property Information & "As Is" Basis',
+      paragraphs: [
+        'All property details published on this website — including but not limited to land size, title deed type, location, terrain description, infrastructure availability, and asking price — are provided in good faith based on the owner\'s personal knowledge and publicly available information.',
+        'However, the following must be independently verified by any prospective buyer before entering into any agreement:',
+        'The asking price displayed on this website is indicative only and subject to change without notice. It does not constitute a formal offer to sell.',
+      ],
+      lists: [{
+        items: [
+          'Exact land dimensions and boundaries, as registered at the Hua Hin Land Department (สำนักงานที่ดินอำเภอหัวหิน), Prachuap Khiri Khan Province',
+          'Title deed status, encumbrances, and full ownership history via official search at the Land Department under the Land Code Act B.E. 2497 (พระราชบัญญัติที่ดิน พ.ศ. ๒๔๙๗)',
+          'Current zoning classification and any building or development restrictions under the City Planning Act B.E. 2518 (พระราชบัญญัติการผังเมือง พ.ศ. ๒๕๑๘) and applicable local development plans',
+          'Availability and capacity of utilities including water, electricity, and road access',
+          'Any environmental restrictions, flood zone classifications, or protected area designations',
+        ],
+      }],
+    },
+    {
+      title: '6. Thai Property Law & Foreign Ownership',
+      strongParagraphs: ['This section is particularly important for non-Thai nationals.'],
+      paragraphs: [
+        'Under the Land Code Act B.E. 2497 (พระราชบัญญัติที่ดิน พ.ศ. ๒๔๙๗), foreign nationals are generally prohibited from owning land freehold in Thailand. This restriction applies regardless of nationality, residence status, or visa type.',
+        'Potential foreign buyers must seek independent legal advice from a licensed Thai lawyer (ทนายความ) regarding legally available ownership structures, which may include but are not limited to:',
+        'The website owner makes no representation that any particular ownership structure is legally available, appropriate, or advisable for any particular buyer. All ownership structures carry legal risk and must be assessed by a qualified Thai lawyer.',
+        'The Thai Land Department has full discretion over property transfers. Approval of any transaction is not guaranteed.',
+        'This website does not constitute legal advice on foreign ownership and nothing herein should be construed as such.',
+      ],
+      lists: [{
+        items: [
+          'Long-term leasehold under Section 540 of the Thai Civil and Commercial Code (maximum 30 years per registration, potentially renewable by agreement)',
+          'Ownership through a Thai limited company, subject to the Foreign Business Act B.E. 2542 (พระราชบัญญัติการประกอบธุรกิจของคนต่างด้าว พ.ศ. ๒๕๔๒) and requirements that Thai nationals hold a genuine majority shareholding',
+          'Usufruct rights under Sections 1417–1428 of the Thai Civil and Commercial Code',
+          'Superficies rights under Sections 1410–1416 of the Thai Civil and Commercial Code',
+          'Inheritance rights, subject to applicable Thai succession law',
+        ],
+      }],
+    },
+    {
+      title: '7. Tax, Transfer Fees & Transaction Costs',
+      paragraphs: [
+        'All references to taxes, transfer fees, stamp duty, Specific Business Tax, withholding tax, and other transaction costs on this website are based on publicly available information from Thai government sources and reputable property platforms as of 2026.',
+        'The website owner accepts no liability for any tax obligation, penalty, or cost arising from any property transaction, whether or not such transaction was influenced by information on this website.',
+      ],
+      lists: [
+        {
+          intro: 'These figures are governed by:',
+          items: [
+            'The Thai Revenue Code (ประมวลรัษฎากร)',
+            'The Land Code Act B.E. 2497',
+            'Ministerial regulations and notifications issued thereunder',
+          ],
+        },
+        {
+          intro: 'All cost information on this website:',
+          items: [
+            'Is indicative only and does not constitute tax advice',
+            'May not reflect your specific transaction circumstances',
+            'May have changed since the date of publication without notice',
+            'Varies based on individual circumstances including property appraised value, declared transaction price, buyer and seller nationality, ownership duration, and transaction structure',
+            'Must be independently verified with a licensed Thai tax advisor, accountant, or property lawyer before any transaction',
+          ],
+        },
+      ],
+    },
+    {
+      title: '8. Market Data, Comparable Listings & Projections',
+      paragraphs: [
+        'This website references comparable property listings, market price data, rental yield estimates, and development potential scenarios for informational and illustrative purposes only.',
+        'Prospective buyers and investors should conduct their own independent due diligence and commission independent professional advice before making any investment decision.',
+      ],
+      lists: [
+        {
+          intro: 'Regarding market data:',
+          items: [
+            'All comparable listing data is sourced from publicly available platforms including FazWaz, Hipflat, Harmony Real Estate, Dot Property, and PropertyHub and has not been independently verified',
+            'Such data reflects listings at a point in time and may no longer be accurate',
+            'It does not constitute a formal, independent market valuation (ราคาประเมิน) by a licensed Thai property valuer',
+          ],
+        },
+        {
+          intro: 'Regarding forward-looking statements and projections:',
+          items: [
+            'Any statements regarding rental yields, development potential, capital appreciation, or investment returns are illustrative scenarios based on publicly available market information',
+            'They are not guarantees, promises, or predictions of future performance',
+            'Past market performance and current listing prices are not reliable indicators of future values',
+            'Actual returns, if any, will depend on numerous factors outside the website owner\'s control including market conditions, development costs, regulatory approvals, and economic factors',
+          ],
+        },
+      ],
+    },
+    {
+      title: '9. No Agency, Brokerage, or Contractual Relationship',
+      paragraphs: [
+        'Nothing on this website creates, or should be construed as creating:',
+        'Any enquiry submitted through the contact form on this website is for communication purposes only and does not constitute an offer to purchase, a reservation, or any legally binding commitment by either party.',
+        'Any legally binding agreement relating to the sale of this property must be:',
+      ],
+      lists: [
+        {
+          items: [
+            'An agency or brokerage relationship between the website owner and any visitor',
+            'A partnership, joint venture, or fiduciary relationship of any kind',
+            'A binding offer, option agreement, letter of intent, or pre-sale agreement',
+            'Any contractual obligation on the part of the website owner',
+          ],
+        },
+        {
+          items: [
+            'In writing',
+            'Signed by all parties with full legal capacity',
+            'Executed in the presence of a Thai Land Department officer at the relevant Land Office',
+            'In compliance with all applicable requirements of the Thai Civil and Commercial Code and the Land Code Act B.E. 2497',
+          ],
+        },
+      ],
+    },
+    {
+      title: '10. Third-Party Links & External Content',
+      paragraphs: [
+        'This website contains links to third-party websites including Google Maps, property portals, government websites, local businesses, and attractions. These links are provided for convenience only.',
+        'The website owner:',
+        'External links to local businesses, restaurants, schools, and attractions are provided for lifestyle information purposes only. Inclusion of a link does not imply endorsement, recommendation, or any commercial relationship.',
+      ],
+      lists: [{
+        items: [
+          'Has no control over the content, accuracy, or availability of third-party websites',
+          'Makes no representations about the content of linked websites',
+          'Accepts no liability for any loss arising from use of third-party websites',
+          'Does not endorse any products, services, or content on linked websites',
+        ],
+      }],
+    },
+    {
+      title: '11. Intellectual Property',
+      paragraphs: [
+        'All original content on this website — including but not limited to text, photographs, layout, and design — is the property of the website owner unless otherwise indicated.',
+        'Photographs taken by the website owner on the property and surrounding area are original works protected under applicable copyright law.',
+        'Third-party content including maps, satellite imagery, and external website links remain the property of their respective owners. No claim of ownership is made over such content.',
+        'No content from this website may be reproduced, distributed, or used for commercial purposes without the express written consent of the website owner.',
+      ],
+    },
+    {
+      title: '12. Severability',
+      paragraphs: [
+        'If any provision of this disclaimer is found by a court or competent authority to be invalid, unlawful, or unenforceable under the laws of the Kingdom of Thailand or any other applicable jurisdiction, such provision shall be deemed modified to the minimum extent necessary to make it valid, legal, and enforceable. If such modification is not possible, the relevant provision shall be deemed deleted. The modification or deletion of any provision shall not affect the validity and enforceability of the rest of this disclaimer.',
+      ],
+    },
+    {
+      title: '13. Governing Law & Jurisdiction',
+      paragraphs: [
+        'This disclaimer and all matters relating to this website and the property described herein are governed by and construed in accordance with the laws of the Kingdom of Thailand.',
+        'Any dispute arising from or in connection with this disclaimer or this website shall be subject to the exclusive jurisdiction of the competent courts of the Kingdom of Thailand, specifically the courts of Prachuap Khiri Khan Province where the property is located.',
+        'For visitors accessing this website from the European Union: to the extent required by applicable EU law including the General Data Protection Regulation (EU) 2016/679 (GDPR), relevant provisions of EU consumer law shall apply in addition to Thai law. In the event of conflict between Thai law and mandatory EU consumer protection provisions, mandatory EU law shall apply to EU-resident visitors only with respect to their specific statutory rights.',
+        'For visitors accessing this website from other jurisdictions: you access this website on your own initiative and are responsible for compliance with local laws to the extent applicable.',
+      ],
+    },
+    {
+      title: '14. Language Versions',
+      paragraphs: [
+        'This website is available in English, Dutch (Nederlands), Thai (ภาษาไทย), and German (Deutsch). All language versions contain the same legal disclaimer.',
+        'The English version of this disclaimer is the legally authoritative version. In the event of any discrepancy, ambiguity, or inconsistency between the English version and any translation, the English version shall prevail in all respects.',
+        'Translations are provided as a courtesy to assist non-English speaking visitors. They do not constitute separate legal documents and do not create any additional rights or obligations.',
+      ],
+    },
+    {
+      title: '15. Updates & Amendments',
+      paragraphs: [
+        'The website owner reserves the right to update, amend, or replace this disclaimer at any time without prior notice. The date shown at the top of this page reflects the most recent update.',
+        'Continued use of this website after any amendment constitutes acceptance of the updated disclaimer. It is your responsibility to check this page regularly.',
+        'Last updated: July 2026.',
+      ],
+    },
+    {
+      title: '16. Contact',
+      paragraphs: [
+        'For questions about this disclaimer, the property, or to exercise any rights under applicable law, please contact us via the contact page on this website.',
+        'Response time: within 5 business days.',
+        'Note: Contact through this website does not constitute legal service of process or formal legal notice of any kind.',
+      ],
+    },
+  ],
+  contactLinkText: 'Go to contact page →',
+  backFooter: '← Back to the land listing',
+}
+
+export const nlUi = {
+  backLink: '← Terug naar listing',
+  title: 'Juridische disclaimer & belangrijke mededelingen',
+  subtitle: 'Lees deze disclaimer zorgvuldig door voordat u deze website gebruikt of beslissingen neemt op basis van de informatie op deze pagina.',
+  lastUpdated: 'Laatst bijgewerkt: juli 2026 · Geldt voor alle talen en versies van deze website',
+  backFooter: '← Terug naar de landlisting',
+  contactLinkText: 'Naar contactpagina →',
+}
+
+export const deUi = {
+  backLink: '← Zurück zur Anzeige',
+  title: 'Rechtlicher Haftungsausschluss & wichtige Hinweise',
+  subtitle: 'Bitte lesen Sie diesen Haftungsausschluss sorgfältig durch, bevor Sie diese Website nutzen oder Entscheidungen auf Grundlage der hier enthaltenen Informationen treffen.',
+  lastUpdated: 'Zuletzt aktualisiert: Juli 2026 · Gilt für alle Sprachversionen dieser Website',
+  backFooter: '← Zurück zur Grundstücksanzeige',
+  contactLinkText: 'Zur Kontaktseite →',
+}

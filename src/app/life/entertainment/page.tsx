@@ -3,8 +3,9 @@ export default function Entertainment() {
     <main className="min-h-screen bg-[#07080f] text-white">
       <div className="relative h-72 flex items-end pb-10 px-6">
         <div className="absolute inset-0">
-          <img src="/lifestyle1.jpg" alt="live music" className="w-full h-full object-cover" style={{objectPosition: 'center 40%'}} />
-          <div className="absolute inset-0" style={{background: 'linear-gradient(to bottom, rgba(7,8,15,0.3) 0%, rgba(7,8,15,0.85) 70%, #07080f 100%)'}} />
+          <img src="/IMG_5842.JPG" alt="restaurant and nightlife" className="w-full h-full object-cover" style={{objectPosition: 'center center', filter: 'blur(1px) saturate(1.1)'}} />
+          <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px]" />
+          <div className="absolute inset-0" style={{background: 'linear-gradient(to bottom, rgba(7,8,15,0.2) 0%, rgba(7,8,15,0.85) 70%, #07080f 100%)'}} />
         </div>
         <div className="relative z-10 max-w-3xl">
           <a href="/" className="text-blue-400 text-xs mb-4 inline-block hover:text-blue-300 transition-colors">← Back to listing</a>

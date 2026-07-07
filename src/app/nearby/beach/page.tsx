@@ -1,10 +1,13 @@
+import DisclaimerFooter from '../../../components/DisclaimerFooter'
+
 export default function Beach() {
   return (
     <main className="min-h-screen bg-[#07080f] text-white">
       <div className="relative h-72 flex items-end pb-10 px-6">
         <div className="absolute inset-0">
-          <img src="/photo2.jpg" alt="sunset" className="w-full h-full object-cover" />
-          <div className="absolute inset-0" style={{background: 'linear-gradient(to bottom, rgba(7,8,15,0.1) 0%, rgba(7,8,15,0.85) 70%, #07080f 100%)'}} />
+          <img src="/IMG_5835.JPG" alt="Hua Hin beach" className="w-full h-full object-cover" style={{objectPosition: 'center center', filter: 'blur(1px) saturate(1.1)'}} />
+          <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px]" />
+          <div className="absolute inset-0" style={{background: 'linear-gradient(to bottom, rgba(7,8,15,0.15) 0%, rgba(7,8,15,0.85) 70%, #07080f 100%)'}} />
         </div>
         <div className="relative z-10 max-w-3xl">
           <a href="/" className="text-blue-400 text-xs mb-4 inline-block hover:text-blue-300">← Back to listing</a>
@@ -27,7 +30,12 @@ export default function Beach() {
             <li><strong className="text-white">Sam Roi Yot</strong> — 60 min · pristine, national park, almost no tourists</li>
           </ul>
         </div>
-        <div className="text-center pt-4"><a href="/" className="text-blue-400 hover:text-blue-300 text-sm">← Back to the land listing</a></div>
+      </div>
+      <div className="max-w-3xl mx-auto px-6 pb-12">
+        <DisclaimerFooter />
+        <div className="text-center pt-4">
+          <a href="/" className="text-blue-400 hover:text-blue-300 transition-colors text-sm">← Back to the land listing</a>
+        </div>
       </div>
     </main>
   )

@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap');
-
 :root {
   --gold: #c9a84c;
   --forest: #2d5016;
@@ -39,7 +37,6 @@ body {
 }
 
 .animate-stagger > * {
-  opacity: 0;
   animation: fadeInUp 0.5s ease forwards;
 }
 

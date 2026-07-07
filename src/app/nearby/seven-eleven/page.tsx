@@ -1,3 +1,5 @@
+import DisclaimerFooter from '../../../components/DisclaimerFooter'
+
 export default function SevenEleven() {
   return (
     <main className="min-h-screen bg-[#07080f] text-white">
@@ -30,7 +32,12 @@ export default function SevenEleven() {
           <h2 className="text-white text-xl font-semibold mb-4">📍 What else is nearby</h2>
           <p className="text-white/70 text-sm leading-relaxed">The 7-Eleven on Soi 112 sits at a local junction that has become a small neighbourhood hub — with local food stalls, a pharmacy and petrol station within walking distance. This is the daily heartbeat of the area.</p>
         </div>
-        <div className="text-center pt-4"><a href="/" className="text-blue-400 hover:text-blue-300 text-sm">← Back to the land listing</a></div>
+      </div>
+      <div className="max-w-3xl mx-auto px-6 pb-12">
+        <DisclaimerFooter />
+        <div className="text-center pt-4">
+          <a href="/" className="text-blue-400 hover:text-blue-300 transition-colors text-sm">← Back to the land listing</a>
+        </div>
       </div>
     </main>
   )

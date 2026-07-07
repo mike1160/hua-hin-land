@@ -1,3 +1,5 @@
+import DisclaimerFooter from '../../../components/DisclaimerFooter'
+
 export default function Bangkok() {
   return (
     <main className="min-h-screen bg-[#07080f] text-white">
@@ -28,7 +30,12 @@ export default function Bangkok() {
           <p className="text-white/70 text-sm leading-relaxed mb-4">Suvarnabhumi Airport (BKK) is one of Asia&apos;s major hubs — direct flights to Amsterdam, Frankfurt, London, Zurich, Dubai, Singapore, Tokyo and hundreds of other destinations. Flying in and out of Bangkok is straightforward and well-connected.</p>
           <p className="text-white/70 text-sm leading-relaxed">Hua Hin also has its own small airport (HHQ) with domestic connections to Bangkok (Don Mueang) — 50 minutes, several times daily.</p>
         </div>
-        <div className="text-center pt-4"><a href="/" className="text-blue-400 hover:text-blue-300 text-sm">← Back to the land listing</a></div>
+      </div>
+      <div className="max-w-3xl mx-auto px-6 pb-12">
+        <DisclaimerFooter />
+        <div className="text-center pt-4">
+          <a href="/" className="text-blue-400 hover:text-blue-300 transition-colors text-sm">← Back to the land listing</a>
+        </div>
       </div>
     </main>
   )

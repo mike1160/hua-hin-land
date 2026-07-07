@@ -1,3 +1,5 @@
+import DisclaimerFooter from '../../../components/DisclaimerFooter'
+
 export default function NationalPark() {
   return (
     <main className="min-h-screen bg-[#07080f] text-white">
@@ -38,7 +40,12 @@ export default function NationalPark() {
           <p className="text-white/70 text-sm leading-relaxed">Studies consistently show that proximity to green space improves wellbeing, reduces stress and extends life expectancy. You don&apos;t need to go to the park — the park comes to you. Birds from the forest visit gardens on Soi 112. The air is noticeably cleaner. The silence at night is real.</p>
           <p className="text-white/50 text-sm italic mt-3">And because it&apos;s protected national park, this will never change. No development. No noise. Just mountain and forest, forever.</p>
         </div>
-        <div className="text-center pt-4"><a href="/" className="text-blue-400 hover:text-blue-300 text-sm">← Back to the land listing</a></div>
+      </div>
+      <div className="max-w-3xl mx-auto px-6 pb-12">
+        <DisclaimerFooter />
+        <div className="text-center pt-4">
+          <a href="/" className="text-blue-400 hover:text-blue-300 transition-colors text-sm">← Back to the land listing</a>
+        </div>
       </div>
     </main>
   )

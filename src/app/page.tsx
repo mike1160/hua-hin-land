@@ -4,20 +4,23 @@ import { useState, useEffect } from 'react'
 
 declare global {
   interface Window {
-    turnstileCallback: (token: string) => void
+    turnstileCallback?: (token: string) => void
   }
 }
 
 const PHONE = '66801406745'
 
 const langs = ['EN', 'NL', 'TH', 'DE']
+const LANG_KEY = 'hua-hin-land-lang'
 
 type Lang = 'EN' | 'NL' | 'TH' | 'DE'
 
 const t: Record<Lang, {
   badge: string, hook: string, sub: string, price: string, priceLabel: string, total: string, cta: string, ctaSub: string,
   plotTitle: string, lifestyleTitle: string, lifestyleSub: string, neighbourTitle: string, neighbourSub: string,
-  whyTitle: string, mapTitle: string, finalHook: string, urgency: string
+  whyTitle: string, mapTitle: string, finalHook: string, urgency: string,
+  disclaimerSticky: string, disclaimerLink: string, contactConfirm: string, contactDisclaimerPhrase: string,
+  agentDisclaimer: string, agentDisclaimerLink: string
 }> = {
   EN: {
     badge: 'Thap Tai, Soi 112 · Hua Hin · Chanote Title Deed',
@@ -37,6 +40,12 @@ const t: Record<Lang, {
     mapTitle: 'Find it.',
     finalHook: 'Prime land. Soi 112. Hua Hin.',
     urgency: 'A rare opportunity to acquire flat, buildable Chanote land in Hua Hin\'s most prestigious villa corridor. The plot is ready to transfer — contact us to arrange a viewing.',
+    disclaimerSticky: 'Important: This website provides general information only. Nothing herein constitutes legal or financial advice. All property information must be independently verified.',
+    disclaimerLink: 'Read full disclaimer',
+    contactConfirm: 'By contacting us you confirm you have read and understood our',
+    contactDisclaimerPhrase: 'legal disclaimer',
+    agentDisclaimer: 'Independent agent — contact for viewings and local enquiries only. Not authorised to negotiate price or terms on behalf of the seller. All offers and agreements directly with the seller only.',
+    agentDisclaimerLink: 'Full disclaimer',
   },
   NL: {
     badge: 'Thap Tai, Soi 112 · Hua Hin · Chanote Eigendomsakte',
@@ -56,6 +65,12 @@ const t: Record<Lang, {
     mapTitle: 'Vind het.',
     finalHook: 'Topgrond. Soi 112. Hua Hin.',
     urgency: 'Een zeldzame kans om een plat, bebouwbaar Chanote-perceel te verwerven in Hua Hin\'s meest prestigieuze villacorridor. Het perceel is overdraagbaar — neem contact op voor een bezichtiging.',
+    disclaimerSticky: 'Belangrijk: deze website biedt uitsluitend algemene informatie. Niets hierin is juridisch of financieel advies. Alle perceelsinformatie moet onafhankelijk worden geverifieerd.',
+    disclaimerLink: 'Lees de volledige disclaimer',
+    contactConfirm: 'Door contact met ons op te nemen bevestigt u dat u onze',
+    contactDisclaimerPhrase: 'juridische disclaimer',
+    agentDisclaimer: 'Onafhankelijke agent — contact voor bezichtigingen en lokale vragen. Niet bevoegd om namens de verkoper te onderhandelen. Alle biedingen en overeenkomsten uitsluitend rechtstreeks met de verkoper.',
+    agentDisclaimerLink: 'Volledige disclaimer',
   },
   TH: {
     badge: 'ทับใต้ ซอย 112 · หัวหิน · โฉนดที่ดิน',
@@ -75,6 +90,12 @@ const t: Record<Lang, {
     mapTitle: 'ค้นหาที่ตั้ง',
     finalHook: 'ที่ดินทำเลทอง ซอย 112 หัวหิน',
     urgency: 'โอกาสหายากในการได้ครอบครองที่ดินโฉนดราบเรียบพร้อมก่อสร้างในทำเลวิลล่าหรูที่ดีที่สุดของหัวหิน พร้อมโอน — ติดต่อเราเพื่อนัดชมที่ดิน',
+    disclaimerSticky: 'สำคัญ: เว็บไซต์นี้ให้ข้อมูลทั่วไปเท่านั้น ไม่มีสิ่งใดที่นี่ถือเป็นคำแนะนำทางกฎหมายหรือการเงิน ข้อมูลทรัพย์สินทั้งหมดต้องได้รับการตรวจสอบอย่างอิสระ',
+    disclaimerLink: 'อ่านข้อจำกัดความรับผิดชอบฉบับเต็ม',
+    contactConfirm: 'การติดต่อเราถือว่าคุณยืนยันว่าได้อ่านและเข้าใจ',
+    contactDisclaimerPhrase: 'ข้อจำกัดความรับผิดชอบทางกฎหมาย',
+    agentDisclaimer: 'ตัวแทนอิสระ — ติดต่อสำหรับการเข้าชมและสอบถามในพื้นที่เท่านั้น ไม่ได้รับอนุญาตให้เจรจาในนามของผู้ขาย ข้อเสนอและข้อตกลงทั้งหมดติดต่อผู้ขายโดยตรงเท่านั้น',
+    agentDisclaimerLink: 'ข้อจำกัดความรับผิดชอบ',
   },
   DE: {
     badge: 'Thap Tai, Soi 112 · Hua Hin · Chanote Eigentumsrecht',
@@ -94,6 +115,12 @@ const t: Record<Lang, {
     mapTitle: 'Finden Sie es.',
     finalHook: 'Erstklassiges Land. Soi 112. Hua Hin.',
     urgency: 'Eine seltene Gelegenheit, ein ebenes, bebaubares Chanote-Grundstück im prestigiösesten Villakorridor von Hua Hin zu erwerben. Das Grundstück ist übertragungsbereit — kontaktieren Sie uns für eine Besichtigung.',
+    disclaimerSticky: 'Wichtig: Diese Website dient nur zur allgemeinen Information. Nichts hierin stellt Rechts- oder Finanzberatung dar. Alle Grundstücksinformationen müssen unabhängig überprüft werden.',
+    disclaimerLink: 'Vollständigen Haftungsausschluss lesen',
+    contactConfirm: 'Mit Ihrer Kontaktaufnahme bestätigen Sie, dass Sie unseren',
+    contactDisclaimerPhrase: 'rechtlichen Haftungsausschluss',
+    agentDisclaimer: 'Unabhängiger Makler — Kontakt für Besichtigungen und lokale Anfragen. Nicht berechtigt, im Namen des Verkäufers zu verhandeln. Alle Angebote und Vereinbarungen direkt mit dem Verkäufer.',
+    agentDisclaimerLink: 'Vollständiger Haftungsausschluss',
   },
 }
 
@@ -113,6 +140,133 @@ const whyPoints: Record<Lang, string[]> = {
   DE: ['Chanote-Titel — stärkster in Thailand', 'Ebenes Gelände — keine Vorbereitungskosten', 'Wasseranschluss vorhanden', 'Soi 112 — Botanica, La Felice, Mali Prestige', '4 Rai 2 Ngan am Stück — selten', 'Günstiger als jedes vergleichbare Grundstück'],
 }
 
+const whyLinks = ['/info/chanote', '/info/terrain', '/info/water', '/nearby/bluport', '/info/size', '/info/comparable-plots'] as const
+
+const learnMore: Record<Lang, string> = {
+  EN: 'Learn more →',
+  NL: 'Meer info →',
+  TH: 'ดูเพิ่มเติม →',
+  DE: 'Mehr erfahren →',
+}
+
+type LifeItem = { label: string; href?: string }
+
+const lifeAroundCards: {
+  icon: string
+  title: string
+  border: string
+  bg: string
+  glow: string
+  arrow: string
+  iconBg: string
+  items: LifeItem[]
+}[] = [
+  {
+    icon: '🌿',
+    title: 'Nature & parks',
+    border: 'border-green-500/20 hover:border-green-400/50',
+    bg: 'linear-gradient(135deg, rgba(6,78,59,0.4) 0%, rgba(5,46,22,0.6) 100%)',
+    glow: 'radial-gradient(circle at 50% 0%, rgba(52,211,153,0.15) 0%, transparent 70%)',
+    arrow: 'text-green-400',
+    iconBg: 'bg-green-500/20',
+    items: [
+      { label: 'Thap Tai National Park — doorstep', href: 'https://forevervacation.com/hua-hin/thap-tai-national-park' },
+      { label: 'Thap Tai Fitness Park — nearby', href: 'https://thaptaifitnesspark.com/' },
+      { label: 'Kaeng Krachan NP — 85 km', href: 'https://en.wikipedia.org/wiki/Kaeng_Krachan_National_Park' },
+      { label: 'Khao Sam Roi Yot — 60 km', href: 'https://en.wikipedia.org/wiki/Khao_Sam_Roi_Yot_National_Park' },
+      { label: 'Kui Buri (wild elephants) — 85 km', href: 'https://en.wikipedia.org/wiki/Kui_Buri_National_Park' },
+      { label: 'Samnaksong Khao Phran Thup — nearby', href: 'https://www.google.com/maps/search/Samnaksong+Khao+Phran+Thup+Hua+Hin' },
+      { label: 'Grand Canyon Hua Hin — 5 min', href: 'https://forevervacation.com/hua-hin/hua-hin-grand-canyon' },
+      { label: 'Thap Lan NP (UNESCO) — 3-4 hrs', href: '/nearby/nature' },
+    ],
+  },
+  {
+    icon: '🍽️',
+    title: 'Food & cafes',
+    border: 'border-orange-500/20 hover:border-orange-400/50',
+    bg: 'linear-gradient(135deg, rgba(120,53,15,0.4) 0%, rgba(69,26,3,0.6) 100%)',
+    glow: 'radial-gradient(circle at 50% 0%, rgba(251,146,60,0.15) 0%, transparent 70%)',
+    arrow: 'text-orange-400',
+    iconBg: 'bg-orange-500/20',
+    items: [
+      { label: 'Parrotdise Organic Farm & Cafe ⭐4.8 — 5 min', href: 'https://parrotdisethailand.com' },
+      { label: 'Sweetheart Cafe ⭐4.6 — riverside', href: 'https://www.facebook.com/search/top?q=sweetheart%20cafe%20hua%20hin' },
+      { label: 'Greenfield Terrace ⭐4.6 — Thap Tai', href: 'https://www.google.com/maps/search/Greenfield+Terrace+Thap+Tai+Hua+Hin' },
+      { label: 'Apsara Art & Restaurant ⭐4.9', href: 'https://www.facebook.com/ApsaraAsianArt/' },
+      { label: 'White Orchid Restaurant & Bar', href: 'https://www.google.com/maps/search/White+Orchid+Restaurant+Bar+Hua+Hin' },
+      { label: 'Hua Hin Night Market — 17 min', href: 'https://www.tripadvisor.com/Attraction_Review-g297922-d12761939-Reviews-Hua_Hin_Night_Market.html' },
+    ],
+  },
+  {
+    icon: '🎵',
+    title: 'Entertainment',
+    border: 'border-purple-500/20 hover:border-purple-400/50',
+    bg: 'linear-gradient(135deg, rgba(88,28,135,0.4) 0%, rgba(49,10,101,0.6) 100%)',
+    glow: 'radial-gradient(circle at 50% 0%, rgba(167,139,250,0.15) 0%, transparent 70%)',
+    arrow: 'text-purple-400',
+    iconBg: 'bg-purple-500/20',
+    items: [
+      { label: 'Baan Suang Music — live Thai music', href: 'https://www.facebook.com/search/top?q=baan%20suang%20music%20hua%20hin' },
+      { label: 'Mini Golf World ⭐4.9 — glow in dark', href: 'https://www.google.com/maps/search/Mini+Golf+World+Hua+Hin' },
+      { label: 'Vana Nava Water Jungle — 10 min', href: 'https://www.vananavahuahin.com' },
+      { label: 'Saam Phan Nam Floating Market — 5 min', href: 'https://www.google.com/maps/search/Sam+Phan+Nam+Floating+Market+Hua+Hin' },
+      { label: 'Cicada Weekend Market', href: 'https://www.facebook.com/cicadamarket' },
+      { label: 'Jazz & live music — nightly', href: 'https://www.google.com/maps/search/jazz+live+music+bar+Hua+Hin' },
+    ],
+  },
+  {
+    icon: '🧘',
+    title: 'Wellness & spas',
+    border: 'border-teal-500/20 hover:border-teal-400/50',
+    bg: 'linear-gradient(135deg, rgba(19,78,74,0.4) 0%, rgba(8,51,68,0.6) 100%)',
+    glow: 'radial-gradient(circle at 50% 0%, rgba(45,212,191,0.15) 0%, transparent 70%)',
+    arrow: 'text-teal-400',
+    iconBg: 'bg-teal-500/20',
+    items: [
+      { label: 'Thai massage centres — Thap Tai', href: 'https://maps.app.goo.gl/search/Thai+massage+Thap+Tai+Hua+Hin' },
+      { label: 'Chiva-Som Health Resort', href: 'https://www.chivasom.com/en/chiva-som-hua-hin/' },
+      { label: 'Anantara Hua Hin Spa', href: 'https://www.anantara.com/en/hua-hin/spa' },
+      { label: 'Bangkok Hospital — 15 min', href: 'https://www.bangkokhospital.com/en/huahin' },
+      { label: 'San Paolo Hospital — 17 min', href: 'https://sanpaulo.co.th' },
+      { label: 'Parrotdise Organic Farm — 5 min', href: 'https://parrotdisethailand.com' },
+    ],
+  },
+  {
+    icon: '🏫',
+    title: 'Schools & families',
+    border: 'border-blue-500/20 hover:border-blue-400/50',
+    bg: 'linear-gradient(135deg, rgba(30,58,138,0.4) 0%, rgba(15,23,92,0.6) 100%)',
+    glow: 'radial-gradient(circle at 50% 0%, rgba(96,165,250,0.15) 0%, transparent 70%)',
+    arrow: 'text-blue-400',
+    iconBg: 'bg-blue-500/20',
+    items: [
+      { label: "Beaconhouse Yamsaard Int'l School", href: 'https://www.facebook.com/byshuahin' },
+      { label: 'The English Centre ⭐5.0', href: 'https://www.google.com/maps/search/The+English+Centre+Hua+Hin' },
+      { label: 'Sethavidhya Bilingual School', href: 'https://www.google.com/maps/search/Sethavidhya+Bilingual+School+Hua+Hin' },
+      { label: 'Multiple kindergartens — Thap Tai', href: 'https://www.google.com/maps/search/kindergarten+Thap+Tai+Hua+Hin' },
+      { label: 'Child-friendly, low-traffic area' },
+      { label: 'Active expat family community' },
+    ],
+  },
+  {
+    icon: '🔨',
+    title: 'Shopping & practical',
+    border: 'border-slate-500/20 hover:border-slate-400/50',
+    bg: 'linear-gradient(135deg, rgba(51,65,85,0.5) 0%, rgba(15,23,42,0.7) 100%)',
+    glow: 'radial-gradient(circle at 50% 0%, rgba(148,163,184,0.12) 0%, transparent 70%)',
+    arrow: 'text-slate-400',
+    iconBg: 'bg-slate-500/20',
+    items: [
+      { label: 'Siwali Building Materials — Thap Tai', href: 'https://www.google.com/maps/search/Siwali+Building+Materials+Thap+Tai+Hua+Hin' },
+      { label: 'Makro Food Service — 15 min', href: 'https://www.makro.pro/en' },
+      { label: 'Bluport Mall & Market Village — 10 min', href: 'https://www.bluporthuahin.com' },
+      { label: '7-Eleven — 4 min from plot', href: 'https://www.7eleven.co.th/' },
+      { label: "Lotus's supermarket — 15 min", href: 'https://www.lotuss.com/en' },
+      { label: 'Immigration office — 15 min', href: 'https://www.immigration.go.th/' },
+    ],
+  },
+]
+
 export default function Home() {
   const [lang, setLang] = useState<Lang>('EN')
   const [lightbox, setLightbox] = useState<string | null>(null)
@@ -121,6 +275,24 @@ export default function Home() {
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
   const [turnstileToken, setTurnstileToken] = useState<string>('')
   const c = t[lang]
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(LANG_KEY) as Lang | null
+      if (saved && langs.includes(saved)) setLang(saved)
+    } catch {
+      // ignore
+    }
+  }, [])
+
+  const selectLang = (next: Lang) => {
+    setLang(next)
+    try {
+      localStorage.setItem(LANG_KEY, next)
+    } catch {
+      // ignore
+    }
+  }
 
   useEffect(() => {
     const script = document.createElement('script')
@@ -133,7 +305,10 @@ export default function Home() {
     }
 
     return () => {
-      document.head.removeChild(script)
+      if (script.parentNode) {
+        script.parentNode.removeChild(script)
+      }
+      delete window.turnstileCallback
     }
   }, [])
 
@@ -185,7 +360,7 @@ export default function Home() {
       {/* LANG SWITCHER — fixed top right */}
       <div className="fixed top-4 right-4 z-40 flex gap-1 bg-black/60 backdrop-blur-md rounded-full px-2 py-1 border border-white/10">
         {langs.map(l => (
-          <button key={l} onClick={() => setLang(l as Lang)}
+          <button key={l} onClick={() => selectLang(l as Lang)}
             className={`px-3 py-1 text-xs font-semibold rounded-full transition-all ${lang === l ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white' : 'text-white/50 hover:text-white'}`}>
             {l}
           </button>
@@ -226,10 +401,25 @@ export default function Home() {
                 <p className="text-xl font-bold tracking-wide">065-901-2984</p>
               </div>
             </a>
+            <p className="text-white/30 text-xs mt-2 max-w-md leading-relaxed">
+              {c.agentDisclaimer}{' '}
+              <a href="/legal/disclaimer" className="hover:text-white/60 transition-colors whitespace-nowrap">
+                → {c.agentDisclaimerLink}
+              </a>
+            </p>
           </div>
           <p className="text-white/50 text-sm mt-4">{c.ctaSub} · 080-140-6745 · Thai: 065-901-2984</p>
         </div>
       </section>
+
+      <div className="sticky top-0 z-30 bg-[#0d1120]/95 border-b border-white/10 backdrop-blur-sm">
+        <div className="max-w-5xl mx-auto px-6 py-2.5 text-center text-white/50 text-xs leading-relaxed">
+          {c.disclaimerSticky}{' '}
+          <a href="/legal/disclaimer" className="text-purple-300/80 hover:text-purple-200 hover:underline transition-colors whitespace-nowrap">
+            → {c.disclaimerLink}
+          </a>
+        </div>
+      </div>
 
       {/* SPECS — dark cards */}
       <section className="py-16 px-6 bg-[#07080f]">
@@ -406,14 +596,15 @@ export default function Home() {
               {[
                 { icon: '🌅', label: lang === 'NL' ? 'Ideaal voor gepensioneerden' : lang === 'TH' ? 'เหมาะสำหรับผู้เกษียณ' : lang === 'DE' ? 'Ideal für Rentner' : 'Perfect for retirees', href: '/life/retirees' },
                 { icon: '🎵', label: lang === 'NL' ? 'Livemuziek elke avond' : lang === 'TH' ? 'ดนตรีสดทุกคืน' : lang === 'DE' ? 'Live-Musik jeden Abend' : 'Live music every night', href: '/life/entertainment' },
-                { icon: '⛳', label: lang === 'NL' ? '3 golfbanen · 20 min' : lang === 'TH' ? '3 สนามกอล์ฟ · 20 นาที' : lang === 'DE' ? '3 Golfplätze · 20 Min.' : '3 golf courses · 20 min', href: '/life/golf' },
-                { icon: '🏖️', label: lang === 'NL' ? 'Strand · 12 min' : lang === 'TH' ? 'หาด · 12 นาที' : lang === 'DE' ? 'Strand · 12 Min.' : 'Beach · 12 min', href: '/life/nature' },
+                { icon: '⛳', label: lang === 'NL' ? '3 golfbanen · 20 min' : lang === 'TH' ? '3 สนามกอล์ฟ · 20 นาที' : lang === 'DE' ? '3 Golfplätze · 20 Min.' : '3 golf courses · 20 min', href: '/nearby/golf' },
+                { icon: '🏖️', label: lang === 'NL' ? 'Strand · 12 min' : lang === 'TH' ? 'หาด · 12 นาที' : lang === 'DE' ? 'Strand · 12 Min.' : 'Beach · 12 min', href: '/nearby/beach' },
                 { icon: '🌍', label: lang === 'NL' ? 'Echt internationaal' : lang === 'TH' ? 'นานาชาติแท้จริง' : lang === 'DE' ? 'Wirklich international' : 'Genuinely international', href: '/life/schools' },
-                { icon: '🏥', label: lang === 'NL' ? 'Ziekenhuis · 15 min' : lang === 'TH' ? 'โรงพยาบาล · 15 นาที' : lang === 'DE' ? 'Krankenhaus · 15 Min.' : 'Hospital · 15 min', href: '/life/health' },
+                { icon: '🏥', label: lang === 'NL' ? 'Ziekenhuis · 15 min' : lang === 'TH' ? 'โรงพยาบาล · 15 นาที' : lang === 'DE' ? 'Krankenhaus · 15 Min.' : 'Hospital · 15 min', href: '/nearby/hospital' },
               ].map((item, i) => (
-                <a key={i} href={item.href} className="block bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 hover:border-white/20 transition-all">
+                <a key={i} href={item.href} className="group relative block cursor-pointer bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 pb-8 hover:bg-white/15 hover:border-white/25 hover:shadow-lg hover:shadow-purple-500/15 transition-all duration-200">
                   <div className="text-2xl mb-2">{item.icon}</div>
-                  <p className="text-white/80 text-sm font-medium">{item.label}</p>
+                  <p className="text-white/80 text-sm font-medium group-hover:text-white transition-colors duration-200">{item.label}</p>
+                  <span className="absolute bottom-3 right-3 text-white/30 text-sm group-hover:text-purple-300 transition-colors duration-200">→</span>
                 </a>
               ))}
             </div>
@@ -456,7 +647,12 @@ export default function Home() {
             {whyPoints[lang].map((w, i) => (
               <div key={i} className="flex items-start gap-4 bg-gradient-to-br from-blue-950/30 to-purple-950/20 border border-blue-900/20 rounded-xl p-5 hover:border-blue-500/40 transition-all">
                 <span className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 flex-shrink-0 mt-2"></span>
-                <p className="text-white/80">{w}</p>
+                <div>
+                  <p className="text-white/80">{w}</p>
+                  <a href={whyLinks[i]} className="inline-block mt-2 text-xs text-purple-400/60 hover:text-purple-300 transition-colors">
+                    {learnMore[lang]}
+                  </a>
+                </div>
               </div>
             ))}
           </div>
@@ -479,53 +675,62 @@ export default function Home() {
           </p>
           <div className="grid md:grid-cols-3 gap-5">
 
-            <div className="relative overflow-hidden rounded-2xl border border-yellow-500/30 hover:border-yellow-400/60 transition-all duration-300" style={{background: 'linear-gradient(135deg, rgba(120,80,0,0.35) 0%, rgba(80,40,0,0.55) 100%)'}}>
-              <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-500" style={{background: 'radial-gradient(circle at 50% 0%, rgba(250,200,50,0.15) 0%, transparent 65%)'}} />
-              <div className="relative p-6">
+            <a href="/info/live-and-profit" className="group relative block overflow-hidden rounded-2xl border border-yellow-500/30 hover:border-yellow-400/60 cursor-pointer hover:shadow-lg hover:shadow-yellow-500/15 transition-all duration-200 min-h-[220px]">
+              <img src="/IMG_7802.JPG" alt="" className="absolute inset-0 w-full h-full object-cover" style={{objectPosition: 'center center'}} />
+              <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px]" />
+              <div className="absolute inset-0" style={{background: 'linear-gradient(135deg, rgba(120,80,0,0.75) 0%, rgba(7,8,15,0.88) 100%)'}} />
+              <div className="relative z-10 p-6 pb-10">
                 <div className="text-3xl mb-3">🏡</div>
-                <h3 className="text-white font-semibold text-lg mb-2">
+                <h3 className="text-white font-semibold text-lg mb-2 group-hover:text-yellow-100 transition-colors duration-200">
                   {lang === 'NL' ? 'Wonen & winst' : lang === 'TH' ? 'อยู่เองและคืนทุน' : lang === 'DE' ? 'Wohnen & Gewinn' : 'Live & profit'}
                 </h3>
-                <p className="text-white/60 text-sm leading-relaxed">
+                <p className="text-white/70 text-sm leading-relaxed">
                   {lang === 'NL' ? 'Bouw uw villa op 1 rai. Verkoop de resterende percelen. Poolvilla\'s op Soi 112 starten bij ฿15M+. Uw grondkosten per perceel onder ฿2,5M.' :
                    lang === 'TH' ? 'สร้างวิลล่าบน 1 ไร่ แบ่งขายอีก 3 แปลง พูลวิลล่าในซอย 112 ราคาเริ่ม ฿15ล.+ ต้นทุนที่ดินต่อแปลงไม่ถึง ฿2.5ล.' :
                    lang === 'DE' ? 'Bauen Sie Ihre Villa auf 1 Rai. Verkaufen Sie die restlichen Parzellen. Pool-Villen in Soi 112 ab ฿15M+.' :
                    'Build your villa on 1 rai. Sell the remaining plots. Pool villas on Soi 112 start at ฿15M+. Your land cost per plot under ฿2.5M.'}
                 </p>
+                <span className="absolute bottom-4 right-4 text-white/30 text-sm group-hover:text-yellow-300 transition-colors duration-200">→</span>
               </div>
-            </div>
+            </a>
 
-            <div className="relative overflow-hidden rounded-2xl border border-green-500/30 hover:border-green-400/60 transition-all duration-300" style={{background: 'linear-gradient(135deg, rgba(6,60,40,0.35) 0%, rgba(3,40,20,0.55) 100%)'}}>
-              <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-500" style={{background: 'radial-gradient(circle at 50% 0%, rgba(52,211,153,0.15) 0%, transparent 65%)'}} />
-              <div className="relative p-6">
+            <a href="/info/boutique-development" className="group relative block overflow-hidden rounded-2xl border border-green-500/30 hover:border-green-400/60 cursor-pointer hover:shadow-lg hover:shadow-green-500/15 transition-all duration-200 min-h-[220px]">
+              <img src="/IMG_7807.JPG" alt="" className="absolute inset-0 w-full h-full object-cover" style={{objectPosition: 'center center'}} />
+              <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px]" />
+              <div className="absolute inset-0" style={{background: 'linear-gradient(135deg, rgba(6,60,40,0.75) 0%, rgba(7,8,15,0.88) 100%)'}} />
+              <div className="relative z-10 p-6 pb-10">
                 <div className="text-3xl mb-3">🏗️</div>
-                <h3 className="text-white font-semibold text-lg mb-2">
+                <h3 className="text-white font-semibold text-lg mb-2 group-hover:text-green-100 transition-colors duration-200">
                   {lang === 'NL' ? 'Boutique ontwikkeling' : lang === 'TH' ? 'โครงการวิลล่าบูติค' : lang === 'DE' ? 'Boutique-Entwicklung' : 'Boutique development'}
                 </h3>
-                <p className="text-white/60 text-sm leading-relaxed">
+                <p className="text-white/70 text-sm leading-relaxed">
                   {lang === 'NL' ? 'Ontwikkel 4–5 luxe poolvilla\'s voor verkoop of vakantieverhuur. Huurrendementen in Hua Hin gemiddeld 6–10% per jaar.' :
                    lang === 'TH' ? 'พัฒนา 4–5 พูลวิลล่าหรูสำหรับขายหรือปล่อยเช่า ผลตอบแทนเฉลี่ย 6–10% ต่อปี' :
                    lang === 'DE' ? 'Entwickeln Sie 4–5 Luxus-Poolvillen zum Verkauf oder zur Ferienvermietung. Mietrenditen in Hua Hin durchschnittlich 6–10%.' :
                    'Develop 4–5 luxury pool villas for sale or holiday rental. Rental yields in Hua Hin average 6–10% per year.'}
                 </p>
+                <span className="absolute bottom-4 right-4 text-white/30 text-sm group-hover:text-green-300 transition-colors duration-200">→</span>
               </div>
-            </div>
+            </a>
 
-            <div className="relative overflow-hidden rounded-2xl border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300" style={{background: 'linear-gradient(135deg, rgba(70,20,100,0.35) 0%, rgba(40,10,70,0.55) 100%)'}}>
-              <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-500" style={{background: 'radial-gradient(circle at 50% 0%, rgba(167,139,250,0.15) 0%, transparent 65%)'}} />
-              <div className="relative p-6">
+            <a href="/info/private-estate" className="group relative block overflow-hidden rounded-2xl border border-purple-500/30 hover:border-purple-400/60 cursor-pointer hover:shadow-lg hover:shadow-purple-500/15 transition-all duration-200 min-h-[220px]">
+              <img src="/IMG_5835.JPG" alt="" className="absolute inset-0 w-full h-full object-cover" style={{objectPosition: 'center center'}} />
+              <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px]" />
+              <div className="absolute inset-0" style={{background: 'linear-gradient(135deg, rgba(70,20,100,0.75) 0%, rgba(7,8,15,0.88) 100%)'}} />
+              <div className="relative z-10 p-6 pb-10">
                 <div className="text-3xl mb-3">🌴</div>
-                <h3 className="text-white font-semibold text-lg mb-2">
+                <h3 className="text-white font-semibold text-lg mb-2 group-hover:text-purple-100 transition-colors duration-200">
                   {lang === 'NL' ? 'Privaat landgoed' : lang === 'TH' ? 'บ้านส่วนตัวขนาดใหญ่' : lang === 'DE' ? 'Privates Anwesen' : 'Private estate'}
                 </h3>
-                <p className="text-white/60 text-sm leading-relaxed">
+                <p className="text-white/70 text-sm leading-relaxed">
                   {lang === 'NL' ? 'Behoud het volledige perceel. Hoofdvilla, gastenverblijf, groot zwembad, tropische tuin — alles met onbelemmerd bergzicht.' :
                    lang === 'TH' ? 'เก็บทั้งแปลง บ้านหลัก บ้านพักแขก สระว่ายน้ำ สวนเขตร้อน พร้อมวิวเขาโล่งกว้าง' :
                    lang === 'DE' ? 'Behalten Sie das gesamte Grundstück. Hauptvilla, Gästehaus, großer Pool, tropischer Garten — alles mit unverbautem Bergblick.' :
                    'Keep the full plot. Main villa, guest house, large pool, tropical gardens — all with unobstructed mountain views.'}
                 </p>
+                <span className="absolute bottom-4 right-4 text-white/30 text-sm group-hover:text-purple-300 transition-colors duration-200">→</span>
               </div>
-            </div>
+            </a>
 
           </div>
         </div>
@@ -592,114 +797,44 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
 
-            <div className="relative group overflow-hidden rounded-2xl border border-green-500/20 hover:border-green-400/50 transition-all duration-300" style={{background: 'linear-gradient(135deg, rgba(6,78,59,0.4) 0%, rgba(5,46,22,0.6) 100%)'}}>
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{background: 'radial-gradient(circle at 50% 0%, rgba(52,211,153,0.15) 0%, transparent 70%)'}} />
-              <div className="relative p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-green-500/20 flex items-center justify-center text-xl">🌿</div>
-                  <h4 className="text-white font-semibold text-base">Nature & parks</h4>
+            {lifeAroundCards.map((card) => (
+              <div key={card.title} className={`relative group overflow-hidden rounded-2xl border transition-all duration-300 ${card.border}`} style={{background: card.bg}}>
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{background: card.glow}} />
+                <div className="relative p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className={`w-10 h-10 rounded-xl ${card.iconBg} flex items-center justify-center text-xl`}>{card.icon}</div>
+                    <h4 className="text-white font-semibold text-base">{card.title}</h4>
+                  </div>
+                  <ul className="space-y-2">
+                    {card.items.map((item) => (
+                      <li key={item.label} className="flex items-start gap-2 text-sm">
+                        {item.href ? (
+                          <>
+                            <span className={`${card.arrow} mt-0.5 flex-shrink-0`}>›</span>
+                            <a
+                              href={item.href}
+                              {...(item.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                              className="text-purple-300/75 hover:text-purple-200 hover:underline cursor-pointer transition-colors"
+                            >
+                              {item.label}
+                            </a>
+                          </>
+                        ) : (
+                          <span className="text-white/65 pl-0">{item.label}</span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul className="space-y-2">
-                  {['Thap Tai National Park — doorstep', 'Kaeng Krachan NP — 85 km', 'Khao Sam Roi Yot — 60 km', 'Kui Buri (wild elephants) — 85 km', 'Samnaksong Khao Phran Thup — nearby', 'Grand Canyon Hua Hin — 5 min'].map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-white/65 hover:text-white/90 transition-colors">
-                      <span className="text-green-400 mt-0.5 flex-shrink-0">›</span>{item}
-                    </li>
-                  ))}
-                </ul>
               </div>
-            </div>
-
-            <div className="relative group overflow-hidden rounded-2xl border border-orange-500/20 hover:border-orange-400/50 transition-all duration-300" style={{background: 'linear-gradient(135deg, rgba(120,53,15,0.4) 0%, rgba(69,26,3,0.6) 100%)'}}>
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{background: 'radial-gradient(circle at 50% 0%, rgba(251,146,60,0.15) 0%, transparent 70%)'}} />
-              <div className="relative p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-orange-500/20 flex items-center justify-center text-xl">🍽️</div>
-                  <h4 className="text-white font-semibold text-base">Food & cafes</h4>
-                </div>
-                <ul className="space-y-2">
-                  {['Parrotdise Organic Farm & Cafe ⭐4.8 — 5 min', 'Sweetheart Cafe ⭐4.6 — riverside', 'Greenfield Terrace ⭐4.6 — Thap Tai', 'Apsara Art & Restaurant ⭐4.9', 'White Orchid Restaurant & Bar', 'Hua Hin Night Market — 17 min'].map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-white/65 hover:text-white/90 transition-colors">
-                      <span className="text-orange-400 mt-0.5 flex-shrink-0">›</span>{item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <div className="relative group overflow-hidden rounded-2xl border border-purple-500/20 hover:border-purple-400/50 transition-all duration-300" style={{background: 'linear-gradient(135deg, rgba(88,28,135,0.4) 0%, rgba(49,10,101,0.6) 100%)'}}>
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{background: 'radial-gradient(circle at 50% 0%, rgba(167,139,250,0.15) 0%, transparent 70%)'}} />
-              <div className="relative p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center text-xl">🎵</div>
-                  <h4 className="text-white font-semibold text-base">Entertainment</h4>
-                </div>
-                <ul className="space-y-2">
-                  {['Baan Suang Music — live Thai music', 'Mini Golf World ⭐4.9 — glow in dark', 'Vana Nava Water Jungle — 10 min', 'Saam Phan Nam Floating Market — 5 min', 'Cicada Weekend Market', 'Jazz & live music — nightly'].map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-white/65 hover:text-white/90 transition-colors">
-                      <span className="text-purple-400 mt-0.5 flex-shrink-0">›</span>{item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <div className="relative group overflow-hidden rounded-2xl border border-teal-500/20 hover:border-teal-400/50 transition-all duration-300" style={{background: 'linear-gradient(135deg, rgba(19,78,74,0.4) 0%, rgba(8,51,68,0.6) 100%)'}}>
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{background: 'radial-gradient(circle at 50% 0%, rgba(45,212,191,0.15) 0%, transparent 70%)'}} />
-              <div className="relative p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-teal-500/20 flex items-center justify-center text-xl">🧘</div>
-                  <h4 className="text-white font-semibold text-base">Wellness & spas</h4>
-                </div>
-                <ul className="space-y-2">
-                  {['Thai massage centres — Thap Tai', 'Chiva-Som Health Resort', 'Anantara Hua Hin Spa', 'Bangkok Hospital — 15 min', 'San Paolo Hospital — 17 min', 'Parrotdise Organic Farm — 5 min'].map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-white/65 hover:text-white/90 transition-colors">
-                      <span className="text-teal-400 mt-0.5 flex-shrink-0">›</span>{item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <div className="relative group overflow-hidden rounded-2xl border border-blue-500/20 hover:border-blue-400/50 transition-all duration-300" style={{background: 'linear-gradient(135deg, rgba(30,58,138,0.4) 0%, rgba(15,23,92,0.6) 100%)'}}>
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{background: 'radial-gradient(circle at 50% 0%, rgba(96,165,250,0.15) 0%, transparent 70%)'}} />
-              <div className="relative p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center text-xl">🏫</div>
-                  <h4 className="text-white font-semibold text-base">Schools & families</h4>
-                </div>
-                <ul className="space-y-2">
-                  {["Beaconhouse Yamsaard Int'l School", 'The English Centre ⭐5.0', 'Sethavidhya Bilingual School', 'Multiple kindergartens — Thap Tai', 'Child-friendly, low-traffic area', 'Active expat family community'].map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-white/65 hover:text-white/90 transition-colors">
-                      <span className="text-blue-400 mt-0.5 flex-shrink-0">›</span>{item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <div className="relative group overflow-hidden rounded-2xl border border-slate-500/20 hover:border-slate-400/50 transition-all duration-300" style={{background: 'linear-gradient(135deg, rgba(51,65,85,0.5) 0%, rgba(15,23,42,0.7) 100%)'}}>
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{background: 'radial-gradient(circle at 50% 0%, rgba(148,163,184,0.12) 0%, transparent 70%)'}} />
-              <div className="relative p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-slate-500/20 flex items-center justify-center text-xl">🔨</div>
-                  <h4 className="text-white font-semibold text-base">Shopping & practical</h4>
-                </div>
-                <ul className="space-y-2">
-                  {['Siwali Building Materials — Thap Tai', 'Makro Food Service — 15 min', 'Bluport Mall & Market Village — 10 min', '7-Eleven — 4 min from plot', "Lotus's supermarket — 15 min", 'Immigration office — 15 min'].map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-white/65 hover:text-white/90 transition-colors">
-                      <span className="text-slate-400 mt-0.5 flex-shrink-0">›</span>{item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            ))}
 
           </div>
         </div>
       </section>
 
       {/* MAP */}
-      <section className="py-16 px-6 bg-[#07080f]">
+      <section id="contact" className="py-16 px-6 bg-[#07080f]">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl font-display font-bold mb-2 text-white" style={{fontFamily: 'Playfair Display, serif'}}>{c.mapTitle}</h2>
           <p className="text-white/40 text-sm mb-6">Thap Tai, Soi 112, Hua Hin, Prachuap Khiri Khan 77110</p>
@@ -764,6 +899,13 @@ export default function Home() {
                   {formStatus === 'error' && (
                     <p className="text-red-400 text-xs">Something went wrong. Please try WhatsApp instead.</p>
                   )}
+                  <p className="text-white/40 text-xs text-center leading-relaxed">
+                    {c.contactConfirm}{' '}
+                    <a href="/legal/disclaimer" className="text-purple-300/70 hover:text-purple-200 hover:underline transition-colors">
+                      {c.contactDisclaimerPhrase}
+                    </a>
+                    {lang === 'NL' ? ' hebt gelezen en begrepen.' : lang === 'TH' ? ' ของเราแล้ว' : lang === 'DE' ? ' gelesen und verstanden haben.' : '.'}
+                  </p>
                   <div
                     className="cf-turnstile"
                     data-sitekey="0x4AAAAADwcB6k73kTycYDr"
@@ -811,6 +953,12 @@ export default function Home() {
               <p className="text-xl font-bold tracking-wide">065-901-2984</p>
             </div>
           </a>
+          <p className="text-white/30 text-xs mt-2 max-w-lg mx-auto leading-relaxed">
+            {c.agentDisclaimer}{' '}
+            <a href="/legal/disclaimer" className="hover:text-white/60 transition-colors whitespace-nowrap">
+              → {c.agentDisclaimerLink}
+            </a>
+          </p>
           <p className="text-white/50 text-sm mb-6">080-140-6745 · Thai: 065-901-2984 · {c.ctaSub}</p>
           <div className="mt-6">
             <p className="text-4xl font-display font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent" style={{fontFamily: 'Playfair Display, serif'}}>{c.price} <span className="text-xl font-normal text-white/40">{lang === 'NL' ? 'per rai' : lang === 'TH' ? 'ต่อไร่' : lang === 'DE' ? 'pro Rai' : 'per rai'}</span></p>
@@ -859,10 +1007,6 @@ export default function Home() {
               <span className="text-white/30 text-xs">080-140-6745 · Thai: 065-901-2984</span>
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3 text-white/30 text-xs">
-              <a href="/privacy" className="hover:text-white/60 transition-colors">Privacy Policy</a>
-              <span>·</span>
-              <a href="/disclaimer" className="hover:text-white/60 transition-colors">Disclaimer</a>
-              <span>·</span>
               <a href="https://allesis.nl" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">
                 Webdesign by <span className="text-blue-400/60 hover:text-blue-400">Allesis.nl</span>
               </a>

@@ -1,3 +1,5 @@
+import DisclaimerFooter from '../../../components/DisclaimerFooter'
+
 export default function SizePage() {
   return (
     <main className="min-h-screen bg-[#07080f] text-white">
@@ -55,6 +57,9 @@ export default function SizePage() {
           </ul>
           <p className="text-white/40 text-xs mt-4">For context: most plots available on Soi 112 are 1–2 Rai. At 4 Rai 2 Ngan, this plot is exceptionally large for the area.</p>
         </div>
+      </div>
+      <div className="max-w-3xl mx-auto px-6 pb-12">
+        <DisclaimerFooter />
         <div className="text-center pt-4">
           <a href="/" className="text-blue-400 hover:text-blue-300 transition-colors text-sm">← Back to the land listing</a>
         </div>

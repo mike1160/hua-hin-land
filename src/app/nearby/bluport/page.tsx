@@ -1,3 +1,5 @@
+import DisclaimerFooter from '../../../components/DisclaimerFooter'
+
 export default function Bluport() {
   return (
     <main className="min-h-screen bg-[#07080f] text-white">
@@ -28,9 +30,26 @@ export default function Bluport() {
         </div>
         <div className="bg-gradient-to-br from-purple-950/30 to-pink-950/20 border border-purple-900/30 rounded-2xl p-6">
           <h2 className="text-white text-xl font-semibold mb-4">🏪 Market Village — just next door</h2>
-          <p className="text-white/70 text-sm leading-relaxed">Adjacent to Bluport is Market Village — an older mall with more everyday stores, a large Tesco Lotus supermarket, hardware shops, phone repair, and dozens of local restaurants. Together, these two malls cover virtually every shopping need.</p>
+          <p className="text-white/70 text-sm leading-relaxed mb-6">Adjacent to Bluport is Market Village — an older mall with more everyday stores, a large Tesco Lotus supermarket, hardware shops, phone repair, and dozens of local restaurants. Together, these two malls cover virtually every shopping need.</p>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="relative h-52 rounded-xl overflow-hidden border border-white/10">
+              <img src="/IMG_7806.JPG" alt="Market Village" className="absolute inset-0 w-full h-full object-cover" style={{objectPosition: 'center center', filter: 'blur(1px) saturate(1.1)'}} />
+              <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px]" />
+              <div className="absolute inset-0" style={{background: 'linear-gradient(to top, rgba(7,8,15,0.65) 0%, rgba(7,8,15,0.2) 100%)'}} />
+            </div>
+            <div className="relative h-52 rounded-xl overflow-hidden border border-white/10">
+              <img src="/IMG_7807.JPG" alt="Market Village interior" className="absolute inset-0 w-full h-full object-cover" style={{objectPosition: 'center center', filter: 'blur(1px) saturate(1.1)'}} />
+              <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px]" />
+              <div className="absolute inset-0" style={{background: 'linear-gradient(to top, rgba(7,8,15,0.65) 0%, rgba(7,8,15,0.2) 100%)'}} />
+            </div>
+          </div>
         </div>
-        <div className="text-center pt-4"><a href="/" className="text-blue-400 hover:text-blue-300 text-sm">← Back to the land listing</a></div>
+      </div>
+      <div className="max-w-3xl mx-auto px-6 pb-12">
+        <DisclaimerFooter />
+        <div className="text-center pt-4">
+          <a href="/" className="text-blue-400 hover:text-blue-300 transition-colors text-sm">← Back to the land listing</a>
+        </div>
       </div>
     </main>
   )

@@ -1,3 +1,5 @@
+import DisclaimerFooter from '../../../components/DisclaimerFooter'
+
 export default function Chumphon() {
   return (
     <main className="min-h-screen bg-[#07080f] text-white">
@@ -28,7 +30,12 @@ export default function Chumphon() {
           <p className="text-white/70 text-sm leading-relaxed">Hua Hin&apos;s location on the upper Gulf coast means you&apos;re within a day&apos;s drive of almost everything Thailand has to offer. North to Bangkok and beyond. South to the islands and eventually Malaysia. West across the peninsula to Kanchanaburi and the Andaman coast.</p>
           <p className="text-white/70 text-sm leading-relaxed mt-3">This is a genuinely central location for exploring Thailand — not a remote destination, not an urban centre. The best of both.</p>
         </div>
-        <div className="text-center pt-4"><a href="/" className="text-blue-400 hover:text-blue-300 text-sm">← Back to the land listing</a></div>
+      </div>
+      <div className="max-w-3xl mx-auto px-6 pb-12">
+        <DisclaimerFooter />
+        <div className="text-center pt-4">
+          <a href="/" className="text-blue-400 hover:text-blue-300 transition-colors text-sm">← Back to the land listing</a>
+        </div>
       </div>
     </main>
   )

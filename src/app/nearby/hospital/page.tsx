@@ -1,3 +1,5 @@
+import DisclaimerFooter from '../../../components/DisclaimerFooter'
+
 export default function Hospital() {
   return (
     <main className="min-h-screen bg-[#07080f] text-white">
@@ -41,7 +43,12 @@ export default function Hospital() {
             <div className="flex justify-between"><span className="text-white/70">Dental cleaning</span><span className="text-green-400">฿500–800 (€13–21)</span></div>
           </div>
         </div>
-        <div className="text-center pt-4"><a href="/" className="text-blue-400 hover:text-blue-300 text-sm">← Back to the land listing</a></div>
+      </div>
+      <div className="max-w-3xl mx-auto px-6 pb-12">
+        <DisclaimerFooter />
+        <div className="text-center pt-4">
+          <a href="/" className="text-blue-400 hover:text-blue-300 transition-colors text-sm">← Back to the land listing</a>
+        </div>
       </div>
     </main>
   )

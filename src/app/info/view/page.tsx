@@ -1,3 +1,5 @@
+import DisclaimerFooter from '../../../components/DisclaimerFooter'
+
 export default function ViewPage() {
   return (
     <main className="min-h-screen bg-[#07080f] text-white">
@@ -33,6 +35,9 @@ export default function ViewPage() {
             <li>• The view you see today is the view you will see in 20 years</li>
           </ul>
         </div>
+      </div>
+      <div className="max-w-3xl mx-auto px-6 pb-12">
+        <DisclaimerFooter />
         <div className="text-center pt-4">
           <a href="/" className="text-blue-400 hover:text-blue-300 transition-colors text-sm">← Back to the land listing</a>
         </div>
