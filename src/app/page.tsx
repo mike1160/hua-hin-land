@@ -15,7 +15,7 @@ const langs = ['EN', 'NL', 'TH', 'DE']
 type Lang = 'EN' | 'NL' | 'TH' | 'DE'
 
 const t: Record<Lang, {
-  badge: string, hook: string, sub: string, price: string, priceLabel: string, total: string, cta: string,
+  badge: string, hook: string, sub: string, price: string, priceLabel: string, total: string, cta: string, ctaSub: string,
   plotTitle: string, lifestyleTitle: string, lifestyleSub: string, neighbourTitle: string, neighbourSub: string,
   whyTitle: string, mapTitle: string, finalHook: string, urgency: string
 }> = {
@@ -27,6 +27,7 @@ const t: Record<Lang, {
     priceLabel: 'per rai · Total ฿ 10,350,000 · ≈ €270,000',
     total: 'Total (4 rai 2 ngan): ฿ 10,350,000 — approx. €270,000',
     cta: '📲 WhatsApp 080-140-6745',
+    ctaSub: 'Or call us',
     plotTitle: 'The land — 4 rai 2 ngan, Soi 112, Hua Hin',
     lifestyleTitle: 'The life you\'ve been designing.',
     lifestyleSub: 'Live music every night. Golf at sunrise. Fresh seafood by the ocean. A warm, genuinely international community of people who chose the good life — and found it in Hua Hin.',
@@ -45,6 +46,7 @@ const t: Record<Lang, {
     priceLabel: 'per rai · Totaal ฿ 10.350.000 · ≈ €270.000',
     total: 'Totaal (4 rai 2 ngan): ฿ 10.350.000 — ca. €270.000',
     cta: '📲 WhatsApp 080-140-6745',
+    ctaSub: 'Of bel ons',
     plotTitle: 'Het perceel.',
     lifestyleTitle: 'Het leven dat je al lang ontwerpt.',
     lifestyleSub: 'Elke avond livemuziek. Golf bij zonsopgang. Verse zeevruchten aan de oceaan. Een warme, echt internationale gemeenschap van mensen die kozen voor het goede leven — en het vonden in Hua Hin.',
@@ -63,6 +65,7 @@ const t: Record<Lang, {
     priceLabel: 'ต่อไร่ · รวม ฿ 10,350,000 · ≈ €270,000',
     total: 'รวม (4 ไร่ 2 งาน): ฿ 10,350,000',
     cta: '📲 WhatsApp 080-140-6745',
+    ctaSub: 'หรือโทรหาเรา',
     plotTitle: 'ที่ดิน',
     lifestyleTitle: 'ชีวิตที่คุณออกแบบมานาน',
     lifestyleSub: 'ดนตรีสดทุกคืน กอล์ฟยามรุ่งอรุณ อาหารทะเลสดริมมหาสมุทร ชุมชนนานาชาติที่อบอุ่นของคนที่เลือกชีวิตที่ดี — และพบมันในหัวหิน',
@@ -81,6 +84,7 @@ const t: Record<Lang, {
     priceLabel: 'pro Rai · Gesamt ฿ 10.350.000 · ≈ €270.000',
     total: 'Gesamt (4 Rai 2 Ngan): ฿ 10.350.000 — ca. €270.000',
     cta: '📲 WhatsApp 080-140-6745',
+    ctaSub: 'Oder rufen Sie uns an',
     plotTitle: 'Das Grundstück.',
     lifestyleTitle: 'Das Leben, das Sie schon lange entwerfen.',
     lifestyleSub: 'Jeden Abend Live-Musik. Golf bei Sonnenaufgang. Frische Meeresfrüchte am Ozean. Eine herzliche, wirklich internationale Gemeinschaft von Menschen, die das gute Leben gewählt haben — und es in Hua Hin gefunden haben.',
@@ -210,6 +214,7 @@ export default function Home() {
               {c.cta}
             </a>
           </div>
+          <p className="text-white/50 text-sm mt-4">{c.ctaSub} · 080-140-6745 · Thai: 065-901-2984</p>
         </div>
       </section>
 
@@ -716,7 +721,7 @@ export default function Home() {
                   >
                     {formStatus === 'sending' ? 'Sending...' : 'Send message →'}
                   </button>
-                  <p className="text-white/40 text-xs text-center">Or WhatsApp directly: 080-140-6745</p>
+                  <p className="text-white/40 text-xs text-center">WhatsApp: 080-140-6745 · Thai (bellen): 065-901-2984</p>
                 </form>
               )}
             </div>
@@ -739,6 +744,7 @@ export default function Home() {
             className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold px-10 py-5 rounded-2xl text-xl transition-all shadow-2xl shadow-green-900/50 hover:scale-105 mb-6">
             {c.cta}
           </a>
+          <p className="text-white/50 text-sm mb-6">080-140-6745 · Thai: 065-901-2984 · {c.ctaSub}</p>
           <div className="mt-6">
             <p className="text-4xl font-display font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent" style={{fontFamily: 'Playfair Display, serif'}}>{c.price} <span className="text-xl font-normal text-white/40">{lang === 'NL' ? 'per rai' : lang === 'TH' ? 'ต่อไร่' : lang === 'DE' ? 'pro Rai' : 'per rai'}</span></p>
             <p className="text-white/40 text-sm mt-2">{c.total}</p>
@@ -783,7 +789,7 @@ export default function Home() {
           <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/50 text-sm text-center md:text-left">
               Thap Tai, Soi 112, Hua Hin, Prachuap Khiri Khan 77110, Thailand<br/>
-              <span className="text-white/30 text-xs">080-140-6745</span>
+              <span className="text-white/30 text-xs">080-140-6745 · Thai: 065-901-2984</span>
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3 text-white/30 text-xs">
               <a href="/privacy" className="hover:text-white/60 transition-colors">Privacy Policy</a>
