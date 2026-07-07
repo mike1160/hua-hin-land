@@ -11,15 +11,50 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/privacy/page": [
+    "/info/size/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/privacy/page.js"
+      "static/chunks/app/info/size/page.js"
     ],
-    "/disclaimer/page": [
+    "/info/chanote/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/disclaimer/page.js"
+      "static/chunks/app/info/chanote/page.js"
+    ],
+    "/info/view/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/info/view/page.js"
+    ],
+    "/info/terrain/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/info/terrain/page.js"
+    ],
+    "/info/water/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/info/water/page.js"
+    ],
+    "/info/access/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/info/access/page.js"
+    ],
+    "/life/golf/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/life/golf/page.js"
+    ],
+    "/nearby/seven-eleven/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/nearby/seven-eleven/page.js"
+    ],
+    "/nearby/bangkok/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/nearby/bangkok/page.js"
     ]
   }
 }

@@ -214,6 +214,19 @@ export default function Home() {
               {c.cta}
             </a>
           </div>
+          <div className="mt-4">
+            <a href="tel:0659012984"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-white text-lg transition-all hover:scale-105 shadow-2xl"
+              style={{background: 'linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #6366f1 100%)', boxShadow: '0 0 30px rgba(124,58,237,0.5), 0 0 60px rgba(99,102,241,0.2)'}}>
+              <span className="text-2xl">📞</span>
+              <div className="text-left">
+                <p className="text-xs text-white/70 uppercase tracking-widest font-medium">
+                  {lang === 'NL' ? 'Bel de agent nu' : lang === 'TH' ? 'โทรหาเอเจนต์เลย' : lang === 'DE' ? 'Jetzt Agent anrufen' : 'Call the agent now'}
+                </p>
+                <p className="text-xl font-bold tracking-wide">065-901-2984</p>
+              </div>
+            </a>
+          </div>
           <p className="text-white/50 text-sm mt-4">{c.ctaSub} · 080-140-6745 · Thai: 065-901-2984</p>
         </div>
       </section>
@@ -222,59 +235,77 @@ export default function Home() {
       <section className="py-16 px-6 bg-[#07080f]">
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-4">
 
-          <div className="relative group overflow-hidden rounded-2xl border border-blue-500/20 hover:border-blue-400/60 transition-all duration-300 cursor-default" style={{background: 'linear-gradient(135deg, rgba(30,58,138,0.35) 0%, rgba(15,23,92,0.55) 100%)'}}>
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{background: 'radial-gradient(circle at 50% 0%, rgba(96,165,250,0.2) 0%, transparent 65%)'}} />
+          {/* Size */}
+          <a href="/info/size" className="relative group overflow-hidden rounded-2xl border border-blue-500/20 hover:border-blue-400/60 transition-all duration-300 cursor-pointer block" style={{minHeight: '160px'}}>
+            <img src="/photo3.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-75 transition-opacity duration-300" />
+            <div className="absolute inset-0" style={{background: 'linear-gradient(135deg, rgba(30,58,138,0.7) 0%, rgba(15,23,92,0.8) 100%)'}} />
             <div className="relative p-6">
               <div className="text-2xl mb-4">📐</div>
-              <p className="text-blue-300/60 text-xs uppercase tracking-widest mb-1 font-medium">Size</p>
+              <p className="text-blue-300/70 text-xs uppercase tracking-widest mb-1 font-medium">Size</p>
               <p className="text-white font-semibold text-base leading-snug">{specs[0][lang.toLowerCase() as 'en'|'nl'|'th'|'de']}</p>
+              <p className="text-blue-400/50 text-xs mt-3 group-hover:text-blue-400/80 transition-colors">Learn more →</p>
             </div>
-          </div>
+          </a>
 
-          <div className="relative group overflow-hidden rounded-2xl border border-amber-500/20 hover:border-amber-400/60 transition-all duration-300 cursor-default" style={{background: 'linear-gradient(135deg, rgba(120,53,15,0.35) 0%, rgba(69,26,3,0.55) 100%)'}}>
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{background: 'radial-gradient(circle at 50% 0%, rgba(251,191,36,0.18) 0%, transparent 65%)'}} />
+          {/* Chanote */}
+          <a href="/info/chanote" className="relative group overflow-hidden rounded-2xl border border-amber-500/20 hover:border-amber-400/60 transition-all duration-300 cursor-pointer block" style={{minHeight: '160px'}}>
+            <img src="/photo1.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-75 transition-opacity duration-300" />
+            <div className="absolute inset-0" style={{background: 'linear-gradient(135deg, rgba(120,53,15,0.7) 0%, rgba(69,26,3,0.8) 100%)'}} />
             <div className="relative p-6">
               <div className="text-2xl mb-4">📜</div>
-              <p className="text-amber-300/60 text-xs uppercase tracking-widest mb-1 font-medium">Title deed</p>
+              <p className="text-amber-300/70 text-xs uppercase tracking-widest mb-1 font-medium">Title deed</p>
               <p className="text-white font-semibold text-base leading-snug">{specs[1][lang.toLowerCase() as 'en'|'nl'|'th'|'de']}</p>
+              <p className="text-amber-400/50 text-xs mt-3 group-hover:text-amber-400/80 transition-colors">Learn more →</p>
             </div>
-          </div>
+          </a>
 
-          <div className="relative group overflow-hidden rounded-2xl border border-purple-500/20 hover:border-purple-400/60 transition-all duration-300 cursor-default" style={{background: 'linear-gradient(135deg, rgba(88,28,135,0.35) 0%, rgba(49,10,101,0.55) 100%)'}}>
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{background: 'radial-gradient(circle at 50% 0%, rgba(167,139,250,0.2) 0%, transparent 65%)'}} />
+          {/* Mountain view */}
+          <a href="/info/view" className="relative group overflow-hidden rounded-2xl border border-purple-500/20 hover:border-purple-400/60 transition-all duration-300 cursor-pointer block" style={{minHeight: '160px'}}>
+            <img src="/photo2.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-75 transition-opacity duration-300" />
+            <div className="absolute inset-0" style={{background: 'linear-gradient(135deg, rgba(88,28,135,0.7) 0%, rgba(49,10,101,0.8) 100%)'}} />
             <div className="relative p-6">
               <div className="text-2xl mb-4">🏔️</div>
-              <p className="text-purple-300/60 text-xs uppercase tracking-widest mb-1 font-medium">View</p>
+              <p className="text-purple-300/70 text-xs uppercase tracking-widest mb-1 font-medium">View</p>
               <p className="text-white font-semibold text-base leading-snug">{specs[2][lang.toLowerCase() as 'en'|'nl'|'th'|'de']}</p>
+              <p className="text-purple-400/50 text-xs mt-3 group-hover:text-purple-400/80 transition-colors">Learn more →</p>
             </div>
-          </div>
+          </a>
 
-          <div className="relative group overflow-hidden rounded-2xl border border-green-500/20 hover:border-green-400/60 transition-all duration-300 cursor-default" style={{background: 'linear-gradient(135deg, rgba(6,78,59,0.35) 0%, rgba(5,46,22,0.55) 100%)'}}>
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{background: 'radial-gradient(circle at 50% 0%, rgba(52,211,153,0.18) 0%, transparent 65%)'}} />
+          {/* Terrain */}
+          <a href="/info/terrain" className="relative group overflow-hidden rounded-2xl border border-green-500/20 hover:border-green-400/60 transition-all duration-300 cursor-pointer block" style={{minHeight: '160px'}}>
+            <img src="/photo4.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-75 transition-opacity duration-300" />
+            <div className="absolute inset-0" style={{background: 'linear-gradient(135deg, rgba(6,78,59,0.7) 0%, rgba(5,46,22,0.8) 100%)'}} />
             <div className="relative p-6">
               <div className="text-2xl mb-4">🚧</div>
-              <p className="text-green-300/60 text-xs uppercase tracking-widest mb-1 font-medium">Terrain</p>
+              <p className="text-green-300/70 text-xs uppercase tracking-widest mb-1 font-medium">Terrain</p>
               <p className="text-white font-semibold text-base leading-snug">{specs[3][lang.toLowerCase() as 'en'|'nl'|'th'|'de']}</p>
+              <p className="text-green-400/50 text-xs mt-3 group-hover:text-green-400/80 transition-colors">Learn more →</p>
             </div>
-          </div>
+          </a>
 
-          <div className="relative group overflow-hidden rounded-2xl border border-cyan-500/20 hover:border-cyan-400/60 transition-all duration-300 cursor-default" style={{background: 'linear-gradient(135deg, rgba(21,94,117,0.35) 0%, rgba(8,51,68,0.55) 100%)'}}>
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{background: 'radial-gradient(circle at 50% 0%, rgba(34,211,238,0.18) 0%, transparent 65%)'}} />
+          {/* Water */}
+          <a href="/info/water" className="relative group overflow-hidden rounded-2xl border border-cyan-500/20 hover:border-cyan-400/60 transition-all duration-300 cursor-pointer block" style={{minHeight: '160px'}}>
+            <img src="/photo5.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-75 transition-opacity duration-300" />
+            <div className="absolute inset-0" style={{background: 'linear-gradient(135deg, rgba(21,94,117,0.7) 0%, rgba(8,51,68,0.8) 100%)'}} />
             <div className="relative p-6">
               <div className="text-2xl mb-4">💧</div>
-              <p className="text-cyan-300/60 text-xs uppercase tracking-widest mb-1 font-medium">Utilities</p>
+              <p className="text-cyan-300/70 text-xs uppercase tracking-widest mb-1 font-medium">Utilities</p>
               <p className="text-white font-semibold text-base leading-snug">{specs[4][lang.toLowerCase() as 'en'|'nl'|'th'|'de']}</p>
+              <p className="text-cyan-400/50 text-xs mt-3 group-hover:text-cyan-400/80 transition-colors">Learn more →</p>
             </div>
-          </div>
+          </a>
 
-          <div className="relative group overflow-hidden rounded-2xl border border-slate-400/20 hover:border-slate-300/60 transition-all duration-300 cursor-default" style={{background: 'linear-gradient(135deg, rgba(51,65,85,0.45) 0%, rgba(15,23,42,0.65) 100%)'}}>
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{background: 'radial-gradient(circle at 50% 0%, rgba(148,163,184,0.15) 0%, transparent 65%)'}} />
+          {/* Access */}
+          <a href="/info/access" className="relative group overflow-hidden rounded-2xl border border-slate-400/20 hover:border-slate-300/60 transition-all duration-300 cursor-pointer block" style={{minHeight: '160px'}}>
+            <img src="/photo6.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-75 transition-opacity duration-300" />
+            <div className="absolute inset-0" style={{background: 'linear-gradient(135deg, rgba(51,65,85,0.7) 0%, rgba(15,23,42,0.8) 100%)'}} />
             <div className="relative p-6">
               <div className="text-2xl mb-4">🛣️</div>
-              <p className="text-slate-400/60 text-xs uppercase tracking-widest mb-1 font-medium">Access</p>
+              <p className="text-slate-400/70 text-xs uppercase tracking-widest mb-1 font-medium">Access</p>
               <p className="text-white font-semibold text-base leading-snug">{specs[5][lang.toLowerCase() as 'en'|'nl'|'th'|'de']}</p>
+              <p className="text-slate-400/50 text-xs mt-3 group-hover:text-slate-400/80 transition-colors">Learn more →</p>
             </div>
-          </div>
+          </a>
 
         </div>
       </section>
@@ -515,20 +546,20 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-16 animate-stagger">
             {[
-              { icon: '🏪', place: '7-Eleven', time: '4 min', highlight: true },
-              { icon: '🛍️', place: 'Bluport Mall', time: '10 min', highlight: false },
-              { icon: '🏖️', place: lang === 'NL' ? 'Strand' : lang === 'TH' ? 'หาด' : lang === 'DE' ? 'Strand' : 'Hua Hin Beach', time: '12 min', highlight: false },
-              { icon: '🏙️', place: lang === 'NL' ? 'Centrum' : lang === 'TH' ? 'ใจกลางหัวหิน' : lang === 'DE' ? 'Stadtzentrum' : 'Town Centre', time: '17 min', highlight: false },
-              { icon: '🏥', place: 'Bangkok Hospital', time: '15 min', highlight: false },
-              { icon: '⛳', place: lang === 'NL' ? 'Golfbanen (3x)' : lang === 'TH' ? 'สนามกอล์ฟ' : lang === 'DE' ? 'Golfplätze' : 'Golf courses (3)', time: '20 min', highlight: false },
-              { icon: '🌿', place: lang === 'NL' ? 'Nationaal Park' : lang === 'TH' ? 'อุทยานฯ' : lang === 'DE' ? 'Nationalpark' : 'National Park', time: lang === 'NL' ? 'Op de stoep' : lang === 'TH' ? 'หน้าบ้าน' : lang === 'DE' ? 'Vor der Tür' : 'Doorstep', highlight: true },
-              { icon: '🏙️', place: 'Bangkok', time: '200 km · 2.5h', highlight: false },
-              { icon: '🌴', place: 'Chumphon', time: '230 km · 3h', highlight: false },
+              { icon: '🏪', place: '7-Eleven', time: '4 min', href: '/nearby/seven-eleven', highlight: true },
+              { icon: '🛍️', place: 'Bluport Mall', time: '10 min', href: '/nearby/bluport', highlight: false },
+              { icon: '🏖️', place: lang === 'NL' ? 'Strand' : lang === 'TH' ? 'หาด' : lang === 'DE' ? 'Strand' : 'Hua Hin Beach', time: '12 min', href: '/nearby/beach', highlight: false },
+              { icon: '🏙️', place: lang === 'NL' ? 'Centrum' : lang === 'TH' ? 'ใจกลางหัวหิน' : lang === 'DE' ? 'Stadtzentrum' : 'Town Centre', time: '17 min', href: '/nearby/town', highlight: false },
+              { icon: '🏥', place: 'Bangkok Hospital', time: '15 min', href: '/nearby/hospital', highlight: false },
+              { icon: '⛳', place: lang === 'NL' ? 'Golfbanen (3x)' : lang === 'TH' ? 'สนามกอล์ฟ' : lang === 'DE' ? 'Golfplätze' : 'Golf courses (3)', time: '20 min', href: '/nearby/golf', highlight: false },
+              { icon: '🌿', place: lang === 'NL' ? 'Nationaal Park' : lang === 'TH' ? 'อุทยานฯ' : lang === 'DE' ? 'Nationalpark' : 'National Park', time: lang === 'NL' ? 'Op de stoep' : lang === 'TH' ? 'หน้าบ้าน' : lang === 'DE' ? 'Vor der Tür' : 'Doorstep', href: '/nearby/national-park', highlight: true },
+              { icon: '🏙️', place: 'Bangkok', time: '200 km · 2.5h', href: '/nearby/bangkok', highlight: false },
+              { icon: '🌴', place: 'Chumphon', time: '230 km · 3h', href: '/nearby/chumphon', highlight: false },
             ].map((d, i) => (
-              <div key={i} className={`flex items-center justify-between px-4 py-3 rounded-xl border transition-all ${d.highlight ? 'bg-blue-600/20 border-blue-500/40 hover:bg-blue-600/30' : 'bg-white/5 border-white/10 hover:bg-white/10'}`}>
+              <a key={i} href={d.href} className={`flex items-center justify-between px-4 py-3 rounded-xl border transition-all hover:scale-105 ${d.highlight ? 'bg-blue-600/20 border-blue-500/40 hover:bg-blue-600/30' : 'bg-white/5 border-white/10 hover:bg-white/10'}`}>
                 <span className="text-white/80 text-sm">{d.icon} {d.place}</span>
                 <span className={`font-bold text-sm ${d.highlight ? 'text-blue-300' : 'text-blue-400'}`}>{d.time}</span>
-              </div>
+              </a>
             ))}
           </div>
 
@@ -710,7 +741,7 @@ export default function Home() {
                   )}
                   <div
                     className="cf-turnstile"
-                    data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                    data-sitekey="0x4AAAAADwcB6k73kTycYDr"
                     data-callback="turnstileCallback"
                     data-theme="dark"
                   ></div>
@@ -721,7 +752,7 @@ export default function Home() {
                   >
                     {formStatus === 'sending' ? 'Sending...' : 'Send message →'}
                   </button>
-                  <p className="text-white/40 text-xs text-center">WhatsApp: 080-140-6745 · Thai (bellen): 065-901-2984</p>
+                  <p className="text-white/40 text-xs text-center">WhatsApp: 080-140-6745</p>
                 </form>
               )}
             </div>
@@ -743,6 +774,17 @@ export default function Home() {
           <a href={`https://wa.me/${PHONE}`} target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold px-10 py-5 rounded-2xl text-xl transition-all shadow-2xl shadow-green-900/50 hover:scale-105 mb-6">
             {c.cta}
+          </a>
+          <a href="tel:0659012984"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-white transition-all hover:scale-105 shadow-2xl mt-4"
+            style={{background: 'linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #6366f1 100%)', boxShadow: '0 0 30px rgba(124,58,237,0.5), 0 0 60px rgba(99,102,241,0.2)'}}>
+            <span className="text-2xl">📞</span>
+            <div className="text-left">
+              <p className="text-xs text-white/70 uppercase tracking-widest font-medium">
+                {lang === 'NL' ? 'Bel de agent nu' : lang === 'TH' ? 'โทรหาเอเจนต์เลย' : lang === 'DE' ? 'Jetzt Agent anrufen' : 'Call the agent now'}
+              </p>
+              <p className="text-xl font-bold tracking-wide">065-901-2984</p>
+            </div>
           </a>
           <p className="text-white/50 text-sm mb-6">080-140-6745 · Thai: 065-901-2984 · {c.ctaSub}</p>
           <div className="mt-6">

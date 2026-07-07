@@ -1,6 +1,7 @@
 {
   "/page": "app/page.js",
-  "/life/schools/page": "app/life/schools/page.js",
-  "/life/retirees/page": "app/life/retirees/page.js",
-  "/life/entertainment/page": "app/life/entertainment/page.js"
+  "/info/water/page": "app/info/water/page.js",
+  "/info/access/page": "app/info/access/page.js",
+  "/nearby/seven-eleven/page": "app/nearby/seven-eleven/page.js",
+  "/nearby/bangkok/page": "app/nearby/bangkok/page.js"
 }
