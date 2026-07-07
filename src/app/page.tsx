@@ -837,19 +837,19 @@ export default function Home() {
       <section id="contact" className="py-16 px-6 bg-[#07080f]">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl font-display font-bold mb-2 text-white" style={{fontFamily: 'Playfair Display, serif'}}>{c.mapTitle}</h2>
-          <p className="text-white/40 text-sm mb-6">Thap Tai, Soi 112, Hua Hin, Prachuap Khiri Khan 77110</p>
+          <p className="text-white/40 text-sm mb-6">Soi 112, Thap Tai, Hua Hin, Prachuap Khiri Khan, Thailand</p>
           <div className="rounded-2xl overflow-hidden border border-blue-900/30" style={{height: '420px'}}>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1000!2d99.9327!3d12.618!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDM3JzA0LjgiTiA5OcKwNTYnMDIuNyJF!5e1!3m2!1sen!2sth!4v1720000000000!5m2!1sen!2sth"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1000!2d99.9073267!3d12.4751699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDI4JzMwLjYiTiA5OcKwNTQnMjYuNCJF!5e1!3m2!1sen!2sth!4v1234567890"
               width="100%" height="100%" style={{border: 0}} allowFullScreen loading="lazy"
               referrerPolicy="no-referrer-when-downgrade" title="Location" />
           </div>
           <div className="mt-4 flex gap-3">
-            <a href="https://maps.app.goo.gl/LLQzxdx2oMeoatE1A" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.google.com/maps?q=12.4751699,99.9073267" target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-blue-600/20 border border-blue-500/30 hover:bg-blue-600/40 text-blue-300 px-5 py-2.5 rounded-xl text-sm transition-all">
               📍 Open in Google Maps
             </a>
-            <a href="https://maps.app.goo.gl/LLQzxdx2oMeoatE1A" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.google.com/maps/dir/?api=1&destination=12.4751699,99.9073267" target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-purple-600/20 border border-purple-500/30 hover:bg-purple-600/40 text-purple-300 px-5 py-2.5 rounded-xl text-sm transition-all">
               🧭 Get directions
             </a>
