@@ -562,7 +562,32 @@ export default function Home() {
               </a>
             ))}
           </div>
+        </div>
+      </section>
 
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src="/seven-eleven.jpg" alt="7-Eleven" className="w-full h-full object-cover" style={{objectPosition: 'center center', filter: 'blur(2px) saturate(1.2)'}} />
+          <div className="absolute inset-0" style={{background: 'linear-gradient(to bottom, #07080f 0%, rgba(7,8,15,0.55) 20%, rgba(7,8,15,0.55) 80%, #07080f 100%)'}} />
+        </div>
+        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+          <p className="text-blue-300/70 text-xs uppercase tracking-widest font-medium mb-4">4 minutes from the plot</p>
+          <h2 className="text-5xl md:text-7xl font-display font-bold mb-6 text-white" style={{fontFamily: 'Playfair Display, serif'}}>
+            Everything you need.<br/><span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Any time of day.</span>
+          </h2>
+          <p className="text-white/60 text-xl max-w-2xl mx-auto mb-10">Coffee at 6am. Cold beer at 10pm. Bills paid, phone topped up, medicine when you need it. Thailand's 7-Eleven is not a convenience store — it's infrastructure.</p>
+          <a href="/nearby/seven-eleven" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-6 py-3 rounded-xl transition-all text-sm font-medium">
+            Why 7-Eleven matters in Thailand →
+          </a>
+        </div>
+      </section>
+
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src="/photo3.jpg" alt="aerial" className="w-full h-full object-cover" />
+          <div className="absolute inset-0" style={{background: 'linear-gradient(to bottom, #07080f 0%, rgba(7,8,15,0.82) 15%, rgba(7,8,15,0.82) 85%, #07080f 100%)'}} />
+        </div>
+        <div className="relative z-10 max-w-5xl mx-auto px-6">
           <h3 className="text-2xl font-display font-semibold text-white mb-8" style={{fontFamily: 'Playfair Display, serif'}}>Life around the plot</h3>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
