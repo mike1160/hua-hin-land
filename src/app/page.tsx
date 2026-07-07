@@ -274,35 +274,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CHANOTE — slim info bar */}
-      <section className="py-10 px-6 bg-[#07080f]">
-        <div className="max-w-5xl mx-auto">
-          <div className="bg-gradient-to-r from-blue-950/40 to-purple-950/30 border border-blue-900/30 rounded-2xl px-8 py-6 flex flex-wrap items-center gap-6">
-            <div className="flex-shrink-0">
-              <p className="text-blue-400 text-xs uppercase tracking-widest font-medium mb-1">Title deed</p>
-              <p className="text-white text-xl font-semibold">Chanote · NS.4J</p>
-              <p className="text-white/50 text-sm">Strongest land title in Thailand</p>
-            </div>
-            <div className="w-px h-12 bg-white/10 hidden md:block"></div>
-            <div className="flex flex-wrap gap-4 flex-1">
-              {['GPS-mapped boundaries', 'Registered at Land Department', 'Ready to transfer immediately', 'Red Garuda seal — authentic'].map((f, i) => (
-                <div key={i} className="flex items-center gap-2 text-sm text-white/60">
-                  <span className="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span>{f}
-                </div>
-              ))}
-            </div>
-            <div className="flex-shrink-0">
-              <button
-                onClick={() => setLightbox('/chanote.jpg')}
-                className="text-blue-400/60 hover:text-blue-400 text-xs underline underline-offset-2 transition-colors"
-              >
-                View title deed document →
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* VIDEO — autoplay hero clip */}
       <section className="py-0 bg-[#07080f]">
         <div className="max-w-5xl mx-auto px-6">
@@ -687,23 +658,7 @@ export default function Home() {
               🧭 Get directions
             </a>
           </div>
-          <div className="mt-8 grid md:grid-cols-2 gap-8 items-start">
-            {/* Chanote thumbnail */}
-            <div>
-              <p className="text-white/30 text-xs uppercase tracking-wider mb-3">Title deed document</p>
-              <div
-                className="w-48 cursor-pointer group relative overflow-hidden rounded-xl border border-blue-900/30 hover:border-blue-500/50 transition-all"
-                onClick={() => setLightbox('/chanote.jpg')}
-              >
-                <img src="/chanote.jpg" alt="Chanote" className="w-full opacity-70 group-hover:opacity-100 transition-opacity group-hover:scale-105 duration-300" />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span className="bg-black/60 text-white text-xs px-2 py-1 rounded-lg">View document</span>
-                </div>
-              </div>
-              <p className="text-white/30 text-xs mt-2">Chanote NS.4J · Click to enlarge</p>
-            </div>
-
-            {/* Contact form */}
+          <div className="mt-8">
             <div className="bg-gradient-to-br from-blue-900/40 to-purple-900/30 border border-blue-500/40 rounded-2xl p-6 backdrop-blur-sm">
               <p className="text-blue-300 text-xs uppercase tracking-widest font-medium mb-1">Get in touch</p>
               <h3 className="text-white text-xl font-semibold mb-4 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">Request more information</h3>
