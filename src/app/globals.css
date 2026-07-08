@@ -49,3 +49,12 @@ body {
 .animate-stagger > *:nth-child(7) { animation-delay: 0.35s; }
 .animate-stagger > *:nth-child(8) { animation-delay: 0.40s; }
 .animate-stagger > *:nth-child(9) { animation-delay: 0.45s; }
+
+@keyframes bounceScroll {
+  0%, 100% { transform: translateY(0); opacity: 0.45; }
+  50% { transform: translateY(10px); opacity: 0.9; }
+}
+
+.animate-bounce-scroll {
+  animation: bounceScroll 2.2s ease-in-out infinite;
+}

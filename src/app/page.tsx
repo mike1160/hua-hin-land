@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import HomeNavbar from '../components/HomeNavbar'
 
 declare global {
   interface Window {
@@ -16,7 +17,8 @@ const LANG_KEY = 'hua-hin-land-lang'
 type Lang = 'EN' | 'NL' | 'TH' | 'DE'
 
 const t: Record<Lang, {
-  badge: string, hook: string, sub: string, price: string, priceLabel: string, total: string, cta: string, ctaSub: string,
+  badge: string, heroBadge: string, statsBar: string, socialProof: string,
+  hook: string, sub: string, price: string, priceLabel: string, total: string, cta: string, ctaSub: string,
   plotTitle: string, lifestyleTitle: string, lifestyleSub: string, neighbourTitle: string, neighbourSub: string,
   whyTitle: string, mapTitle: string, finalHook: string, urgency: string,
   disclaimerSticky: string, disclaimerLink: string, contactConfirm: string, contactDisclaimerPhrase: string,
@@ -24,6 +26,9 @@ const t: Record<Lang, {
 }> = {
   EN: {
     badge: 'Thap Tai, Soi 112 · Hua Hin · Chanote Title Deed',
+    heroBadge: 'Below market price · Chanote · Ready to transfer',
+    statsBar: '฿2.3M/rai · 4 rai 2 ngan · Chanote NS.4J · Flat terrain · Water connected · Soi 112 luxury corridor',
+    socialProof: 'Located in the same corridor as Botanica, La Felice and Mali Prestige — Hua Hin\'s most sought-after development zone.',
     hook: '4 Rai 2 Ngan of prime land. Soi 112, Hua Hin.',
     sub: '4 Rai 2 Ngan · Flat · Chanote · Mountain views · Water connected · Soi 112',
     price: '฿ 2,300,000',
@@ -49,6 +54,9 @@ const t: Record<Lang, {
   },
   NL: {
     badge: 'Thap Tai, Soi 112 · Hua Hin · Chanote Eigendomsakte',
+    heroBadge: 'Onder marktprijs · Chanote · Overdraagbaar',
+    statsBar: '฿2,3M/rai · 4 rai 2 ngan · Chanote NS.4J · Vlak terrein · Water aanwezig · Soi 112 luxecorridor',
+    socialProof: 'In dezelfde corridor als Botanica, La Felice en Mali Prestige — Hua Hin\'s meest gewilde ontwikkelingszone.',
     hook: '4 Rai 2 Ngan topgrond. Soi 112, Hua Hin.',
     sub: '4 Rai 2 Ngan · Vlak · Chanote · Bergzicht · Water aanwezig · Soi 112',
     price: '฿ 2.300.000',
@@ -74,6 +82,9 @@ const t: Record<Lang, {
   },
   TH: {
     badge: 'ทับใต้ ซอย 112 · หัวหิน · โฉนดที่ดิน',
+    heroBadge: 'ต่ำกว่าราคาตลาด · โฉนด · พร้อมโอน',
+    statsBar: '฿2.3M/ไร่ · 4 ไร่ 2 งาน · โฉนด น.ส.4จ · ที่ราบ · มีน้ำประปา · ซอย 112 ทำเลวิลล่า',
+    socialProof: 'ทำเลเดียวกับ Botanica, La Felice และ Mali Prestige — โซนพัฒนาที่ต้องการมากที่สุดของหัวหิน',
     hook: 'ที่ดิน 4 ไร่ 2 งาน ทำเลทอง ซอย 112 หัวหิน',
     sub: '4 ไร่ 2 งาน · ราบเรียบ · โฉนด · วิวเขา · มีน้ำประปา · ซอย 112',
     price: '฿ 2,300,000',
@@ -99,6 +110,9 @@ const t: Record<Lang, {
   },
   DE: {
     badge: 'Thap Tai, Soi 112 · Hua Hin · Chanote Eigentumsrecht',
+    heroBadge: 'Unter Marktpreis · Chanote · Übertragungsbereit',
+    statsBar: '฿2,3M/Rai · 4 Rai 2 Ngan · Chanote NS.4J · Ebenes Gelände · Wasser · Soi 112 Luxuskorridor',
+    socialProof: 'Im selben Korridor wie Botanica, La Felice und Mali Prestige — Hua Hins begehrteste Entwicklungszone.',
     hook: '4 Rai 2 Ngan Topgrundstück. Soi 112, Hua Hin.',
     sub: '4 Rai 2 Ngan · Eben · Chanote · Bergblick · Wasser vorhanden · Soi 112',
     price: '฿ 2.300.000',
@@ -210,6 +224,7 @@ const lifeAroundCards: {
       { label: 'Mini Golf World ⭐4.9 — glow in dark', href: 'https://www.google.com/maps/search/Mini+Golf+World+Hua+Hin' },
       { label: 'Vana Nava Water Jungle — 10 min', href: 'https://www.vananavahuahin.com' },
       { label: 'Saam Phan Nam Floating Market — 5 min', href: 'https://www.google.com/maps/search/Sam+Phan+Nam+Floating+Market+Hua+Hin' },
+      { label: 'Majestic Creek Golf — 5 min', href: '/nearby/golf' },
       { label: 'Cicada Weekend Market', href: 'https://www.facebook.com/cicadamarket' },
       { label: 'Jazz & live music — nightly', href: 'https://www.google.com/maps/search/jazz+live+music+bar+Hua+Hin' },
     ],
@@ -224,6 +239,7 @@ const lifeAroundCards: {
     iconBg: 'bg-teal-500/20',
     items: [
       { label: 'Thai massage centres — Thap Tai', href: 'https://maps.app.goo.gl/search/Thai+massage+Thap+Tai+Hua+Hin' },
+      { label: 'Buddha-Metta Meditation Center — nearby', href: '/nearby/meditation' },
       { label: 'Chiva-Som Health Resort', href: 'https://www.chivasom.com/en/chiva-som-hua-hin/' },
       { label: 'Anantara Hua Hin Spa', href: 'https://www.anantara.com/en/hua-hin/spa' },
       { label: 'Bangkok Hospital — 15 min', href: 'https://www.bangkokhospital.com/en/huahin' },
@@ -265,6 +281,14 @@ const lifeAroundCards: {
       { label: 'Immigration office — 15 min', href: 'https://www.immigration.go.th/' },
     ],
   },
+]
+
+const nearbyHighlightCards = [
+  { icon: '🏌️', label: 'Majestic Creek Golf — 5 min', href: '/nearby/golf' },
+  { icon: '🧘', label: 'Buddha-Metta Meditation Center — nearby', href: '/nearby/meditation' },
+  { icon: '🏖️', label: 'Pranburi Beach — 20 min', href: '/nearby/pranburi' },
+  { icon: '⭐', label: 'The Son Resort — best rated nearby', href: '/nearby/son-resort' },
+  { icon: '🚗', label: 'Bangkok — 3.5 hrs · Airport — 25 min', href: '/nearby/connectivity' },
 ]
 
 export default function Home() {
@@ -357,32 +381,31 @@ export default function Home() {
         </div>
       )}
 
-      {/* LANG SWITCHER — fixed top right */}
-      <div className="fixed top-4 right-4 z-40 flex gap-1 bg-black/60 backdrop-blur-md rounded-full px-2 py-1 border border-white/10">
-        {langs.map(l => (
-          <button key={l} onClick={() => selectLang(l as Lang)}
-            className={`px-3 py-1 text-xs font-semibold rounded-full transition-all ${lang === l ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white' : 'text-white/50 hover:text-white'}`}>
-            {l}
-          </button>
-        ))}
-      </div>
+      <HomeNavbar lang={lang} langs={langs} onSelectLang={selectLang} />
 
       {/* HERO — fullscreen photo background */}
       <section className="relative min-h-screen flex flex-col justify-end">
         <div className="absolute inset-0">
           <img src="/photo2.jpg" alt="hero" className="w-full h-full object-cover" />
-          <div className="absolute inset-0" style={{background: 'linear-gradient(to bottom, rgba(30,10,60,0.2) 0%, rgba(60,20,120,0.5) 40%, rgba(7,8,15,0.9) 75%, #07080f 100%)'}} />
+          <div className="absolute inset-0 backdrop-blur-[2px]" style={{background: 'rgba(0,0,0,0.55)'}} />
+          <div className="absolute inset-0" style={{background: 'linear-gradient(to bottom, rgba(30,10,60,0.2) 0%, rgba(60,20,120,0.3) 40%, rgba(7,8,15,0.94) 75%, #07080f 100%)'}} />
         </div>
         <div className="relative z-10 max-w-5xl mx-auto w-full px-6 pb-20">
+          <div className="inline-flex items-center gap-2 bg-purple-500/20 backdrop-blur-sm border border-purple-400/30 rounded-full px-4 py-1.5 text-xs text-purple-100 mb-4 font-medium tracking-wide">
+            {c.heroBadge}
+          </div>
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 text-xs text-white/80 mb-6">{c.badge}</div>
           <h1 className="text-5xl md:text-7xl font-display font-bold leading-tight mb-4" style={{fontFamily: 'Playfair Display, serif'}}>
             <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-blue-300 bg-clip-text text-transparent">{c.hook}</span>
           </h1>
-          <p className="text-white/70 text-lg md:text-xl mb-10 tracking-wide">{c.sub}</p>
+          <p className="text-white/90 text-lg md:text-xl mb-10 tracking-wide">{c.sub}</p>
           <div className="flex flex-wrap items-center gap-6">
             <div>
               <div className="text-4xl md:text-5xl font-display font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent" style={{fontFamily: 'Playfair Display, serif'}}>{c.price}</div>
-              <div className="text-white/50 text-sm mt-1">{c.priceLabel}</div>
+              <div className="text-white/60 text-sm mt-1">{c.priceLabel}</div>
+              <a href="#plot-gallery" className="inline-flex flex-col items-start mt-6 text-white/40 hover:text-white/70 transition-colors animate-bounce-scroll" aria-label="Scroll to plot photos">
+                <span className="text-xl leading-none">↓</span>
+              </a>
             </div>
             <a href={`https://wa.me/${PHONE}`} target="_blank" rel="noopener noreferrer"
               className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold px-8 py-4 rounded-2xl text-lg transition-all shadow-2xl shadow-green-900/50 hover:scale-105">
@@ -412,7 +435,62 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="sticky top-0 z-30 bg-[#0d1120]/95 border-b border-white/10 backdrop-blur-sm">
+      {/* STATS BAR */}
+      <div id="plot-gallery" className="bg-[#0a0c14] border-y border-white/10">
+        <div className="max-w-5xl mx-auto px-6 py-3 text-center text-white/55 text-[11px] sm:text-xs tracking-wide leading-relaxed">
+          {c.statsBar}
+        </div>
+      </div>
+
+      {/* PHOTO GALLERY — slider (moved up) */}
+      <section className="py-10 px-6 bg-[#07080f]">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-4xl font-display font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent" style={{fontFamily: 'Playfair Display, serif'}}>{c.plotTitle}</h2>
+          <p className="text-white/40 text-sm mb-6">Use arrows or thumbnails to browse · Click to enlarge</p>
+
+          <div className="relative group rounded-2xl overflow-hidden" style={{height: '520px'}}>
+            <img
+              src={slides[slideIndex].src}
+              alt={slides[slideIndex].caption}
+              className="w-full h-full object-cover cursor-pointer transition-opacity duration-300"
+              onClick={() => setLightbox(slides[slideIndex].src)}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
+            <p className="absolute bottom-16 left-6 text-white/80 text-sm">{slides[slideIndex].caption}</p>
+            <p className="absolute bottom-6 left-6 text-white/40 text-xs">Click to enlarge · {slideIndex + 1} / {slides.length}</p>
+            <button
+              onClick={() => setSlideIndex((slideIndex - 1 + slides.length) % slides.length)}
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/50 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white text-xl hover:bg-purple-600/60 transition-all opacity-0 group-hover:opacity-100"
+            >
+              ←
+            </button>
+            <button
+              onClick={() => setSlideIndex((slideIndex + 1) % slides.length)}
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/50 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white text-xl hover:bg-purple-600/60 transition-all opacity-0 group-hover:opacity-100"
+            >
+              →
+            </button>
+          </div>
+
+          <div className="flex gap-2 mt-3 overflow-x-auto pb-2">
+            {slides.map((slide, i) => (
+              <button
+                key={i}
+                onClick={() => setSlideIndex(i)}
+                className={`flex-shrink-0 w-20 h-14 rounded-lg overflow-hidden border-2 transition-all ${slideIndex === i ? 'border-blue-400 opacity-100' : 'border-transparent opacity-50 hover:opacity-80'}`}
+              >
+                <img src={slide.src} alt="" className="w-full h-full object-cover" />
+              </button>
+            ))}
+          </div>
+
+          <p className="mt-6 text-center text-white/50 text-sm leading-relaxed max-w-2xl mx-auto italic" style={{fontFamily: 'Playfair Display, serif'}}>
+            {c.socialProof}
+          </p>
+        </div>
+      </section>
+
+      <div className="sticky top-14 z-30 bg-[#0d1120]/95 border-b border-white/10 backdrop-blur-sm">
         <div className="max-w-5xl mx-auto px-6 py-2.5 text-center text-white/50 text-xs leading-relaxed">
           {c.disclaimerSticky}{' '}
           <a href="/legal/disclaimer" className="text-purple-300/80 hover:text-purple-200 hover:underline transition-colors whitespace-nowrap">
@@ -516,59 +594,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PHOTO GALLERY — slider */}
-      <section className="py-8 bg-[#07080f]">
-        <div className="max-w-5xl mx-auto px-6">
-          <h2 className="text-4xl font-display font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2" style={{fontFamily: 'Playfair Display, serif'}}>{c.plotTitle}</h2>
-          <p className="text-white/40 text-sm mb-6">Use arrows or thumbnails to browse · Click to enlarge</p>
-
-          {/* Main slide */}
-          <div className="relative group rounded-2xl overflow-hidden" style={{height: '520px'}}>
-            <img
-              src={slides[slideIndex].src}
-              alt={slides[slideIndex].caption}
-              className="w-full h-full object-cover cursor-pointer transition-opacity duration-300"
-              onClick={() => setLightbox(slides[slideIndex].src)}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
-
-            {/* Caption */}
-            <p className="absolute bottom-16 left-6 text-white/80 text-sm">{slides[slideIndex].caption}</p>
-            <p className="absolute bottom-6 left-6 text-white/40 text-xs">Click to enlarge · {slideIndex + 1} / {slides.length}</p>
-
-            {/* Left arrow */}
-            <button
-              onClick={() => setSlideIndex((slideIndex - 1 + slides.length) % slides.length)}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/50 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white text-xl hover:bg-purple-600/60 transition-all opacity-0 group-hover:opacity-100"
-            >
-              ←
-            </button>
-
-            {/* Right arrow */}
-            <button
-              onClick={() => setSlideIndex((slideIndex + 1) % slides.length)}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/50 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white text-xl hover:bg-purple-600/60 transition-all opacity-0 group-hover:opacity-100"
-            >
-              →
-            </button>
-          </div>
-
-          {/* Thumbnails */}
-          <div className="flex gap-2 mt-3 overflow-x-auto pb-2">
-            {slides.map((slide, i) => (
-              <button
-                key={i}
-                onClick={() => setSlideIndex(i)}
-                className={`flex-shrink-0 w-20 h-14 rounded-lg overflow-hidden border-2 transition-all ${slideIndex === i ? 'border-blue-400 opacity-100' : 'border-transparent opacity-50 hover:opacity-80'}`}
-              >
-                <img src={slide.src} alt="" className="w-full h-full object-cover" />
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* VIDEOS */}
+      {/* VIDEOS — bird's eye */}
       <section className="py-12 px-6 bg-[#07080f]">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl font-display font-bold mb-8 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent" style={{fontFamily: 'Playfair Display, serif'}}>Bird&apos;s eye view.</h2>
@@ -787,7 +813,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative py-24 overflow-hidden">
+      <section id="life-around" className="relative py-24 overflow-hidden">
         <div className="absolute inset-0">
           <img src="/photo3.jpg" alt="aerial" className="w-full h-full object-cover" />
           <div className="absolute inset-0" style={{background: 'linear-gradient(to bottom, #07080f 0%, rgba(7,8,15,0.82) 15%, rgba(7,8,15,0.82) 85%, #07080f 100%)'}} />
@@ -830,6 +856,20 @@ export default function Home() {
             ))}
 
           </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-8">
+            {nearbyHighlightCards.map((card) => (
+              <a
+                key={card.href}
+                href={card.href}
+                className="group relative block cursor-pointer bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 pb-8 hover:bg-white/15 hover:border-white/25 hover:shadow-lg hover:shadow-purple-500/15 transition-all duration-200"
+              >
+                <div className="text-2xl mb-2">{card.icon}</div>
+                <p className="text-white/80 text-sm font-medium group-hover:text-white transition-colors duration-200 leading-snug">{card.label}</p>
+                <span className="absolute bottom-3 right-3 text-white/30 text-sm group-hover:text-purple-300 transition-colors duration-200">→</span>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -837,7 +877,7 @@ export default function Home() {
       <section id="contact" className="py-16 px-6 bg-[#07080f]">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl font-display font-bold mb-2 text-white" style={{fontFamily: 'Playfair Display, serif'}}>{c.mapTitle}</h2>
-          <p className="text-white/40 text-sm mb-6">Soi 112, Thap Tai, Hua Hin, Prachuap Khiri Khan, Thailand</p>
+          <p className="text-white/70 text-base leading-relaxed mb-6 max-w-3xl">Situated on a quiet access road directly off Route 2004 (Soi 112), this plot sits in one of Hua Hin&apos;s last remaining open green corridors — surrounded by nature yet connected to everything. To the northeast, the Sam Phan Nam reservoir and floating market are within walking distance. To the west, Siwali building supplies and the main road to Hua Hin centre. The plot itself is flat, unfenced, and unobstructed — a rare open canvas in a rapidly developing area.</p>
           <div className="rounded-2xl overflow-hidden border border-blue-900/30" style={{height: '420px'}}>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1000!2d99.9073267!3d12.4751699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDI4JzMwLjYiTiA5OcKwNTQnMjYuNCJF!5e1!3m2!1sen!2sth!4v1234567890"
