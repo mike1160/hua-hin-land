@@ -1,6 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
+import BackButton from '@/components/BackButton'
 import DisclaimerFooter from '@/components/DisclaimerFooter'
 import { Link } from '@/i18n/navigation'
 
@@ -12,6 +13,10 @@ export default function GolfNearby() {
 
   return (
     <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
+      <div className="px-6 pt-5 pb-3 max-w-5xl mx-auto w-full">
+        <BackButton />
+      </div>
+
       <div className="relative h-72 flex items-end pb-10 px-6">
         <div className="absolute inset-0">
           <img
@@ -26,9 +31,6 @@ export default function GolfNearby() {
           />
         </div>
         <div className="relative z-10 max-w-3xl">
-          <Link href="/" className="text-[#C8973A] text-xs mb-4 inline-block hover:text-[#d4a84f] transition-colors">
-            {tc('backToListing')}
-          </Link>
           <h1
             className="text-white text-4xl md:text-5xl font-bold mt-2"
             style={{ fontFamily: 'Playfair Display, serif', textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}

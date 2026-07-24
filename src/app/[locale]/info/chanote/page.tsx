@@ -1,68 +1,157 @@
+'use client'
+
+import { useTranslations } from 'next-intl'
+import BackButton from '@/components/BackButton'
 import DisclaimerFooter from '@/components/DisclaimerFooter'
+import InfoHero from '@/components/info/InfoHero'
+import InfoPhotoCta from '@/components/info/InfoPhotoCta'
+import InfoStatGrid from '@/components/info/InfoStatGrid'
+import { Link } from '@/i18n/navigation'
+import { LINE_AGENT_URL } from '@/lib/contact'
 
 export default function ChanotePage() {
+  const t = useTranslations('chanotePage')
+  const tc = useTranslations('common')
+
+  const stats = [
+    { value: 'NS.4J', label: t('stat1Label') },
+    { value: 'GPS', label: t('stat2Label') },
+    { value: t('stat3Value'), label: t('stat3Label') },
+    { value: t('stat4Value'), label: t('stat4Label') },
+  ]
+
   return (
     <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
-      <div className="relative h-72 flex items-end pb-10 px-6">
-        <div className="absolute inset-0">
-          <img src="/photo1.jpg" alt="plot" className="w-full h-full object-cover" style={{objectPosition: 'center 30%'}} />
-          <div className="absolute inset-0" style={{background: 'linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.35) 70%, #FAF7F0 100%)'}} />
-        </div>
-        <div className="relative z-10 max-w-3xl">
-          <a href="/" className="text-[#C8973A] text-xs mb-4 inline-block hover:text-[#d4a84f] transition-colors">← Back to listing</a>
-          <h1 className="text-white text-4xl md:text-5xl font-bold mt-2" style={{fontFamily: 'Playfair Display, serif', textShadow: '0 2px 8px rgba(0,0,0,0.5)'}}>Chanote — the gold standard.</h1>
-          <p className="text-white/85 mt-2">Understanding Thai land title deeds</p>
-        </div>
+      <div className="px-6 pt-5 pb-3 max-w-5xl mx-auto w-full">
+        <BackButton />
       </div>
-      <div className="max-w-3xl mx-auto px-6 py-12 space-y-8">
-        <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6">
-          <h2 className="text-[#1A2744] text-xl font-semibold mb-4">📜 Types of Thai title deeds</h2>
-          <div className="space-y-4 text-sm">
-            <div className="border-b border-[#E8E2D6] pb-4">
-              <div className="flex items-center gap-2 mb-2"><span className="bg-[#C8973A]/15 text-[#C8973A] text-xs px-2 py-0.5 rounded-full font-medium">STRONGEST</span><p className="text-[#1A2744] font-semibold">Chanote (โฉนดที่ดิน · NS.4J)</p></div>
-              <p className="text-[#5C5247]">Full ownership title. GPS-surveyed boundaries registered at the Land Department. Can be sold, mortgaged, leased or subdivided freely. This is what this plot has.</p>
+
+      <InfoHero
+        image="/photo2.jpg"
+        imageAlt={t('heroAlt')}
+        imagePosition="center 30%"
+        title={t('title')}
+        subtitle={t('subtitle')}
+      />
+
+      <section className="bg-[#FAF7F0] py-20 md:py-28 px-6">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-[#C8973A] text-xs uppercase tracking-[0.2em] font-medium mb-3">{t('strengthLabel')}</p>
+          <h2
+            className="text-[#1A2744] text-3xl md:text-5xl font-bold leading-tight mb-10 max-w-2xl"
+            style={{ fontFamily: 'Playfair Display, serif' }}
+          >
+            {t('typesTitle')}
+          </h2>
+          <InfoStatGrid stats={stats} />
+        </div>
+      </section>
+
+      <section className="bg-[#FAF7F0] pb-20 md:pb-28 px-6">
+        <div className="max-w-3xl mx-auto space-y-4">
+          <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6 md:p-8">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="bg-[#C8973A]/15 text-[#C8973A] text-xs px-2 py-0.5 rounded-full font-medium">{t('badgeStrongest')}</span>
+              <p className="text-[#1A2744] font-semibold">{t('chanoteName')}</p>
             </div>
-            <div className="border-b border-[#E8E2D6] pb-4">
-              <div className="flex items-center gap-2 mb-2"><span className="bg-yellow-500/20 text-yellow-400 text-xs px-2 py-0.5 rounded-full font-medium">MODERATE</span><p className="text-[#1A2744] font-semibold">Nor Sor 3 Gor (NS.3G)</p></div>
-              <p className="text-[#5C5247]">Strong title but boundaries not GPS-confirmed. Can be upgraded to Chanote. Transactions possible but require more due diligence.</p>
+            <p className="text-[#5C5247] text-sm md:text-base leading-relaxed">
+              {t('chanoteBody')}
+            </p>
+          </div>
+          <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6 md:p-8">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="bg-yellow-500/20 text-yellow-600 text-xs px-2 py-0.5 rounded-full font-medium">{t('badgeModerate')}</span>
+              <p className="text-[#1A2744] font-semibold">{t('ns3gName')}</p>
             </div>
-            <div className="border-b border-[#E8E2D6] pb-4">
-              <div className="flex items-center gap-2 mb-2"><span className="bg-orange-500/20 text-orange-400 text-xs px-2 py-0.5 rounded-full font-medium">WEAK</span><p className="text-[#1A2744] font-semibold">Nor Sor 3 (NS.3)</p></div>
-              <p className="text-[#5C5247]">Possession right only. Boundaries may be disputed. Transactions require 30-day public notice period. Not recommended for investment.</p>
+            <p className="text-[#5C5247] text-sm md:text-base leading-relaxed">
+              {t('ns3gBody')}
+            </p>
+          </div>
+          <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6 md:p-8">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="bg-orange-500/20 text-orange-600 text-xs px-2 py-0.5 rounded-full font-medium">{t('badgeWeak')}</span>
+              <p className="text-[#1A2744] font-semibold">{t('ns3Name')}</p>
             </div>
-            <div>
-              <div className="flex items-center gap-2 mb-2"><span className="bg-red-500/20 text-red-400 text-xs px-2 py-0.5 rounded-full font-medium">AVOID</span><p className="text-[#1A2744] font-semibold">Sor Por Kor / Por Bor Tor 5</p></div>
-              <p className="text-[#5C5247]">Agricultural use permits only. Cannot be sold or transferred. No investment value.</p>
+            <p className="text-[#5C5247] text-sm md:text-base leading-relaxed">
+              {t('ns3Body')}
+            </p>
+          </div>
+          <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6 md:p-8">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="bg-red-500/20 text-red-600 text-xs px-2 py-0.5 rounded-full font-medium">{t('badgeAvoid')}</span>
+              <p className="text-[#1A2744] font-semibold">{t('spkName')}</p>
             </div>
+            <p className="text-[#5C5247] text-sm md:text-base leading-relaxed">
+              {t('spkBody')}
+            </p>
           </div>
         </div>
-        <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6">
-          <h2 className="text-[#1A2744] text-xl font-semibold mb-4">✅ Why Chanote matters</h2>
-          <ul className="space-y-2 text-[#5C5247] text-sm">
-            <li>• <strong className="text-[#1A2744]">GPS-mapped boundaries</strong> — no boundary disputes possible</li>
-            <li>• <strong className="text-[#1A2744]">Registered at the Land Department</strong> — government guarantee of ownership</li>
-            <li>• <strong className="text-[#1A2744]">Freely transferable</strong> — sale, mortgage, lease all straightforward</li>
-            <li>• <strong className="text-[#1A2744]">Can be subdivided</strong> — split into smaller plots if desired</li>
-            <li>• <strong className="text-[#1A2744]">Bank accepted</strong> — can be used as collateral for a construction loan</li>
+      </section>
+
+      <section className="relative overflow-hidden py-20 md:py-28">
+        <div className="absolute inset-0">
+          <img src="/photo3.jpg" alt={t('whyAlt')} className="w-full h-full object-cover" style={{ objectPosition: 'center 40%' }} />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                'linear-gradient(105deg, rgba(26,39,68,0.94) 0%, rgba(26,39,68,0.82) 55%, rgba(26,39,68,0.55) 100%)',
+            }}
+          />
+        </div>
+        <div className="relative z-10 max-w-3xl mx-auto px-6">
+          <p className="text-[#C8973A] text-xs uppercase tracking-[0.2em] font-medium mb-3">{t('whyLabel')}</p>
+          <h2
+            className="text-white text-3xl md:text-5xl font-bold leading-tight mb-6"
+            style={{ fontFamily: 'Playfair Display, serif' }}
+          >
+            {t('whyTitle')}
+          </h2>
+          <ul className="space-y-2 text-white/80 text-sm md:text-base">
+            <li>• <strong className="text-white">{t('why1Title')}</strong> — {t('why1Body')}</li>
+            <li>• <strong className="text-white">{t('why2Title')}</strong> — {t('why2Body')}</li>
+            <li>• <strong className="text-white">{t('why3Title')}</strong> — {t('why3Body')}</li>
+            <li>• <strong className="text-white">{t('why4Title')}</strong> — {t('why4Body')}</li>
+            <li>• <strong className="text-white">{t('why5Title')}</strong> — {t('why5Body')}</li>
           </ul>
         </div>
-        <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6">
-          <h2 className="text-[#1A2744] text-xl font-semibold mb-4">🌍 Foreign ownership options</h2>
-          <p className="text-[#5C5247] text-sm leading-relaxed mb-4">Thai law restricts direct foreign land ownership. However, several legal structures allow foreigners to control and benefit from land:</p>
-          <ul className="space-y-2 text-[#5C5247] text-sm">
-            <li>• <strong className="text-[#1A2744]">Thai company structure</strong> — land held by a Thai limited company with foreign director</li>
-            <li>• <strong className="text-[#1A2744]">Long-term leasehold</strong> — 30-year lease (renewable), common for villa developments</li>
-            <li>• <strong className="text-[#1A2744]">Thai spouse/partner</strong> — land in Thai name with usufruct rights</li>
-            <li>• <strong className="text-[#1A2744]">BOI promotion</strong> — certain investments qualify for direct ownership</li>
+      </section>
+
+      <section className="bg-[#FAF7F0] py-20 md:py-28 px-6">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-[#C8973A] text-xs uppercase tracking-[0.2em] font-medium mb-3">{t('foreignLabel')}</p>
+          <h2
+            className="text-[#1A2744] text-3xl md:text-5xl font-bold leading-tight mb-6"
+            style={{ fontFamily: 'Playfair Display, serif' }}
+          >
+            {t('foreignTitle')}
+          </h2>
+          <p className="text-[#5C5247] text-sm md:text-base leading-relaxed mb-6">
+            {t('foreignIntro')}
+          </p>
+          <ul className="space-y-2 text-[#5C5247] text-sm md:text-base">
+            <li>• <strong className="text-[#1A2744]">{t('foreign1Title')}</strong> — {t('foreign1Body')}</li>
+            <li>• <strong className="text-[#1A2744]">{t('foreign2Title')}</strong> — {t('foreign2Body')}</li>
+            <li>• <strong className="text-[#1A2744]">{t('foreign3Title')}</strong> — {t('foreign3Body')}</li>
+            <li>• <strong className="text-[#1A2744]">{t('foreign4Title')}</strong> — {t('foreign4Body')}</li>
           </ul>
-          <p className="text-[#5C5247] text-xs mt-4">Always seek independent legal advice from a qualified Thai property lawyer before purchasing.</p>
+          <p className="text-[#5C5247] text-xs mt-6">{t('foreignNote')}</p>
         </div>
-      </div>
-      <div className="max-w-3xl mx-auto px-6 pb-12">
+      </section>
+
+      <InfoPhotoCta
+        title={t('ctaTitle')}
+        body={t('ctaBody')}
+        lineLabel={tc('lineAgent')}
+        lineHref={LINE_AGENT_URL}
+      >
+        <Link href="/" className="text-[#C8973A] hover:text-[#d4a84f] transition-colors font-medium">
+          {tc('backFooter')}
+        </Link>
+      </InfoPhotoCta>
+
+      <div className="max-w-3xl mx-auto px-6 py-12">
         <DisclaimerFooter />
-        <div className="text-center pt-4">
-          <a href="/" className="text-[#C8973A] hover:text-[#d4a84f] transition-colors text-sm">← Back to the land listing</a>
-        </div>
       </div>
     </main>
   )

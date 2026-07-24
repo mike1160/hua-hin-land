@@ -1,46 +1,115 @@
+'use client'
+
+import { useTranslations } from 'next-intl'
+import BackButton from '@/components/BackButton'
 import DisclaimerFooter from '@/components/DisclaimerFooter'
+import InfoHero from '@/components/info/InfoHero'
+import InfoPhotoCta from '@/components/info/InfoPhotoCta'
+import InfoStatGrid from '@/components/info/InfoStatGrid'
+import { Link } from '@/i18n/navigation'
+import { LINE_AGENT_URL } from '@/lib/contact'
 
 export default function ViewPage() {
+  const t = useTranslations('viewPage')
+  const tc = useTranslations('common')
+
+  const stats = [
+    { value: '360°', label: t('stat1Label') },
+    { value: t('stat2Value'), label: t('stat2Label') },
+    { value: t('stat3Value'), label: t('stat3Label') },
+    { value: '20+ yrs', label: t('stat4Label') },
+  ]
+
   return (
     <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
-      <div className="relative h-[50vh] flex items-end pb-10 px-6">
-        <div className="absolute inset-0">
-          <img src="/photo2.jpg" alt="mountain view sunset" className="w-full h-full object-cover" />
-          <div className="absolute inset-0" style={{background: 'linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.35) 70%, #FAF7F0 100%)'}} />
-        </div>
-        <div className="relative z-10 max-w-3xl">
-          <a href="/" className="text-[#C8973A] text-xs mb-4 inline-block hover:text-[#d4a84f] transition-colors">← Back to listing</a>
-          <h1 className="text-white text-4xl md:text-5xl font-bold mt-2" style={{fontFamily: 'Playfair Display, serif', textShadow: '0 2px 8px rgba(0,0,0,0.5)'}}>The view that changes everything.</h1>
-          <p className="text-white/85 mt-2">Panoramic mountain views — morning, noon and golden hour</p>
-        </div>
+      <div className="px-6 pt-5 pb-3 max-w-5xl mx-auto w-full">
+        <BackButton />
       </div>
-      <div className="max-w-3xl mx-auto px-6 py-12 space-y-8">
-        <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6">
-          <h2 className="text-[#1A2744] text-xl font-semibold mb-4">🏔️ What you see from the plot</h2>
-          <p className="text-[#5C5247] text-sm leading-relaxed mb-4">The Thap Tai mountains rise directly behind the plot — a lush, green limestone ridge that stays cool and forested year-round. There are no buildings between the plot and the mountains. The view is unobstructed and, given the protected forest status, will remain so.</p>
-          <p className="text-[#5C5247] text-sm leading-relaxed">In the morning, mist sometimes rolls through the valleys between the peaks — a sight that people travel hours to see. At golden hour, the mountains turn amber and the sky behind them shifts through every shade of orange, pink and purple. This is the view from your future terrace.</p>
+
+      <InfoHero
+        image="/photo4.jpg"
+        imageAlt={t('heroAlt')}
+        imagePosition="center 45%"
+        title={t('title')}
+        subtitle={t('subtitle')}
+      />
+
+      <section className="bg-[#FAF7F0] py-20 md:py-28 px-6">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-[#C8973A] text-xs uppercase tracking-[0.2em] font-medium mb-3">{t('viewLabel')}</p>
+          <h2
+            className="text-[#1A2744] text-3xl md:text-5xl font-bold leading-tight mb-6"
+            style={{ fontFamily: 'Playfair Display, serif' }}
+          >
+            {t('viewTitle')}
+          </h2>
+          <div className="space-y-4 text-[#5C5247] text-sm md:text-base leading-relaxed">
+            <p>{t('viewBody1')}</p>
+            <p>{t('viewBody2')}</p>
+          </div>
         </div>
-        <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6">
-          <h2 className="text-[#1A2744] text-xl font-semibold mb-4">☕ Imagine your morning here</h2>
-          <p className="text-[#5C5247] text-sm leading-relaxed mb-4">You wake up, brew a proper coffee or steep a matcha. You step out onto your terrace — the air is still cool, the birds are starting. The mountains are right there, close enough to feel their presence, far enough to give you space and silence.</p>
-          <p className="text-[#5C5247] text-sm leading-relaxed mb-4">In the evening, a glass of wine. The mountains catch the last light. The temperature drops just enough to be perfect. This is not a holiday postcard — this is a Tuesday.</p>
-          <p className="text-[#5C5247] text-sm italic">This is what the view does to a life. It slows it down. In the best possible way.</p>
+      </section>
+
+      <section className="relative min-h-[55vh] md:min-h-[65vh] flex items-end">
+        <div className="absolute inset-0">
+          <img src="/photo5.jpg" alt={t('goldenAlt')} className="w-full h-full object-cover" />
+          <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.45)' }} />
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(to top, rgba(26,39,68,0.88) 0%, rgba(26,39,68,0.25) 55%, transparent 100%)',
+            }}
+          />
         </div>
-        <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6">
-          <h2 className="text-[#1A2744] text-xl font-semibold mb-4">🌿 Why this view is protected</h2>
-          <ul className="space-y-2 text-[#5C5247] text-sm">
-            <li>• The mountains behind the plot are protected national park — no development allowed</li>
-            <li>• Thap Tai National Park designation ensures permanent green backdrop</li>
-            <li>• No high-rise development possible in this zone — low density area</li>
-            <li>• The view you see today is the view you will see in 20 years</li>
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-6 pb-14 md:pb-20">
+          <h2
+            className="text-white text-3xl md:text-5xl font-bold leading-tight max-w-2xl"
+            style={{ fontFamily: 'Playfair Display, serif', textShadow: '0 2px 20px rgba(0,0,0,0.4)' }}
+          >
+            {t('imagineTitle')}
+          </h2>
+        </div>
+      </section>
+
+      <section className="bg-[#FAF7F0] py-20 md:py-28 px-6">
+        <div className="max-w-3xl mx-auto">
+          <div className="space-y-4 text-[#5C5247] text-sm md:text-base leading-relaxed mb-12">
+            <p>{t('morningBody1')}</p>
+            <p>{t('morningBody2')}</p>
+            <p className="italic">{t('morningBody3')}</p>
+          </div>
+
+          <p className="text-[#C8973A] text-xs uppercase tracking-[0.2em] font-medium mb-3">{t('protectedLabel')}</p>
+          <h2
+            className="text-[#1A2744] text-3xl md:text-5xl font-bold leading-tight mb-8"
+            style={{ fontFamily: 'Playfair Display, serif' }}
+          >
+            {t('protectedTitle')}
+          </h2>
+          <InfoStatGrid stats={stats} />
+          <ul className="space-y-2 text-[#5C5247] text-sm md:text-base mt-10">
+            <li>• {t('protect1')}</li>
+            <li>• {t('protect2')}</li>
+            <li>• {t('protect3')}</li>
+            <li>• {t('protect4')}</li>
           </ul>
         </div>
-      </div>
-      <div className="max-w-3xl mx-auto px-6 pb-12">
+      </section>
+
+      <InfoPhotoCta
+        image="/photo4.jpg"
+        title={t('ctaTitle')}
+        body={t('ctaBody')}
+        lineLabel={tc('lineAgent')}
+        lineHref={LINE_AGENT_URL}
+      >
+        <Link href="/" className="text-[#C8973A] hover:text-[#d4a84f] transition-colors font-medium">
+          {tc('backFooter')}
+        </Link>
+      </InfoPhotoCta>
+
+      <div className="max-w-3xl mx-auto px-6 py-12">
         <DisclaimerFooter />
-        <div className="text-center pt-4">
-          <a href="/" className="text-[#C8973A] hover:text-[#d4a84f] transition-colors text-sm">← Back to the land listing</a>
-        </div>
       </div>
     </main>
   )

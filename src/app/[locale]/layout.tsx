@@ -5,7 +5,7 @@ import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import LegalFooterBar from '@/components/LegalFooterBar'
-import CookieNotice from '@/components/CookieNotice'
+import CookieConsent from '@/components/CookieConsent'
 import HtmlLang from '@/components/HtmlLang'
 import { routing } from '@/i18n/routing'
 
@@ -52,6 +52,17 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
+      <Script id="gtag-consent-default" strategy="beforeInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('consent', 'default', {
+            analytics_storage: 'denied',
+            ad_storage: 'denied',
+            wait_for_update: 500
+          });
+        `}
+      </Script>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-664P8EQ6ZX"
         strategy="afterInteractive"
@@ -61,13 +72,18 @@ export default async function LocaleLayout({ children, params }: Props) {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
+          try {
+            if (localStorage.getItem('hua-hin-land-cookie-consent') === 'accepted') {
+              gtag('consent', 'update', { analytics_storage: 'granted' });
+            }
+          } catch (e) {}
           gtag('config', 'G-664P8EQ6ZX');
         `}
       </Script>
       <HtmlLang />
       {children}
       <LegalFooterBar />
-      <CookieNotice />
+      <CookieConsent />
       <Analytics />
     </NextIntlClientProvider>
   )

@@ -5,7 +5,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import HomeNavbar from '@/components/HomeNavbar'
 import LineButton from '@/components/LineButton'
 import { Link } from '@/i18n/navigation'
-import { LINE_AGENT_URL, AGENT_PHONE } from '@/lib/contact'
+import { LINE_AGENT_URL, AGENT_PHONE, AGENT_PHONE_DISPLAY } from '@/lib/contact'
 
 declare global {
   interface Window {
@@ -15,6 +15,7 @@ declare global {
 }
 
 const PHONE = AGENT_PHONE
+const PHONE_DISPLAY = AGENT_PHONE_DISPLAY
 
 function isInternalHref(href: string) {
   return (
@@ -188,6 +189,7 @@ const popularGuides = [
 export default function Home() {
   const t = useTranslations('homepage')
   const tc = useTranslations('common')
+  const tn = useTranslations('navigation')
   const locale = useLocale()
   const [lightbox, setLightbox] = useState<string | null>(null)
   const [slideIndex, setSlideIndex] = useState(0)
@@ -899,74 +901,73 @@ export default function Home() {
 
         {/* Sitemap footer */}
         <div className="bg-[#1A2744] text-white overflow-hidden">
-          <div className="max-w-5xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+          <div className="max-w-5xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             <div className="min-w-0">
               <p className="text-[#C8973A] text-xs uppercase tracking-widest font-medium mb-4">{t('footerPlot')}</p>
               <ul className="space-y-2.5 text-sm">
-                <li><Link href="/info/size" className="text-white/80 hover:text-[#C8973A] transition-colors">{t('footerSize')}</Link></li>
-                <li><Link href="/info/terrain" className="text-white/80 hover:text-[#C8973A] transition-colors">{t('footerTerrain')}</Link></li>
-                <li><Link href="/info/access" className="text-white/80 hover:text-[#C8973A] transition-colors">{t('footerLocation')}</Link></li>
-                <li><Link href="/info/comparable-plots" className="text-white/80 hover:text-[#C8973A] transition-colors">{t('footerComparable')}</Link></li>
+                <li><Link href="/info/size" className="text-white/70 hover:text-[#C8973A] transition-colors">{t('footerSize')}</Link></li>
+                <li><Link href="/info/terrain" className="text-white/70 hover:text-[#C8973A] transition-colors">{t('footerTerrain')}</Link></li>
+                <li><Link href="/info/access" className="text-white/70 hover:text-[#C8973A] transition-colors">{t('footerLocation')}</Link></li>
+                <li><Link href="/info/chanote-vs-nor-sor" className="text-white/70 hover:text-[#C8973A] transition-colors">{t('footerChanoteVs')}</Link></li>
+                <li><Link href="/info/comparable-plots" className="text-white/70 hover:text-[#C8973A] transition-colors">{t('footerComparable')}</Link></li>
+                <li><Link href="/info/partial-sale" className="text-white/70 hover:text-[#C8973A] transition-colors">{t('footerPartialSale')}</Link></li>
+                <li><Link href="/info/nominee-crackdown" className="text-white/70 hover:text-[#C8973A] transition-colors">{t('footerNominee')}</Link></li>
+                <li><Link href="/faq" className="text-white/70 hover:text-[#C8973A] transition-colors">{t('footerFaq')}</Link></li>
+              </ul>
+            </div>
+            <div className="min-w-0">
+              <p className="text-[#C8973A] text-xs uppercase tracking-widest font-medium mb-4">{t('footerDevelopment')}</p>
+              <ul className="space-y-2.5 text-sm">
+                <li><Link href="/info/live-and-profit" className="text-white/70 hover:text-[#C8973A] transition-colors">{t('footerLiveProfit')}</Link></li>
+                <li><Link href="/info/boutique-development" className="text-white/70 hover:text-[#C8973A] transition-colors">{t('footerBoutique')}</Link></li>
+                <li><Link href="/info/private-estate" className="text-white/70 hover:text-[#C8973A] transition-colors">{t('footerPrivateEstate')}</Link></li>
+                <li><Link href="/info/foreign-buyers" className="text-white/70 hover:text-[#C8973A] transition-colors">{t('footerForeignBuyers')}</Link></li>
+                <li><Link href="/info/soi-112" className="text-white/70 hover:text-[#C8973A] transition-colors">{t('footerSoi112')}</Link></li>
               </ul>
             </div>
             <div className="min-w-0">
               <p className="text-[#C8973A] text-xs uppercase tracking-widest font-medium mb-4">{t('footerArea')}</p>
               <ul className="space-y-2.5 text-sm">
-                <li><Link href="/nearby/why-hua-hin" className="text-white/80 hover:text-[#C8973A] transition-colors">{t('footerWhy')}</Link></li>
-                <li><Link href="/life/european-retirees" className="text-white/80 hover:text-[#C8973A] transition-colors">{t('footerRetiringEuropeans')}</Link></li>
-                <li><Link href="/life/retirees" className="text-white/80 hover:text-[#C8973A] transition-colors">{t('footerRetiringAmericans')}</Link></li>
-                <li><Link href="/life/dutch" className="text-white/80 hover:text-[#C8973A] transition-colors">{t('footerDutch')}</Link></li>
-                <li><Link href="/life/german" className="text-white/80 hover:text-[#C8973A] transition-colors">{t('footerGerman')}</Link></li>
-                <li><Link href="/life/swedish" className="text-white/80 hover:text-[#C8973A] transition-colors">{t('footerSwedish')}</Link></li>
-                <li><Link href="/life/danish" className="text-white/80 hover:text-[#C8973A] transition-colors">{t('footerDanish')}</Link></li>
-                <li><Link href="/life/scandinavians" className="text-white/80 hover:text-[#C8973A] transition-colors">{t('footerScandinavians')}</Link></li>
-                <li><Link href="/life/british" className="text-white/80 hover:text-[#C8973A] transition-colors">{t('footerBritish')}</Link></li>
-                <li><Link href="/nearby/golf" className="text-white/80 hover:text-[#C8973A] transition-colors">{t('footerGolf')}</Link></li>
-                <li><Link href="/nearby/beach" className="text-white/80 hover:text-[#C8973A] transition-colors">{t('footerBeaches')}</Link></li>
-                <li><Link href="/nearby/meditation" className="text-white/80 hover:text-[#C8973A] transition-colors">{t('footerWellness')}</Link></li>
-                <li><Link href="/life/schools" className="text-white/80 hover:text-[#C8973A] transition-colors">{t('footerSchools')}</Link></li>
-                <li><Link href="/nearby/connectivity" className="text-white/80 hover:text-[#C8973A] transition-colors">{t('footerBangkok')}</Link></li>
+                <li><Link href="/nearby/why-hua-hin" className="text-white/70 hover:text-[#C8973A] transition-colors">{t('footerWhy')}</Link></li>
+                <li><Link href="/nearby/golf" className="text-white/70 hover:text-[#C8973A] transition-colors">{t('footerGolf')}</Link></li>
+                <li><Link href="/nearby/beach" className="text-white/70 hover:text-[#C8973A] transition-colors">{t('footerBeaches')}</Link></li>
+                <li><Link href="/nearby/meditation" className="text-white/70 hover:text-[#C8973A] transition-colors">{t('footerWellness')}</Link></li>
+                <li><Link href="/life/schools" className="text-white/70 hover:text-[#C8973A] transition-colors">{t('footerSchools')}</Link></li>
+                <li><Link href="/nearby/connectivity" className="text-white/70 hover:text-[#C8973A] transition-colors">{t('footerBangkok')}</Link></li>
+                <li><Link href="/nearby/hospital" className="text-white/70 hover:text-[#C8973A] transition-colors">{t('footerHospital')}</Link></li>
               </ul>
             </div>
             <div className="min-w-0">
               <p className="text-[#C8973A] text-xs uppercase tracking-widest font-medium mb-4">{t('footerResources')}</p>
               <ul className="space-y-2.5 text-sm">
                 <li>
-                  <a href="https://data.hua-hin-land.com" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-[#C8973A] transition-colors">
+                  <a href="https://data.hua-hin-land.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-[#C8973A] transition-colors">
                     {t('footerVerify')}
                   </a>
                 </li>
-                <li><Link href="/legal/disclaimer" className="text-white/80 hover:text-[#C8973A] transition-colors">{t('footerDisclaimer')}</Link></li>
-                <li><Link href="/legal/privacy" className="text-white/80 hover:text-[#C8973A] transition-colors">{t('footerPrivacy')}</Link></li>
-                <li><Link href="/#contact" className="text-white/80 hover:text-[#C8973A] transition-colors">{t('footerContact')}</Link></li>
+                <li><Link href="/legal/disclaimer" className="text-white/70 hover:text-[#C8973A] transition-colors">{t('footerDisclaimer')}</Link></li>
+                <li><Link href="/legal/privacy" className="text-white/70 hover:text-[#C8973A] transition-colors">{t('footerPrivacy')}</Link></li>
+                <li><Link href="/#contact" className="text-white/70 hover:text-[#C8973A] transition-colors">{t('footerContact')}</Link></li>
               </ul>
             </div>
           </div>
+
           <div className="border-t border-white/10">
-            <div className="max-w-5xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
-              <div className="text-center md:text-left">
-                <p className="text-white/50 text-sm">
-                  Thap Tai, Soi 112, Hua Hin, Prachuap Khiri Khan 77110, Thailand<br/>
-                  <span className="text-white/40 text-xs">
-                    <a href={`tel:${PHONE}`} className="hover:text-[#C8973A] transition-colors">065-901-2984</a>
-                  </span>
-                </p>
-                <div className="mt-3 flex flex-col items-center md:items-start gap-2">
-                  <LineButton size="sm" />
-                  <p className="text-white/50 text-sm">Good land YAI · 065-901-2984</p>
-                </div>
-              </div>
-              <div className="flex flex-col items-center md:items-end gap-1 text-center md:text-right">
-                <a href="https://allesis.nl" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-[#C8973A] transition-colors">
-                  Webdesign by <span className="text-[#C8973A] font-medium">Allesis.nl</span>
-                </a>
-                <p className="text-white/40 text-xs">
-                  Websites · SEO · Apps —{' '}
-                  <a href="https://allesis.nl" target="_blank" rel="noopener noreferrer" className="hover:text-[#C8973A] transition-colors underline underline-offset-2">
-                    allesis.nl
-                  </a>
-                </p>
-              </div>
+            <div className="max-w-5xl mx-auto px-6 py-5 flex flex-col lg:flex-row items-center justify-between gap-4 text-xs text-white/45">
+              <p className="text-center lg:text-left">{t('footerCopyright')}</p>
+              <p className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+                <Link href="/legal/disclaimer" className="hover:text-[#C8973A] transition-colors">{t('footerDisclaimer')}</Link>
+                <span aria-hidden>·</span>
+                <Link href="/legal/privacy" className="hover:text-[#C8973A] transition-colors">{t('footerPrivacy')}</Link>
+              </p>
+              <a
+                href="https://allesis.nl"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#C8973A] transition-colors"
+              >
+                {tn('webdesignBy')}
+              </a>
             </div>
           </div>
         </div>

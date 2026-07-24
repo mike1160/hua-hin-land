@@ -1,190 +1,315 @@
-import DisclaimerFooter from '@/components/DisclaimerFooter'
-import LineButton from '@/components/LineButton'
+'use client'
 
+import { useTranslations } from 'next-intl'
+import BackButton from '@/components/BackButton'
+import DisclaimerFooter from '@/components/DisclaimerFooter'
+import { Link } from '@/i18n/navigation'
+import { LINE_AGENT_URL } from '@/lib/contact'
 
 export default function ScandinaviansPage() {
+  const t = useTranslations('lifeScandinavians')
+  const tc = useTranslations('common')
+
+  const stats = [
+    { value: t('stat1Value'), label: t('stat1Label') },
+    { value: t('stat2Value'), label: t('stat2Label') },
+    { value: t('stat3Value'), label: t('stat3Label') },
+    { value: t('stat4Value'), label: t('stat4Label') },
+  ]
+
+  const resources = [
+    { label: t('resourceLabel1'), href: 'https://www.immigration.go.th', display: 'immigration.go.th' },
+    { label: t('resourceLabel2'), href: 'https://ltr.boi.go.th', display: 'ltr.boi.go.th' },
+    { label: t('resourceLabel3'), href: 'https://www.bangkokhospital.com/en/huahin', display: 'bangkokhospital.com/en/huahin' },
+    { label: t('resourceLabel4'), href: 'https://data.hua-hin-land.com', display: 'data.hua-hin-land.com' },
+    { label: t('resourceLabel5'), href: '/life/european-retirees', display: 'hua-hin-land.com/life/european-retirees' },
+  ]
+
   return (
     <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
-      <div className="relative h-72 md:h-80 flex items-end pb-10 px-6">
+      <div className="px-6 pt-5 pb-3 max-w-5xl mx-auto w-full">
+        <BackButton />
+      </div>
+
+      {/* HERO */}
+      <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-end">
         <div className="absolute inset-0">
           <img
-            src="/lifestyle1.jpg"
-            alt="Hua Hin lifestyle for Scandinavian expats"
+            src="/photo2.jpg"
+            alt={t('heroAlt')}
             className="w-full h-full object-cover"
             style={{ objectPosition: 'center 40%' }}
           />
+          <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.45)' }} />
           <div
             className="absolute inset-0"
-            style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.35) 70%, #FAF7F0 100%)' }}
+            style={{
+              background:
+                'linear-gradient(to top, rgba(26,39,68,0.92) 0%, rgba(26,39,68,0.35) 50%, transparent 100%)',
+            }}
           />
         </div>
-        <div className="relative z-10 max-w-3xl">
-          <a href="/" className="text-[#C8973A] text-xs mb-4 inline-block hover:text-[#d4a84f] transition-colors">
-            ← Back to listing
-          </a>
-          <p className="text-[#C8973A] text-xs uppercase tracking-widest font-medium mb-2" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}>
-            For Scandinavians
-          </p>
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-6 pb-16 md:pb-24 pt-28">
+          <p className="text-[#C8973A] text-xs uppercase tracking-[0.25em] font-medium mb-4">{t('heroLabel')}</p>
           <h1
-            className="text-white text-3xl md:text-5xl font-bold mt-1 leading-tight"
-            style={{ fontFamily: 'Playfair Display, serif', textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}
+            className="text-white text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.05] max-w-4xl"
+            style={{ fontFamily: 'Playfair Display, serif', textShadow: '0 2px 24px rgba(0,0,0,0.45)' }}
           >
-            Hua Hin — Scandinavia&apos;s favourite Thailand address
+            {t('title')}
           </h1>
         </div>
-      </div>
+      </section>
 
-      <div className="max-w-3xl mx-auto px-6 py-12 space-y-8">
-        <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6">
-          <p className="text-[#C8973A] text-xs uppercase tracking-widest font-medium mb-3">The community</p>
-          <h2 className="text-[#1A2744] text-xl md:text-2xl font-semibold mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
-            The largest Western expat group in Hua Hin.
+      {/* COMMUNITY — cream */}
+      <section className="bg-[#FAF7F0] py-20 md:py-28 px-6">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-[#C8973A] text-xs uppercase tracking-[0.2em] font-medium mb-3">{t('communityLabel')}</p>
+          <h2
+            className="text-[#1A2744] text-3xl md:text-5xl font-bold leading-tight mb-6"
+            style={{ fontFamily: 'Playfair Display, serif' }}
+          >
+            {t('communityTitle')}
           </h2>
-          <p className="text-[#5C5247] text-sm leading-relaxed mb-4">
-            Scandinavians have been coming to Hua Hin since the 1990s — many via Scandinavian tour operators who put this royal beach town on the map for Swedish, Norwegian and Danish travellers. Today they form the largest Western expat community here.
-          </p>
-          <p className="text-[#5C5247] text-sm leading-relaxed">
-            Active Swedish, Norwegian and Danish community groups on Facebook make it easy to find neighbours, golf partners and social events — from the first week you arrive.
-          </p>
+          <div className="space-y-4 text-[#5C5247] text-sm md:text-base leading-relaxed">
+            <p>{t('communityBody1')}</p>
+            <p>{t('communityBody2')}</p>
+          </div>
         </div>
+      </section>
 
-        <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6">
-          <p className="text-[#C8973A] text-xs uppercase tracking-widest font-medium mb-3">Climate</p>
-          <h2 className="text-[#1A2744] text-xl md:text-2xl font-semibold mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
-            Escape the dark winters.
+      {/* STATS — cream */}
+      <section className="bg-[#FAF7F0] pb-20 md:pb-28 px-6">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-[#C8973A] text-xs uppercase tracking-[0.2em] font-medium mb-3">{t('costLabel')}</p>
+          <h2
+            className="text-[#1A2744] text-3xl md:text-5xl font-bold leading-tight mb-10 max-w-2xl"
+            style={{ fontFamily: 'Playfair Display, serif' }}
+          >
+            {t('costTitle')}
           </h2>
-          <p className="text-[#5C5247] text-sm leading-relaxed">
-            Year-round 28–32°C. Sunshine instead of months of darkness. Hua Hin&apos;s climate is one of the strongest reasons Scandinavian retirees stay — not just visit.
-          </p>
-        </div>
-
-        <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6">
-          <p className="text-[#C8973A] text-xs uppercase tracking-widest font-medium mb-3">Golf</p>
-          <h2 className="text-[#1A2744] text-xl md:text-2xl font-semibold mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
-            Built for Scandinavian golfers.
-          </h2>
-          <p className="text-[#5C5247] text-sm leading-relaxed mb-4">
-            10+ championship courses within 30 minutes. Golf is hugely popular with Scandinavian retirees in Hua Hin — and Soi 112 sits in the golf corridor, minutes from Majestic Creek.
-          </p>
-          <a href="/nearby/golf" className="text-[#C8973A] hover:text-[#d4a84f] text-sm transition-colors">
-            Golf near the plot →
-          </a>
-        </div>
-
-        <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6">
-          <p className="text-[#C8973A] text-xs uppercase tracking-widest font-medium mb-3">Visa</p>
-          <h2 className="text-[#1A2744] text-xl md:text-2xl font-semibold mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
-            How Scandinavians stay long-term
-          </h2>
-          <ul className="space-y-4 text-sm">
-            <li className="border-b border-[#E8E2D6] pb-4">
-              <p className="text-[#1A2744] font-semibold mb-1">Non-Immigrant O-A Retirement Visa</p>
-              <p className="text-[#5C5247] leading-relaxed mb-2">
-                1 year, renewable. Age 50+. Income or savings requirements apply.
-              </p>
-              <a href="https://www.immigration.go.th" target="_blank" rel="noopener noreferrer" className="text-[#C8973A] hover:text-[#d4a84f] text-xs transition-colors">
-                → Official Thai Immigration website
-              </a>
-            </li>
-            <li className="border-b border-[#E8E2D6] pb-4">
-              <p className="text-[#1A2744] font-semibold mb-1">LTR Visa &amp; Thailand Privilege (Thai Elite)</p>
-              <p className="text-[#5C5247] leading-relaxed mb-2">
-                Longer stays with expanded benefits — popular options for Nordic retirees planning multi-year life in Thailand.
-              </p>
-              <a href="https://ltr.boi.go.th" target="_blank" rel="noopener noreferrer" className="text-[#C8973A] hover:text-[#d4a84f] text-xs transition-colors">
-                → Official LTR Visa portal (Board of Investment)
-              </a>
-            </li>
-          </ul>
-          <p className="text-[#5C5247] text-xs mt-5 pt-4 border-t border-[#E8E2D6] leading-relaxed">
-            Always consult a licensed Thai immigration lawyer.{' '}
-            <a href="/life/european-retirees" className="text-[#C8973A] hover:text-[#d4a84f] transition-colors">
-              Full visa guide →
-            </a>
-          </p>
-        </div>
-
-        <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6">
-          <p className="text-[#C8973A] text-xs uppercase tracking-widest font-medium mb-3">Cost of living</p>
-          <h2 className="text-[#1A2744] text-xl md:text-2xl font-semibold mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>
-            60–70% cheaper than Stockholm, Oslo or Copenhagen.
-          </h2>
-          <div className="grid sm:grid-cols-2 gap-3">
-            {[
-              { value: '60–70%', label: 'cheaper than Nordic capitals' },
-              { value: '28–32°C', label: 'year-round sunshine' },
-              { value: '10+', label: 'golf courses within 30 min' },
-              { value: '15 min', label: 'to Bangkok Hospital Hua Hin' },
-            ].map((stat) => (
-              <div key={stat.label} className="bg-[#FAF7F0] p-4" style={{ border: '1px solid #E8E2D6', borderRadius: '12px' }}>
-                <p className="text-[#C8973A] text-xl font-bold" style={{ fontFamily: 'Playfair Display, serif' }}>{stat.value}</p>
-                <p className="text-[#5C5247] text-xs mt-1 leading-snug">{stat.label}</p>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="bg-white border border-[#E8E2D6] rounded-[12px] p-6 md:p-8 text-center"
+              >
+                <p className="text-[#C8973A] text-3xl md:text-4xl font-bold" style={{ fontFamily: 'Playfair Display, serif' }}>
+                  {stat.value}
+                </p>
+                <p className="text-[#5C5247] text-xs mt-3 leading-snug">{stat.label}</p>
               </div>
             ))}
           </div>
         </div>
+      </section>
 
-        <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6">
-          <p className="text-[#C8973A] text-xs uppercase tracking-widest font-medium mb-3">Healthcare</p>
-          <h2 className="text-[#1A2744] text-xl md:text-2xl font-semibold mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
-            English-speaking care, 15 minutes away.
+      {/* LIFESTYLE PHOTO */}
+      <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-end">
+        <div className="absolute inset-0">
+          <img
+            src="/lifestyle1.jpg"
+            alt={t('lifestyleTitle')}
+            className="w-full h-full object-cover"
+            style={{ objectPosition: 'center 45%' }}
+          />
+          <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.45)' }} />
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(to top, rgba(26,39,68,0.88) 0%, rgba(26,39,68,0.25) 55%, transparent 100%)',
+            }}
+          />
+        </div>
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-6 pb-14 md:pb-20">
+          <h2
+            className="text-white text-3xl md:text-5xl font-bold leading-tight max-w-2xl"
+            style={{ fontFamily: 'Playfair Display, serif', textShadow: '0 2px 20px rgba(0,0,0,0.4)' }}
+          >
+            {t('lifestyleTitle')}
           </h2>
-          <p className="text-[#5C5247] text-sm leading-relaxed mb-4">
-            Bangkok Hospital Hua Hin is JCI-accredited with English-speaking doctors — a deciding factor for many Scandinavian families.
+        </div>
+      </section>
+
+      {/* CLIMATE — cream */}
+      <section className="bg-[#FAF7F0] py-20 md:py-28 px-6">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-[#C8973A] text-xs uppercase tracking-[0.2em] font-medium mb-3">{t('climateLabel')}</p>
+          <h2
+            className="text-[#1A2744] text-3xl md:text-5xl font-bold leading-tight mb-6"
+            style={{ fontFamily: 'Playfair Display, serif' }}
+          >
+            {t('climateTitle')}
+          </h2>
+          <p className="text-[#5C5247] text-sm md:text-base leading-relaxed">{t('climateBody')}</p>
+        </div>
+      </section>
+
+      {/* GOLF — cream */}
+      <section className="bg-[#FAF7F0] pb-20 md:pb-28 px-6">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-[#C8973A] text-xs uppercase tracking-[0.2em] font-medium mb-3">{t('golfLabel')}</p>
+          <h2
+            className="text-[#1A2744] text-3xl md:text-5xl font-bold leading-tight mb-6"
+            style={{ fontFamily: 'Playfair Display, serif' }}
+          >
+            {t('golfTitle')}
+          </h2>
+          <p className="text-[#5C5247] text-sm md:text-base leading-relaxed mb-6">{t('golfBody')}</p>
+          <Link href="/nearby/golf" className="text-[#C8973A] hover:text-[#d4a84f] text-sm font-medium transition-colors">
+            {t('golfLink')}
+          </Link>
+        </div>
+      </section>
+
+      {/* VISA — cream (2 items, both with links) */}
+      <section className="bg-[#FAF7F0] py-20 md:py-28 px-6">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-[#C8973A] text-xs uppercase tracking-[0.2em] font-medium mb-3">{t('visaLabel')}</p>
+          <h2
+            className="text-[#1A2744] text-3xl md:text-5xl font-bold leading-tight mb-10"
+            style={{ fontFamily: 'Playfair Display, serif' }}
+          >
+            {t('visaTitle')}
+          </h2>
+          <ul className="space-y-6">
+            <li className="border-b border-[#E8E2D6] pb-6">
+              <p className="text-[#1A2744] font-semibold mb-2">{t('visaItem1Title')}</p>
+              <p className="text-[#5C5247] text-sm leading-relaxed mb-2">{t('visaItem1Body')}</p>
+              <a href="https://www.immigration.go.th" target="_blank" rel="noopener noreferrer" className="text-[#C8973A] hover:text-[#d4a84f] text-xs transition-colors">
+                {t('visaItem1Link')}
+              </a>
+            </li>
+            <li>
+              <p className="text-[#1A2744] font-semibold mb-2">{t('visaItem2Title')}</p>
+              <p className="text-[#5C5247] text-sm leading-relaxed mb-2">{t('visaItem2Body')}</p>
+              <a href="https://ltr.boi.go.th" target="_blank" rel="noopener noreferrer" className="text-[#C8973A] hover:text-[#d4a84f] text-xs transition-colors">
+                {t('visaItem2Link')}
+              </a>
+            </li>
+          </ul>
+          <p className="text-[#5C5247] text-xs mt-8 pt-6 border-t border-[#E8E2D6] leading-relaxed">
+            {t('visaNote')}{' '}
+            <Link href="/life/european-retirees" className="text-[#C8973A] hover:text-[#d4a84f] transition-colors">
+              {t('visaNoteLink')}
+            </Link>
           </p>
-          <a href="https://www.bangkokhospital.com/en/huahin" target="_blank" rel="noopener noreferrer" className="text-[#C8973A] hover:text-[#d4a84f] text-sm transition-colors">
-            Bangkok Hospital Hua Hin →
+        </div>
+      </section>
+
+      {/* HEALTH — photo1 */}
+      <section className="relative overflow-hidden py-20 md:py-28">
+        <div className="absolute inset-0">
+          <img
+            src="/photo1.jpg"
+            alt={t('healthTitle')}
+            className="w-full h-full object-cover"
+            style={{ objectPosition: 'center 35%' }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                'linear-gradient(105deg, rgba(250,247,240,0.97) 0%, rgba(250,247,240,0.9) 48%, rgba(250,247,240,0.45) 100%)',
+            }}
+          />
+        </div>
+        <div className="relative z-10 max-w-2xl mx-auto px-6">
+          <p className="text-[#C8973A] text-xs uppercase tracking-[0.2em] font-medium mb-3">{t('healthLabel')}</p>
+          <h2
+            className="text-[#1A2744] text-3xl md:text-5xl font-bold leading-tight mb-6"
+            style={{ fontFamily: 'Playfair Display, serif' }}
+          >
+            {t('healthTitle')}
+          </h2>
+          <p className="text-[#5C5247] text-sm md:text-base leading-relaxed mb-6">{t('healthBody')}</p>
+          <a
+            href="https://www.bangkokhospital.com/en/huahin"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#C8973A] hover:text-[#d4a84f] text-sm font-medium transition-colors"
+          >
+            {t('healthLink')}
           </a>
         </div>
+      </section>
 
-        <div className="bg-white p-6 md:p-8 text-center" style={{ border: '1px solid #E8E2D6', borderRadius: '16px' }}>
-          <p className="text-[#C8973A] text-xs uppercase tracking-widest font-medium mb-3">Your next chapter</p>
-          <h2 className="text-[#1A2744] text-xl md:text-2xl font-semibold mb-4 leading-snug" style={{ fontFamily: 'Playfair Display, serif' }}>
-            Build your home on Soi 112.
-          </h2>
-          <p className="text-[#5C5247] text-sm leading-relaxed mb-6 max-w-xl mx-auto">
-            4 Rai 2 Ngan of flat Chanote land in Hua Hin&apos;s most prestigious corridor. From $63,000/rai. Partial sale from 1 rai available.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <LineButton size="md" />
-          </div>
-          <div className="mt-5 flex flex-wrap items-center justify-center gap-4">
-            <a href="/" className="text-[#C8973A] hover:text-[#d4a84f] transition-colors text-sm font-medium">View the plot →</a>
-            <a href="https://data.hua-hin-land.com" target="_blank" rel="noopener noreferrer" className="text-[#C8973A] hover:text-[#d4a84f] transition-colors text-sm font-medium">
-              Verify Thai property records →
-            </a>
-          </div>
-        </div>
-
-        <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6">
-          <p className="text-[#C8973A] text-xs uppercase tracking-widest font-medium mb-4">Official resources</p>
-          <ul className="space-y-2.5 text-sm">
-            {[
-              { label: 'Thai Immigration Department', href: 'https://www.immigration.go.th', display: 'immigration.go.th' },
-              { label: 'LTR Visa (Board of Investment)', href: 'https://ltr.boi.go.th', display: 'ltr.boi.go.th' },
-              { label: 'Bangkok Hospital Hua Hin', href: 'https://www.bangkokhospital.com/en/huahin', display: 'bangkokhospital.com/en/huahin' },
-              { label: 'Verify Thai property records', href: 'https://data.hua-hin-land.com', display: 'data.hua-hin-land.com' },
-              { label: 'Full retirement / visa guide', href: '/life/european-retirees', display: 'hua-hin-land.com/life/european-retirees' },
-            ].map((link) => (
-              <li key={link.href} className="flex flex-col sm:flex-row sm:items-baseline sm:gap-2">
+      {/* RESOURCES — cream */}
+      <section className="bg-[#FAF7F0] py-16 md:py-20 px-6">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-[#C8973A] text-xs uppercase tracking-[0.2em] font-medium mb-6">{t('resourcesLabel')}</p>
+          <ul className="space-y-3 text-sm">
+            {resources.map((link) => (
+              <li key={link.href} className="flex flex-col sm:flex-row sm:items-baseline sm:gap-3 border-b border-[#E8E2D6] pb-3">
                 <span className="text-[#5C5247] text-xs sm:text-sm sm:min-w-[220px]">{link.label}</span>
-                <a
-                  href={link.href}
-                  {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                  className="text-[#1A2744] hover:text-[#C8973A] transition-colors font-medium"
-                >
-                  {link.display}
-                </a>
+                {link.href.startsWith('http') ? (
+                  <a href={link.href} target="_blank" rel="noopener noreferrer" className="text-[#1A2744] hover:text-[#C8973A] transition-colors font-medium">
+                    {link.display}
+                  </a>
+                ) : (
+                  <Link href={link.href} className="text-[#1A2744] hover:text-[#C8973A] transition-colors font-medium">
+                    {link.display}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
         </div>
-      </div>
+      </section>
 
-      <div className="max-w-3xl mx-auto px-6 pb-12">
+      {/* CTA — full-bleed photo + navy + gold LINE */}
+      <section className="relative min-h-[70vh] flex items-center">
+        <div className="absolute inset-0">
+          <img
+            src="/photo4.jpg"
+            alt={t('ctaTitle')}
+            className="w-full h-full object-cover"
+            style={{ objectPosition: 'center 50%' }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{ background: 'linear-gradient(to top, rgba(26,39,68,0.92) 0%, rgba(26,39,68,0.65) 100%)' }}
+          />
+        </div>
+        <div className="relative z-10 w-full max-w-3xl mx-auto px-6 py-20 text-center">
+          <p className="text-[#C8973A] text-xs uppercase tracking-[0.2em] font-medium mb-4">{t('ctaLabel')}</p>
+          <h2
+            className="text-white text-3xl md:text-5xl font-bold leading-tight mb-6"
+            style={{ fontFamily: 'Playfair Display, serif', textShadow: '0 2px 20px rgba(0,0,0,0.35)' }}
+          >
+            {t('ctaTitle')}
+          </h2>
+          <p className="text-white/75 text-sm md:text-base leading-relaxed mb-10 max-w-xl mx-auto">{t('ctaBody')}</p>
+          <a
+            href={LINE_AGENT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 min-h-[52px] px-8 rounded-[12px] text-base font-semibold text-[#1A2744] transition-all hover:brightness-110"
+            style={{ background: '#C8973A' }}
+          >
+            {tc('lineAgent')}
+          </a>
+          <div className="mt-8 flex flex-wrap justify-center gap-5 text-sm">
+            <Link href="/" className="text-[#C8973A] hover:text-[#d4a84f] transition-colors font-medium">
+              {t('ctaViewLink')}
+            </Link>
+            <a
+              href="https://data.hua-hin-land.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/70 hover:text-[#C8973A] transition-colors"
+            >
+              {t('ctaVerifyLink')}
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div className="max-w-3xl mx-auto px-6 py-12">
         <DisclaimerFooter />
         <div className="text-center pt-4">
-          <a href="/" className="text-[#C8973A] hover:text-[#d4a84f] transition-colors text-sm">← Back to the land listing</a>
+          <Link href="/" className="text-[#C8973A] hover:text-[#d4a84f] transition-colors text-sm">
+            {tc('backFooter')}
+          </Link>
         </div>
       </div>
     </main>

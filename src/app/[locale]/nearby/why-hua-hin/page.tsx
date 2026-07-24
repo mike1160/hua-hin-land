@@ -1,6 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
+import BackButton from '@/components/BackButton'
 import DisclaimerFooter from '@/components/DisclaimerFooter'
 import LineButton from '@/components/LineButton'
 import { Link } from '@/i18n/navigation'
@@ -114,6 +115,10 @@ export default function WhyHuaHinPage() {
 
   return (
     <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
+      <div className="px-6 pt-5 pb-3 max-w-5xl mx-auto w-full">
+        <BackButton />
+      </div>
+
       <section className="relative min-h-[88vh] md:min-h-[92vh] flex items-end">
         <div className="absolute inset-0">
           <img
@@ -131,12 +136,6 @@ export default function WhyHuaHinPage() {
           />
         </div>
         <div className="relative z-10 w-full max-w-5xl mx-auto px-6 pb-16 md:pb-24 pt-28 why-hero-in">
-          <Link
-            href="/"
-            className="text-[#C8973A] text-xs mb-8 inline-block hover:text-[#d4a84f] transition-colors"
-          >
-            {tc('backToListing')}
-          </Link>
           <p className="text-[#C8973A] text-xs uppercase tracking-[0.25em] font-medium mb-4 why-hero-in-delay-1">
             {t('hero.eyebrow')}
           </p>

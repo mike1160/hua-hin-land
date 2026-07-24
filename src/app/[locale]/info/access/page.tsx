@@ -1,53 +1,120 @@
+'use client'
+
+import { useTranslations } from 'next-intl'
+import BackButton from '@/components/BackButton'
 import DisclaimerFooter from '@/components/DisclaimerFooter'
+import InfoHero from '@/components/info/InfoHero'
+import InfoPhotoCta from '@/components/info/InfoPhotoCta'
+import InfoStatGrid from '@/components/info/InfoStatGrid'
+import { Link } from '@/i18n/navigation'
+import { LINE_AGENT_URL } from '@/lib/contact'
 
 export default function AccessPage() {
+  const t = useTranslations('accessPage')
+  const tc = useTranslations('common')
+
+  const stats = [
+    { value: '4 min', label: t('stat1Label') },
+    { value: '10 min', label: t('stat2Label') },
+    { value: '12 min', label: t('stat3Label') },
+    { value: '17 min', label: t('stat4Label') },
+  ]
+
   return (
     <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
-      <div className="relative h-72 flex items-end pb-10 px-6">
-        <div className="absolute inset-0">
-          <img src="/photo6.jpg" alt="concrete road access" className="w-full h-full object-cover" style={{objectPosition: 'center 50%'}} />
-          <div className="absolute inset-0" style={{background: 'linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.35) 70%, #FAF7F0 100%)'}} />
-        </div>
-        <div className="relative z-10 max-w-3xl">
-          <a href="/" className="text-[#C8973A] text-xs mb-4 inline-block hover:text-[#d4a84f] transition-colors">← Back to listing</a>
-          <h1 className="text-white text-4xl md:text-5xl font-bold mt-2" style={{fontFamily: 'Playfair Display, serif', textShadow: '0 2px 8px rgba(0,0,0,0.5)'}}>Access — the best of both worlds.</h1>
-          <p className="text-white/85 mt-2">Close enough to everything. Far enough from the noise.</p>
-        </div>
+      <div className="px-6 pt-5 pb-3 max-w-5xl mx-auto w-full">
+        <BackButton />
       </div>
-      <div className="max-w-3xl mx-auto px-6 py-12 space-y-8">
-        <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6">
-          <h2 className="text-[#1A2744] text-xl font-semibold mb-4">🛣️ Direct concrete road access</h2>
-          <p className="text-[#5C5247] text-sm leading-relaxed mb-4">The plot sits directly on a concrete road — no dirt tracks, no seasonal access issues, no getting stuck in the rainy season. You can drive a truck to the plot on day one. Construction vehicles, delivery lorries, your own car — all fine year-round.</p>
-          <p className="text-[#5C5247] text-sm leading-relaxed">This matters more than it sounds. Many attractive plots in Thailand are accessed via dirt or laterite tracks that become impassable in heavy rain. Not here.</p>
-        </div>
-        <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6">
-          <h2 className="text-[#1A2744] text-xl font-semibold mb-4">📍 The sweet spot — Soi 112, Thap Tai</h2>
-          <p className="text-[#5C5247] text-sm leading-relaxed mb-4">Soi 112 sits at the edge of Hua Hin&apos;s urban spread — developed enough to have infrastructure, quiet enough to feel like the countryside. It&apos;s a genuinely pleasant place to live, not just to visit.</p>
-          <div className="space-y-3 text-sm mt-4">
-            <div className="flex justify-between border-b border-[#E8E2D6] pb-2"><span className="text-[#5C5247]">7-Eleven</span><span className="text-[#C8973A] font-medium">4 min drive</span></div>
-            <div className="flex justify-between border-b border-[#E8E2D6] pb-2"><span className="text-[#5C5247]">Bluport Mall</span><span className="text-[#C8973A] font-medium">10 min drive</span></div>
-            <div className="flex justify-between border-b border-[#E8E2D6] pb-2"><span className="text-[#5C5247]">Hua Hin Beach</span><span className="text-[#C8973A] font-medium">12 min drive</span></div>
-            <div className="flex justify-between border-b border-[#E8E2D6] pb-2"><span className="text-[#5C5247]">Hua Hin town centre</span><span className="text-[#C8973A] font-medium">17 min drive</span></div>
-            <div className="flex justify-between"><span className="text-[#5C5247]">Bangkok highway</span><span className="text-[#C8973A] font-medium">Direct access</span></div>
+
+      <InfoHero
+        image="/photo6.jpg"
+        imageAlt={t('heroAlt')}
+        imagePosition="center 50%"
+        title={t('title')}
+        subtitle={t('subtitle')}
+      />
+
+      <section className="bg-[#FAF7F0] py-20 md:py-28 px-6">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-[#C8973A] text-xs uppercase tracking-[0.2em] font-medium mb-3">{t('roadLabel')}</p>
+          <h2
+            className="text-[#1A2744] text-3xl md:text-5xl font-bold leading-tight mb-6"
+            style={{ fontFamily: 'Playfair Display, serif' }}
+          >
+            {t('roadTitle')}
+          </h2>
+          <div className="space-y-4 text-[#5C5247] text-sm md:text-base leading-relaxed">
+            <p>{t('roadBody1')}</p>
+            <p>{t('roadBody2')}</p>
           </div>
         </div>
-        <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6">
-          <h2 className="text-[#1A2744] text-xl font-semibold mb-4">🌿 Far enough from the noise</h2>
-          <p className="text-[#5C5247] text-sm leading-relaxed mb-4">Soi 112 is a residential corridor, not a busy through-road. Traffic is light — mostly residents and the occasional delivery. There are no factories, no night markets on the doorstep, no airport flight paths.</p>
-          <ul className="space-y-2 text-[#5C5247] text-sm">
-            <li>• No road noise from the main highway — Soi 112 is a side road</li>
-            <li>• No industrial neighbours — purely residential and agricultural area</li>
-            <li>• National park behind the plot — silence in that direction guaranteed</li>
-            <li>• Low traffic density — this is a neighbourhood road, not a commuter route</li>
+      </section>
+
+      <section className="bg-[#FAF7F0] pb-20 md:pb-28 px-6">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-[#C8973A] text-xs uppercase tracking-[0.2em] font-medium mb-3">{t('distancesLabel')}</p>
+          <h2
+            className="text-[#1A2744] text-3xl md:text-5xl font-bold leading-tight mb-10 max-w-2xl"
+            style={{ fontFamily: 'Playfair Display, serif' }}
+          >
+            {t('distancesTitle')}
+          </h2>
+          <InfoStatGrid stats={stats} />
+          <p className="text-[#5C5247] text-sm md:text-base leading-relaxed mt-10 max-w-3xl">
+            {t('distancesBody')}
+          </p>
+          <p className="text-[#5C5247] text-sm mt-4">
+            <span className="text-[#1A2744] font-medium">{t('highwayLabel')}</span>
+            <span className="text-[#C8973A] font-medium ml-2">{t('highwayValue')}</span>
+          </p>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden py-20 md:py-28">
+        <div className="absolute inset-0">
+          <img src="/photo1.jpg" alt={t('quietAlt')} className="w-full h-full object-cover" style={{ objectPosition: 'center 35%' }} />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                'linear-gradient(105deg, rgba(250,247,240,0.97) 0%, rgba(250,247,240,0.9) 48%, rgba(250,247,240,0.45) 100%)',
+            }}
+          />
+        </div>
+        <div className="relative z-10 max-w-3xl mx-auto px-6">
+          <p className="text-[#C8973A] text-xs uppercase tracking-[0.2em] font-medium mb-3">{t('quietLabel')}</p>
+          <h2
+            className="text-[#1A2744] text-3xl md:text-5xl font-bold leading-tight mb-6"
+            style={{ fontFamily: 'Playfair Display, serif' }}
+          >
+            {t('quietTitle')}
+          </h2>
+          <p className="text-[#5C5247] text-sm md:text-base leading-relaxed mb-6">
+            {t('quietBody')}
+          </p>
+          <ul className="space-y-2 text-[#5C5247] text-sm md:text-base">
+            <li>• {t('quiet1')}</li>
+            <li>• {t('quiet2')}</li>
+            <li>• {t('quiet3')}</li>
+            <li>• {t('quiet4')}</li>
           </ul>
-          <p className="text-[#5C5247] text-xs mt-4 italic">The loudest thing you&apos;ll hear most mornings is birdsong from the national park.</p>
+          <p className="text-[#5C5247] text-xs mt-6 italic">{t('quietNote')}</p>
         </div>
-      </div>
-      <div className="max-w-3xl mx-auto px-6 pb-12">
+      </section>
+
+      <InfoPhotoCta
+        title={t('ctaTitle')}
+        body={t('ctaBody')}
+        lineLabel={tc('lineAgent')}
+        lineHref={LINE_AGENT_URL}
+      >
+        <Link href="/" className="text-[#C8973A] hover:text-[#d4a84f] transition-colors font-medium">
+          {tc('backFooter')}
+        </Link>
+      </InfoPhotoCta>
+
+      <div className="max-w-3xl mx-auto px-6 py-12">
         <DisclaimerFooter />
-        <div className="text-center pt-4">
-          <a href="/" className="text-[#C8973A] hover:text-[#d4a84f] transition-colors text-sm">← Back to the land listing</a>
-        </div>
       </div>
     </main>
   )
