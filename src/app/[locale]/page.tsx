@@ -611,16 +611,28 @@ export default function Home() {
         </div>
         <div className="relative z-10 max-w-5xl mx-auto px-6">
 
-          <h2 className="text-5xl md:text-7xl font-display font-bold mb-4 text-white" style={{fontFamily: 'Playfair Display, serif', textShadow: '0 2px 8px rgba(0,0,0,0.5)'}}>
+          <h2 className="text-5xl md:text-7xl font-display font-bold mb-4 text-white" style={{fontFamily: 'Playfair Display, serif', textShadow: '0 2px 12px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,0.9)'}}>
             {t('reachTitle')}
           </h2>
-          <p className="text-white/85 text-lg mb-14" style={{textShadow: '0 1px 6px rgba(0,0,0,0.45)'}}>{t('reachSub')}</p>
+          <p className="text-white/85 text-lg mb-14" style={{textShadow: '0 2px 12px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,0.9)'}}>{t('reachSub')}</p>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-16 animate-stagger">
             {distanceItems.map((d, i) => (
-              <Link key={i} href={d.href} className={`flex items-center justify-between px-4 py-3 rounded-xl border transition-all hover:scale-105 ${d.highlight ? 'bg-[#C8973A]/15 border-[#C8973A]/40 hover:bg-[#C8973A]/25' : 'bg-white/5 border-white/10 hover:bg-white/10'}`}>
-                <span className="text-white/80 text-sm">{d.icon} {d.placeKey ? t(d.placeKey) : d.place}</span>
-                <span className={`font-bold text-sm ${d.highlight ? 'text-[#C8973A]' : 'text-[#C8973A]/80'}`}>{d.timeKey ? t(d.timeKey) : d.time}</span>
+              <Link
+                key={i}
+                href={d.href}
+                className="flex items-center justify-between transition-all hover:scale-105 hover:brightness-110"
+                style={{
+                  background: 'rgba(0,0,0,0.55)',
+                  backdropFilter: 'blur(4px)',
+                  WebkitBackdropFilter: 'blur(4px)',
+                  border: d.highlight ? '1px solid rgba(200,151,58,0.5)' : '1px solid rgba(255,255,255,0.15)',
+                  borderRadius: '10px',
+                  padding: '8px 14px',
+                }}
+              >
+                <span className="text-white text-sm">{d.icon} {d.placeKey ? t(d.placeKey) : d.place}</span>
+                <span className="font-bold text-sm text-[#C8973A]">{d.timeKey ? t(d.timeKey) : d.time}</span>
               </Link>
             ))}
           </div>
@@ -901,7 +913,8 @@ export default function Home() {
               <p className="text-[#C8973A] text-xs uppercase tracking-widest font-medium mb-4">{t('footerArea')}</p>
               <ul className="space-y-2.5 text-sm">
                 <li><Link href="/nearby/why-hua-hin" className="text-white/80 hover:text-[#C8973A] transition-colors">{t('footerWhy')}</Link></li>
-                <li><Link href="/life/retirees" className="text-white/80 hover:text-[#C8973A] transition-colors">{t('footerRetiring')}</Link></li>
+                <li><Link href="/life/european-retirees" className="text-white/80 hover:text-[#C8973A] transition-colors">{t('footerRetiringEuropeans')}</Link></li>
+                <li><Link href="/life/retirees" className="text-white/80 hover:text-[#C8973A] transition-colors">{t('footerRetiringAmericans')}</Link></li>
                 <li><Link href="/life/dutch" className="text-white/80 hover:text-[#C8973A] transition-colors">{t('footerDutch')}</Link></li>
                 <li><Link href="/life/german" className="text-white/80 hover:text-[#C8973A] transition-colors">{t('footerGerman')}</Link></li>
                 <li><Link href="/life/swedish" className="text-white/80 hover:text-[#C8973A] transition-colors">{t('footerSwedish')}</Link></li>

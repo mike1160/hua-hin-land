@@ -17,6 +17,7 @@ const navGroups: NavGroup[] = [
       { labelKey: 'plot.terrain', href: '/info/terrain' },
       { labelKey: 'plot.location', href: '/info/access' },
       { labelKey: 'plot.comparable', href: '/info/comparable-plots' },
+      { labelKey: 'plot.nomineeCrackdown', href: '/info/nominee-crackdown' },
     ],
   },
   {
@@ -32,7 +33,8 @@ const navGroups: NavGroup[] = [
     labelKey: 'areaMenu',
     items: [
       { labelKey: 'area.whyHuaHin', href: '/nearby/why-hua-hin' },
-      { labelKey: 'area.retiring', href: '/life/retirees' },
+      { labelKey: 'area.retiringEuropeans', href: '/life/european-retirees' },
+      { labelKey: 'area.retiringAmericans', href: '/life/retirees' },
       { labelKey: 'area.dutch', href: '/life/dutch' },
       { labelKey: 'area.german', href: '/life/german' },
       { labelKey: 'area.swedish', href: '/life/swedish' },

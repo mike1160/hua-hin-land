@@ -123,7 +123,7 @@ export default function SwedishPage() {
           </ul>
           <p className="text-[#5C5247] text-xs mt-5 pt-4 border-t border-[#E8E2D6] leading-relaxed">
             Rådfråga alltid en behörig thailändsk immigrationsadvokat.{' '}
-            <a href="/life/retirees" className="text-[#C8973A] hover:text-[#d4a84f] transition-colors">
+            <a href="/life/european-retirees" className="text-[#C8973A] hover:text-[#d4a84f] transition-colors">
               Fullständig visumguide (EN) →
             </a>
           </p>
@@ -185,7 +185,7 @@ export default function SwedishPage() {
               { label: 'LTR-visum (Board of Investment)', href: 'https://ltr.boi.go.th', display: 'ltr.boi.go.th' },
               { label: 'Bangkok Hospital Hua Hin', href: 'https://www.bangkokhospital.com/en/huahin', display: 'bangkokhospital.com/en/huahin' },
               { label: 'Verifiera thailändska register', href: 'https://data.hua-hin-land.com', display: 'data.hua-hin-land.com' },
-              { label: 'Fullständig pensions-/visumguide', href: '/life/retirees', display: 'hua-hin-land.com/life/retirees' },
+              { label: 'Fullständig pensions-/visumguide', href: '/life/european-retirees', display: 'hua-hin-land.com/life/european-retirees' },
             ].map((link) => (
               <li key={link.href} className="flex flex-col sm:flex-row sm:items-baseline sm:gap-2">
                 <span className="text-[#5C5247] text-xs sm:text-sm sm:min-w-[220px]">{link.label}</span>
