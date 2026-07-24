@@ -10,7 +10,7 @@ export default function NotFound() {
         </h1>
         <p className="text-[#5C5247] text-sm mb-6">The page you requested does not exist.</p>
         <Link
-          href="/en"
+          href="/"
           className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white rounded-[12px]"
           style={{ background: '#C8973A' }}
         >

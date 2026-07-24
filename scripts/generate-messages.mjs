@@ -44,7 +44,7 @@ const en = {
     },
     area: {
       whyHuaHin: 'Why Hua Hin',
-      retiring: 'Retiring in Hua Hin (English)',
+      retiring: 'Retiring in Hua Hin',
       dutch: 'Voor Nederlanders',
       german: 'Für Deutsche',
       swedish: 'För Svenskar',
@@ -276,7 +276,7 @@ Object.assign(nl.navigation, {
   },
   area: {
     whyHuaHin: 'Waarom Hua Hin',
-    retiring: 'Pensioen in Hua Hin (Engels)',
+    retiring: 'Pensioen in Hua Hin',
     dutch: 'Voor Nederlanders',
     german: 'Für Deutsche',
     swedish: 'För Svenskar',
@@ -476,7 +476,7 @@ Object.assign(de.navigation, {
   },
   area: {
     whyHuaHin: 'Warum Hua Hin',
-    retiring: 'Ruhestand in Hua Hin (Englisch)',
+    retiring: 'Rente in Hua Hin',
     dutch: 'Voor Nederlanders',
     german: 'Für Deutsche',
     swedish: 'För Svenskar',
@@ -676,7 +676,7 @@ Object.assign(sv.navigation, {
   },
   area: {
     whyHuaHin: 'Varför Hua Hin',
-    retiring: 'Pension i Hua Hin (engelska)',
+    retiring: 'Pension i Hua Hin',
     dutch: 'Voor Nederlanders',
     german: 'Für Deutsche',
     swedish: 'För Svenskar',
@@ -876,7 +876,7 @@ Object.assign(da.navigation, {
   },
   area: {
     whyHuaHin: 'Hvorfor Hua Hin',
-    retiring: 'Pension i Hua Hin (engelsk)',
+    retiring: 'Pension i Hua Hin',
     dutch: 'Voor Nederlanders',
     german: 'Für Deutsche',
     swedish: 'För Svenskar',
@@ -1076,7 +1076,7 @@ Object.assign(th.navigation, {
   },
   area: {
     whyHuaHin: 'ทำไมหัวหิน',
-    retiring: 'เกษียณที่หัวหิน (ภาษาอังกฤษ)',
+    retiring: 'เกษียณที่หัวหิน',
     dutch: 'Voor Nederlanders',
     german: 'Für Deutsche',
     swedish: 'För Svenskar',
