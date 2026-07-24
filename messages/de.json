@@ -60,7 +60,7 @@
     "heroBadge": "Unter Marktpreis · Chanote · Übertragungsbereit",
     "hook": "4 Rai 2 Ngan Topgrundstück. Soi 112, Hua Hin.",
     "sub": "4 Rai 2 Ngan · Eben · Chanote · Volleigentum · Bergblick · Wasser vorhanden · Soi 112",
-    "cta": "📲 WhatsApp 080-140-6745",
+    "cta": "💬 LINE Agent",
     "ctaEmail": "📧 Makler per E-Mail",
     "ctaCall": "oder anrufen 065-901-2984",
     "learnMorePrefix": "Mehr erfahren:",
@@ -71,8 +71,7 @@
     "pricePerRai": "/ rai",
     "priceApprox": "≈ $63.000/Rai · ≈ €270.000 gesamt",
     "partialSaleNote": "Teilverkauf ab 1 Rai möglich · Preis auf Anfrage",
-    "partialSaleCta": "Interesse an 1–2 Rai? Kontaktieren Sie uns.",
-    "whatsappArrow": "WhatsApp →",
+    "partialSaleCta": "Interesse an 1–2 Rai? Kontaktieren Sie uns über LINE →",
     "verifyRecords": "🔍 Thailändische Immobiliendaten prüfen",
     "trustFreeholdTitle": "Volleigentum (Chanote)",
     "trustFreeholdDesc": "Stärkstes Eigentum in Thailand",
@@ -166,7 +165,7 @@
     "contactSend": "Nachricht senden",
     "contactSending": "Wird gesendet…",
     "contactSent": "Nachricht gesendet. Wir melden uns bald.",
-    "contactError": "Etwas ist schiefgelaufen. Bitte WhatsApp oder E-Mail versuchen.",
+    "contactError": "Etwas ist schiefgelaufen. Bitte LINE oder E-Mail versuchen.",
     "contactConfirm": "Mit Ihrer Kontaktaufnahme bestätigen Sie, dass Sie unseren",
     "contactDisclaimerPhrase": "rechtlichen Haftungsausschluss",
     "agentDisclaimer": "Unabhängiger Makler — Kontakt für Besichtigungen und lokale Anfragen. Nicht berechtigt, im Namen des Verkäufers zu verhandeln. Alle Angebote und Vereinbarungen direkt mit dem Verkäufer.",
@@ -217,7 +216,11 @@
     "disclaimerFooter": "Die Informationen auf dieser Seite dienen ausschließlich allgemeinen Informationszwecken und stellen keine Rechts-, Finanz- oder Steuerberatung dar. Steuerzahlen, Kosten und Marktdaten sind indikativ und basieren auf öffentlich verfügbaren Quellen Stand 2026. Holen Sie immer unabhängige Rechtsberatung ein, bevor Sie eine Immobilientransaktion in Thailand eingehen.",
     "disclaimerFooterLink": "→ Vollständigen Haftungsausschluss lesen",
     "contactDisclaimer": "Mit Ihrer Kontaktaufnahme bestätigen Sie, dass Sie unseren",
-    "contactDisclaimerLink": "rechtlichen Haftungsausschluss"
+    "contactDisclaimerLink": "rechtlichen Haftungsausschluss",
+    "lineCta": "💬 LINE Agent",
+    "lineNote": "Auf LINE hinzufügen mit Telefonnummer: 065-901-2984",
+    "lineArrow": "LINE →",
+    "lineAgent": "💬 LINE Agent"
   },
   "whyHuaHin": {
     "heroAlt": "Hua-Hin-Landschaft zur goldenen Stunde",
@@ -249,9 +252,7 @@
     "vsLabel": "Warum nicht Phuket",
     "vsTitle": "Ruhe by Design.",
     "vsBody": "Phuket hat Partys. Pattaya hat Nachtleben. Hua Hin hat Golf, Seafood, Jazzbars und einen Strand, der drei Generationen thailändischer Könige gut genug war. Die Expat-Community hier sind Familien und Ruheständler — Menschen, die Lebensqualität statt Chaos gewählt haben.",
-    "ctaTitle": "Ihr Grundstück in Hua Hins begehrtester Lage — Soi 112.",
-    "ctaWhatsapp": "📲 WhatsApp 080-140-6745",
-    "waMessage": "Hallo — ich interessiere mich für das Grundstück Soi 112 in Hua Hin."
+    "ctaTitle": "Ihr Grundstück in Hua Hins begehrtester Lage — Soi 112."
   },
   "retirees": {
     "heroAlt": "Entspannter Lebensstil in Hua Hin",
@@ -308,7 +309,6 @@
     "ctaLabel": "Ihr nächstes Kapitel",
     "ctaTitle": "Bauen Sie Ihr Ruhestandshaus auf Soi 112.",
     "ctaBody": "4 Rai 2 Ngan flaches Chanote-Land in Hua Hins prestigeträchtigster Lage. Bauen Sie Ihre Villa genau wie gewünscht. Ab $63.000/rai. Teilverkauf ab 1 Rai möglich.",
-    "ctaWhatsapp": "📲 WhatsApp 080-140-6745",
     "ctaViewPlot": "Grundstück ansehen →",
     "resourcesLabel": "Offizielle Quellen",
     "resourceImmigration": "Thailändische Einwanderungsbehörde",
@@ -317,8 +317,7 @@
     "resourceBoi": "Board of Investment (LTR-Visum)",
     "resourceHospital": "Bangkok Hospital Hua Hin",
     "resourceLand": "Katasteramt (Eigentum)",
-    "resourceVerify": "Thailändische Grundbücher prüfen",
-    "waMessage": "Hallo — ich interessiere mich für das Grundstück Soi 112 in Hua Hin für den Ruhestand."
+    "resourceVerify": "Thailändische Grundbücher prüfen"
   },
   "golf": {
     "heroAlt": "Golfplatz Majestic Creek Country Club Hua Hin",

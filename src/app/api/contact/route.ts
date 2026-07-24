@@ -38,7 +38,7 @@ export async function POST(req: NextRequest) {
           <table style="width: 100%; border-collapse: collapse;">
             <tr><td style="padding: 8px 0; color: #94a3b8; width: 120px;">Name</td><td style="padding: 8px 0; color: #f0f4ff;">${name}</td></tr>
             <tr><td style="padding: 8px 0; color: #94a3b8;">Email</td><td style="padding: 8px 0; color: #60a5fa;"><a href="mailto:${email}" style="color: #60a5fa;">${email}</a></td></tr>
-            <tr><td style="padding: 8px 0; color: #94a3b8;">Phone / WhatsApp</td><td style="padding: 8px 0; color: #f0f4ff;">${phone || '—'}</td></tr>
+            <tr><td style="padding: 8px 0; color: #94a3b8;">Phone</td><td style="padding: 8px 0; color: #f0f4ff;">${phone || '—'}</td></tr>
             <tr><td style="padding: 8px 0; color: #94a3b8;">Language</td><td style="padding: 8px 0; color: #f0f4ff;">${lang}</td></tr>
             <tr><td style="padding: 8px 0; color: #94a3b8; vertical-align: top;">Message</td><td style="padding: 8px 0; color: #f0f4ff;">${message}</td></tr>
           </table>
@@ -63,8 +63,9 @@ export async function POST(req: NextRequest) {
           <div style="padding: 32px;">
             <p style="color: #cbd5e1; line-height: 1.7; margin: 0 0 24px;">We will be in touch within <strong style="color: #ffffff;">24 hours</strong>. In the meantime, feel free to reach us directly:</p>
             <div style="background: #0d1120; border: 1px solid #1e2a4a; border-radius: 12px; padding: 20px; margin-bottom: 24px;">
-              <p style="margin: 0 0 8px; color: #94a3b8; font-size: 13px;">WhatsApp / Phone</p>
-              <p style="margin: 0; color: #60a5fa; font-size: 18px; font-weight: bold;">080-140-6745</p>
+              <p style="margin: 0 0 8px; color: #94a3b8; font-size: 13px;">Phone / LINE</p>
+              <p style="margin: 0; color: #60a5fa; font-size: 18px; font-weight: bold;">065-901-2984</p>
+              <p style="margin: 8px 0 0; color: #94a3b8; font-size: 13px;">LINE: Good land YAI · <a href="https://line.me/ti/p/+660659012984" style="color: #60a5fa;">Open LINE</a></p>
             </div>
             <div style="background: #0d1120; border: 1px solid #1e2a4a; border-radius: 12px; padding: 20px; margin-bottom: 32px;">
               <p style="margin: 0 0 12px; color: #94a3b8; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Your enquiry summary</p>
@@ -76,7 +77,7 @@ export async function POST(req: NextRequest) {
               </table>
             </div>
             <p style="color: #475569; font-size: 13px; line-height: 1.6; margin: 0;">
-              This is an automated confirmation. Contact us directly via WhatsApp on <strong style="color: #60a5fa;">080-140-6745</strong>
+              This is an automated confirmation. Contact us by phone on <strong style="color: #60a5fa;">065-901-2984</strong> or via LINE.
             </p>
           </div>
           <div style="background: #0d1120; padding: 20px 32px; border-top: 1px solid #1e2a4a;">

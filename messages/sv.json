@@ -60,7 +60,7 @@
     "heroBadge": "Under marknadspris · Chanote · Redo att överlåtas",
     "hook": "4 Rai 2 Ngan förstklassig mark. Soi 112, Hua Hin.",
     "sub": "4 Rai 2 Ngan · Platt · Chanote · Friköp · Bergsutsikt · Vatten anslutet · Soi 112",
-    "cta": "📲 WhatsApp 080-140-6745",
+    "cta": "💬 LINE Agent",
     "ctaEmail": "📧 Mejla mäklaren",
     "ctaCall": "eller ring 065-901-2984",
     "learnMorePrefix": "Läs mer:",
@@ -71,8 +71,7 @@
     "pricePerRai": "/ rai",
     "priceApprox": "≈ $63 000/rai · ≈ €270 000 totalt",
     "partialSaleNote": "Delvis försäljning från 1 rai · Pris på begäran",
-    "partialSaleCta": "Intresserad av 1–2 rai? Kontakta oss.",
-    "whatsappArrow": "WhatsApp →",
+    "partialSaleCta": "Intresserad av 1–2 rai? Kontakta oss via LINE →",
     "verifyRecords": "🔍 Verifiera thailändska fastighetsuppgifter",
     "trustFreeholdTitle": "Friköpslagfart (Chanote)",
     "trustFreeholdDesc": "Starkaste ägandet i Thailand",
@@ -166,7 +165,7 @@
     "contactSend": "Skicka meddelande",
     "contactSending": "Skickar…",
     "contactSent": "Meddelande skickat. Vi svarar snart.",
-    "contactError": "Något gick fel. Prova WhatsApp eller e-post.",
+    "contactError": "Något gick fel. Prova LINE eller e-post.",
     "contactConfirm": "Genom att kontakta oss bekräftar du att du har läst och förstått vår",
     "contactDisclaimerPhrase": "juridiska ansvarsfriskrivning",
     "agentDisclaimer": "Oberoende mäklare — kontakt för visningar och lokala förfrågningar. Inte behörig att förhandla pris eller villkor för säljarens räkning. Alla bud och avtal direkt med säljaren.",
@@ -217,7 +216,11 @@
     "disclaimerFooter": "Informationen på denna sida tillhandahålls endast i allmän informationssyfte och utgör inte juridisk, finansiell eller skatterådgivning. Skattesiffror, kostnader och marknadsdata är vägledande och baserade på offentligt tillgängliga källor per 2026. Sök alltid oberoende juridisk rådgivning innan du ingår en fastighetstransaktion i Thailand.",
     "disclaimerFooterLink": "→ Läs vår fullständiga ansvarsfriskrivning",
     "contactDisclaimer": "Genom att kontakta oss bekräftar du att du har läst och förstått vår",
-    "contactDisclaimerLink": "juridiska disclaimer"
+    "contactDisclaimerLink": "juridiska disclaimer",
+    "lineCta": "💬 LINE Agent",
+    "lineNote": "Lägg till på LINE med telefonnummer: 065-901-2984",
+    "lineArrow": "LINE →",
+    "lineAgent": "💬 LINE Agent"
   },
   "whyHuaHin": {
     "heroAlt": "Hua Hin-landskap i den gyllene timmen",
@@ -249,9 +252,7 @@
     "vsLabel": "Varför inte Phuket",
     "vsTitle": "Lugn by design.",
     "vsBody": "Phuket har fester. Pattaya har nattliv. Hua Hin har golf, skaldjur, jazzbarer och en strand som dög för tre generationer thailändska kungar. Expatgemenskapen här är familjer och pensionärer — människor som valde livskvalitet framför kaos.",
-    "ctaTitle": "Er tomt i Hua Hins mest eftertraktade korridor — Soi 112.",
-    "ctaWhatsapp": "📲 WhatsApp 080-140-6745",
-    "waMessage": "Hej — jag är intresserad av tomten på Soi 112 i Hua Hin."
+    "ctaTitle": "Er tomt i Hua Hins mest eftertraktade korridor — Soi 112."
   },
   "retirees": {
     "heroAlt": "Avslappnad livsstil i Hua Hin",
@@ -308,7 +309,6 @@
     "ctaLabel": "Ert nästa kapitel",
     "ctaTitle": "Bygg ert pensionshem på Soi 112.",
     "ctaBody": "4 Rai 2 Ngan platt Chanote-mark i Hua Hins mest prestigefyllda korridor. Bygg er villa precis som ni vill. Från $63 000/rai. Delvis försäljning från 1 rai möjlig.",
-    "ctaWhatsapp": "📲 WhatsApp 080-140-6745",
     "ctaViewPlot": "Visa tomten →",
     "resourcesLabel": "Officiella källor",
     "resourceImmigration": "Thailändska immigrationsverket",
@@ -317,8 +317,7 @@
     "resourceBoi": "Board of Investment (LTR-visum)",
     "resourceHospital": "Bangkok Hospital Hua Hin",
     "resourceLand": "Lantmäteriet (fastigheter)",
-    "resourceVerify": "Verifiera thailändska fastighetsregister",
-    "waMessage": "Hej — jag är intresserad av tomten på Soi 112 i Hua Hin för pension."
+    "resourceVerify": "Verifiera thailändska fastighetsregister"
   },
   "golf": {
     "heroAlt": "Golfbanan Majestic Creek Country Club Hua Hin",

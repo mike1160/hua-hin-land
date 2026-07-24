@@ -1,8 +1,7 @@
 import DisclaimerFooter from '@/components/DisclaimerFooter'
+import LineButton from '@/components/LineButton'
 import LangSwitcher from '@/components/LangSwitcher'
 
-const PHONE = '66801406745'
-const WA_URL = `https://wa.me/${PHONE}?text=${encodeURIComponent('Hej — jag är intresserad av tomten Soi 112 Hua Hin.')}`
 
 export default function SwedishPage() {
   return (
@@ -167,15 +166,9 @@ export default function SwedishPage() {
           <p className="text-[#5C5247] text-sm leading-relaxed mb-6 max-w-xl mx-auto">
             4 Rai 2 Ngan plan Chanote-mark i Hua Hins mest eftertraktade korridor. Från $63 000/rai. Delförsäljning från 1 rai möjlig.
           </p>
-          <a
-            href={WA_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center min-h-[48px] font-semibold px-8 py-3 text-white text-sm transition-all hover:brightness-110"
-            style={{ background: '#C8973A', borderRadius: '12px' }}
-          >
-            📲 WhatsApp 080-140-6745
-          </a>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <LineButton size="md" />
+          </div>
           <div className="mt-5 flex flex-wrap items-center justify-center gap-4">
             <a href="/" className="text-[#C8973A] hover:text-[#d4a84f] transition-colors text-sm font-medium">Visa tomten →</a>
             <a href="https://data.hua-hin-land.com" target="_blank" rel="noopener noreferrer" className="text-[#C8973A] hover:text-[#d4a84f] transition-colors text-sm font-medium">

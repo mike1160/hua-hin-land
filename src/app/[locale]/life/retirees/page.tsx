@@ -2,15 +2,12 @@
 
 import { useTranslations } from 'next-intl'
 import DisclaimerFooter from '@/components/DisclaimerFooter'
+import LineButton from '@/components/LineButton'
 import { Link } from '@/i18n/navigation'
-
-const PHONE = '66801406745'
 
 export default function RetireesPage() {
   const t = useTranslations('retirees')
   const tc = useTranslations('common')
-
-  const waUrl = `https://wa.me/${PHONE}?text=${encodeURIComponent(t('waMessage'))}`
 
   const costStats = [
     { value: t('costComfortableValue'), label: t('costComfortableLabel') },
@@ -238,15 +235,9 @@ export default function RetireesPage() {
             {t('ctaTitle')}
           </h2>
           <p className="text-[#5C5247] text-sm leading-relaxed mb-6 max-w-xl mx-auto">{t('ctaBody')}</p>
-          <a
-            href={waUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center min-h-[48px] font-semibold px-8 py-3 text-white text-sm transition-all hover:brightness-110"
-            style={{ background: '#C8973A', borderRadius: '12px' }}
-          >
-            {t('ctaWhatsapp')}
-          </a>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <LineButton size="md" />
+          </div>
           <div className="mt-5">
             <Link href="/" className="text-[#C8973A] hover:text-[#d4a84f] transition-colors text-sm font-medium">
               {t('ctaViewPlot')}

@@ -60,7 +60,7 @@
     "heroBadge": "Under markedspris · Chanote · Klar til overdragelse",
     "hook": "4 Rai 2 Ngan førsteklasses grund. Soi 112, Hua Hin.",
     "sub": "4 Rai 2 Ngan · Fladt · Chanote · Friejejendom · Bjergudsigt · Vand tilsluttet · Soi 112",
-    "cta": "📲 WhatsApp 080-140-6745",
+    "cta": "💬 LINE Agent",
     "ctaEmail": "📧 E-mail mægleren",
     "ctaCall": "eller ring 065-901-2984",
     "learnMorePrefix": "Læs mere:",
@@ -71,8 +71,7 @@
     "pricePerRai": "/ rai",
     "priceApprox": "≈ $63.000/rai · ≈ €270.000 i alt",
     "partialSaleNote": "Delvis salg fra 1 rai · Pris på forespørgsel",
-    "partialSaleCta": "Interesseret i 1–2 rai? Kontakt os.",
-    "whatsappArrow": "WhatsApp →",
+    "partialSaleCta": "Interesseret i 1–2 rai? Kontakt os via LINE →",
     "verifyRecords": "🔍 Verificer thailandske ejendomsoplysninger",
     "trustFreeholdTitle": "Friejejendom (Chanote)",
     "trustFreeholdDesc": "Stærkeste ejerskab i Thailand",
@@ -166,7 +165,7 @@
     "contactSend": "Send besked",
     "contactSending": "Sender…",
     "contactSent": "Besked sendt. Vi svarer snart.",
-    "contactError": "Noget gik galt. Prøv WhatsApp eller e-mail.",
+    "contactError": "Noget gik galt. Prøv LINE eller e-mail.",
     "contactConfirm": "Ved at kontakte os bekræfter du, at du har læst og forstået vores",
     "contactDisclaimerPhrase": "juridiske ansvarsfraskrivelse",
     "agentDisclaimer": "Uafhængig mægler — kontakt for fremvisninger og lokale henvendelser. Ikke bemyndiget til at forhandle pris eller vilkår på sælgers vegne. Alle tilbud og aftaler direkte med sælgeren.",
@@ -217,7 +216,11 @@
     "disclaimerFooter": "Oplysningerne på denne side er kun til generelle informationsformål og udgør ikke juridisk, finansiel eller skattemæssig rådgivning. Skattetal, omkostninger og markedsdata er vejledende og baseret på offentligt tilgængelige kilder pr. 2026. Søg altid uafhængig juridisk rådgivning, før du indgår en ejendomstransaktion i Thailand.",
     "disclaimerFooterLink": "→ Læs vores fulde ansvarsfraskrivelse",
     "contactDisclaimer": "Ved at kontakte os bekræfter du, at du har læst og forstået vores",
-    "contactDisclaimerLink": "juridiske disclaimer"
+    "contactDisclaimerLink": "juridiske disclaimer",
+    "lineCta": "💬 LINE Agent",
+    "lineNote": "Tilføj på LINE med telefonnummer: 065-901-2984",
+    "lineArrow": "LINE →",
+    "lineAgent": "💬 LINE Agent"
   },
   "whyHuaHin": {
     "heroAlt": "Hua Hin-landskab i den gyldne time",
@@ -249,9 +252,7 @@
     "vsLabel": "Hvorfor ikke Phuket",
     "vsTitle": "Ro by design.",
     "vsBody": "Phuket har fest. Pattaya har natteliv. Hua Hin har golf, skaldyr, jazzbarer og en strand, der var god nok til tre generationer af thailandske konger. Expatmiljøet her er familier og pensionister — mennesker, der valgte livskvalitet frem for kaos.",
-    "ctaTitle": "Deres grund i Hua Hins mest eftertragtede korridor — Soi 112.",
-    "ctaWhatsapp": "📲 WhatsApp 080-140-6745",
-    "waMessage": "Hej — jeg er interesseret i grunden på Soi 112 i Hua Hin."
+    "ctaTitle": "Deres grund i Hua Hins mest eftertragtede korridor — Soi 112."
   },
   "retirees": {
     "heroAlt": "Afslappet livsstil i Hua Hin",
@@ -308,7 +309,6 @@
     "ctaLabel": "Jeres næste kapitel",
     "ctaTitle": "Byg jeres pensionshjem på Soi 112.",
     "ctaBody": "4 Rai 2 Ngan fladt Chanote-land i Hua Hins mest prestigefyldte korridor. Byg jeres villa præcis som I vil. Fra $63.000/rai. Delvist salg fra 1 rai muligt.",
-    "ctaWhatsapp": "📲 WhatsApp 080-140-6745",
     "ctaViewPlot": "Se grunden →",
     "resourcesLabel": "Officielle kilder",
     "resourceImmigration": "Thailandsk immigrationsmyndighed",
@@ -317,8 +317,7 @@
     "resourceBoi": "Board of Investment (LTR-visum)",
     "resourceHospital": "Bangkok Hospital Hua Hin",
     "resourceLand": "Matrikelvæsenet (ejendom)",
-    "resourceVerify": "Verificer thailandske ejendomsregistre",
-    "waMessage": "Hej — jeg er interesseret i grunden på Soi 112 i Hua Hin til pensionering."
+    "resourceVerify": "Verificer thailandske ejendomsregistre"
   },
   "golf": {
     "heroAlt": "Golfbanen Majestic Creek Country Club Hua Hin",

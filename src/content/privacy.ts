@@ -26,7 +26,7 @@ const en: PrivacyContent = {
     },
     {
       title: 'Your rights (GDPR)',
-      body: 'Under GDPR you have the right to access, correct or delete your personal data. To exercise these rights, contact us via WhatsApp: 080-140-6745.',
+      body: 'Under GDPR you have the right to access, correct or delete your personal data. To exercise these rights, contact us by phone on 065-901-2984 or via LINE.',
     },
     {
       title: 'Cookies',
@@ -34,7 +34,7 @@ const en: PrivacyContent = {
     },
     {
       title: 'Contact',
-      body: 'Contact us via WhatsApp: 080-140-6745',
+      body: 'Contact us by phone on 065-901-2984 or via LINE (Good land YAI).',
     },
   ],
 }
@@ -57,7 +57,7 @@ const th: PrivacyContent = {
     },
     {
       title: 'สิทธิของคุณ (กฎระเบียบคุ้มครองข้อมูลทั่วไป / GDPR)',
-      body: 'ภายใต้กฎระเบียบคุ้มครองข้อมูลทั่วไป (GDPR) คุณมีสิทธิ์เข้าถึง แก้ไข หรือลบข้อมูลส่วนบุคคลของคุณ หากต้องการใช้สิทธิเหล่านี้ ติดต่อเราผ่าน WhatsApp: 080-140-6745',
+      body: 'ภายใต้กฎระเบียบคุ้มครองข้อมูลทั่วไป (GDPR) คุณมีสิทธิ์เข้าถึง แก้ไข หรือลบข้อมูลส่วนบุคคลของคุณ หากต้องการใช้สิทธิเหล่านี้ ติดต่อเราทางโทรศัพท์ 065-901-2984 หรือผ่าน LINE',
     },
     {
       title: 'คุกกี้',
@@ -65,7 +65,7 @@ const th: PrivacyContent = {
     },
     {
       title: 'ติดต่อ',
-      body: 'ติดต่อเราผ่าน WhatsApp: 080-140-6745',
+      body: 'ติดต่อเราทางโทรศัพท์ 065-901-2984 หรือผ่าน LINE (Good land YAI)',
     },
   ],
 }
@@ -79,9 +79,9 @@ const nl: PrivacyContent = {
       'Wanneer u het contactformulier indient, verzamelen we uw naam, e-mailadres, telefoonnummer en bericht. Deze informatie wordt uitsluitend gebruikt om uw vraag over het perceel te beantwoorden.',
       'Uw gegevens worden alleen gebruikt om uw vraag te beantwoorden. We verkopen, delen of gebruiken uw gegevens niet voor marketing. Uw gegevens worden veilig opgeslagen en niet gedeeld met derden.',
       'Aanvraaggegevens worden maximaal 12 maanden bewaard nadat het perceel is verkocht, waarna ze permanent worden verwijderd.',
-      'Op grond van de AVG/GDPR heeft u het recht om uw persoonsgegevens in te zien, te corrigeren of te laten verwijderen. Neem contact op via WhatsApp: 080-140-6745.',
+      'Op grond van de AVG/GDPR heeft u het recht om uw persoonsgegevens in te zien, te corrigeren of te laten verwijderen. Neem contact op via telefoon 065-901-2984 of via LINE.',
       'Deze website gebruikt Vercel Analytics — een privacyvriendelijke analysetool zonder cookies. Er worden geen persoonsgegevens via cookies verzameld.',
-      'Neem contact op via WhatsApp: 080-140-6745',
+      'Neem contact op via telefoon 065-901-2984 of via LINE (Good land YAI)',
     ][i],
   })),
 }
@@ -95,9 +95,9 @@ const de: PrivacyContent = {
       'Wenn Sie das Kontaktformular absenden, erheben wir Ihren Namen, Ihre E-Mail-Adresse, Telefonnummer und Nachricht. Diese Informationen werden ausschließlich zur Beantwortung Ihrer Anfrage zum Grundstück verwendet.',
       'Ihre Daten werden nur zur Beantwortung Ihrer Anfrage verwendet. Wir verkaufen, teilen oder nutzen Ihre Daten nicht für Marketingzwecke. Ihre Angaben werden sicher gespeichert und nicht an Dritte weitergegeben.',
       'Anfragedaten werden maximal 12 Monate nach dem Verkauf des Grundstücks aufbewahrt und danach dauerhaft gelöscht.',
-      'Unter der DSGVO/GDPR haben Sie das Recht, Ihre personenbezogenen Daten einzusehen, zu berichtigen oder löschen zu lassen. Kontaktieren Sie uns per WhatsApp: 080-140-6745.',
+      'Unter der DSGVO/GDPR haben Sie das Recht, Ihre personenbezogenen Daten einzusehen, zu berichtigen oder löschen zu lassen. Kontaktieren Sie uns telefonisch unter 065-901-2984 oder über LINE.',
       'Diese Website nutzt Vercel Analytics — ein datenschutzfreundliches Analysetool ohne Cookies. Es werden keine personenbezogenen Daten über Cookies erfasst.',
-      'Kontaktieren Sie uns per WhatsApp: 080-140-6745',
+      'Kontaktieren Sie uns telefonisch unter 065-901-2984 oder über LINE (Good land YAI)',
     ][i],
   })),
 }

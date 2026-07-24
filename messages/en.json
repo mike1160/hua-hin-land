@@ -60,7 +60,7 @@
     "heroBadge": "Below market price · Chanote · Ready to transfer",
     "hook": "4 Rai 2 Ngan of prime land. Soi 112, Hua Hin.",
     "sub": "4 Rai 2 Ngan · Flat · Chanote · Freehold title · Mountain views · Water connected · Soi 112",
-    "cta": "📲 WhatsApp 080-140-6745",
+    "cta": "💬 LINE Agent",
     "ctaEmail": "📧 Email the agent",
     "ctaCall": "or call 065-901-2984",
     "learnMorePrefix": "Learn more:",
@@ -71,8 +71,7 @@
     "pricePerRai": "/ rai",
     "priceApprox": "≈ $63,000/rai · ≈ €270,000 total",
     "partialSaleNote": "Partial sale available from 1 rai · Pricing on request",
-    "partialSaleCta": "Interested in 1–2 rai? Contact us.",
-    "whatsappArrow": "WhatsApp →",
+    "partialSaleCta": "Interested in 1–2 rai? Contact us via LINE →",
     "verifyRecords": "🔍 Verify Thai property records",
     "trustFreeholdTitle": "Freehold title deed (Chanote)",
     "trustFreeholdDesc": "Strongest ownership in Thailand",
@@ -166,7 +165,7 @@
     "contactSend": "Send message",
     "contactSending": "Sending…",
     "contactSent": "Message sent. We'll reply soon.",
-    "contactError": "Something went wrong. Please try WhatsApp or email.",
+    "contactError": "Something went wrong. Please try LINE or email.",
     "contactConfirm": "By contacting us you confirm you have read and understood our",
     "contactDisclaimerPhrase": "legal disclaimer",
     "agentDisclaimer": "Independent agent — contact for viewings and local enquiries only. Not authorised to negotiate price or terms on behalf of the seller. All offers and agreements directly with the seller only.",
@@ -217,7 +216,11 @@
     "disclaimerFooter": "The information on this page is provided for general informational purposes only and does not constitute legal, financial, or tax advice. Tax figures, costs, and market data are indicative and based on publicly available sources as of 2026. Always seek independent legal advice before entering into any property transaction in Thailand.",
     "disclaimerFooterLink": "→ Read our full disclaimer",
     "contactDisclaimer": "By contacting us you confirm you have read and understood our",
-    "contactDisclaimerLink": "legal disclaimer"
+    "contactDisclaimerLink": "legal disclaimer",
+    "lineCta": "💬 LINE Agent",
+    "lineNote": "Add on LINE using phone number: 065-901-2984",
+    "lineArrow": "LINE →",
+    "lineAgent": "💬 LINE Agent"
   },
   "whyHuaHin": {
     "heroAlt": "Hua Hin landscape at golden hour",
@@ -249,9 +252,7 @@
     "vsLabel": "Why not Phuket",
     "vsTitle": "Quiet by design.",
     "vsBody": "Phuket has parties. Pattaya has nightlife. Hua Hin has golf, seafood, jazz bars, and a beach that was good enough for three generations of Thai kings. The expat community here is families and retirees — people who chose quality of life over chaos.",
-    "ctaTitle": "Your plot in Hua Hin's most sought-after corridor — Soi 112.",
-    "ctaWhatsapp": "📲 WhatsApp 080-140-6745",
-    "waMessage": "Hi — I am interested in the Soi 112 Hua Hin land listing."
+    "ctaTitle": "Your plot in Hua Hin's most sought-after corridor — Soi 112."
   },
   "retirees": {
     "heroAlt": "Relaxed Hua Hin lifestyle",
@@ -308,7 +309,6 @@
     "ctaLabel": "Your next chapter",
     "ctaTitle": "Build your retirement home on Soi 112.",
     "ctaBody": "4 Rai 2 Ngan of flat Chanote land in Hua Hin's most prestigious corridor. Build your villa exactly as you want it. From $63,000/rai. Partial sale from 1 rai available.",
-    "ctaWhatsapp": "📲 WhatsApp 080-140-6745",
     "ctaViewPlot": "View the plot →",
     "resourcesLabel": "Official resources",
     "resourceImmigration": "Thai Immigration Department",
@@ -317,8 +317,7 @@
     "resourceBoi": "Board of Investment (LTR visa)",
     "resourceHospital": "Bangkok Hospital Hua Hin",
     "resourceLand": "Land Department (property)",
-    "resourceVerify": "Verify Thai property records",
-    "waMessage": "Hi — I am interested in the Soi 112 Hua Hin land listing for retirement."
+    "resourceVerify": "Verify Thai property records"
   },
   "golf": {
     "heroAlt": "Majestic Creek Country Club golf course Hua Hin",

@@ -3,7 +3,9 @@
 import { useState, useEffect } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
 import HomeNavbar from '@/components/HomeNavbar'
+import LineButton from '@/components/LineButton'
 import { Link } from '@/i18n/navigation'
+import { LINE_AGENT_URL, AGENT_PHONE } from '@/lib/contact'
 
 declare global {
   interface Window {
@@ -12,7 +14,7 @@ declare global {
 }
 }
 
-const PHONE = '66801406745'
+const PHONE = AGENT_PHONE
 
 function isInternalHref(href: string) {
   return (
@@ -185,6 +187,7 @@ const popularGuides = [
 
 export default function Home() {
   const t = useTranslations('homepage')
+  const tc = useTranslations('common')
   const locale = useLocale()
   const [lightbox, setLightbox] = useState<string | null>(null)
   const [slideIndex, setSlideIndex] = useState(0)
@@ -287,15 +290,6 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap items-center gap-3 mb-4">
             <a
-              href={`https://wa.me/${PHONE}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center min-h-[52px] font-semibold px-8 py-3.5 rounded-xl text-base md:text-lg transition-all shadow-lg hover:shadow-xl hover:brightness-110"
-              style={{background: '#C8973A', color: '#ffffff'}}
-            >
-              {t('cta')}
-            </a>
-            <a
               href="mailto:kleinjansmike@gmail.com?subject=Enquiry%20—%20Hua%20Hin%20Soi%20112%20land"
               className="inline-flex items-center justify-center min-h-[52px] font-semibold px-8 py-3.5 rounded-xl text-base md:text-lg transition-all bg-white/15 hover:bg-white/25 text-white border border-white/40 backdrop-blur-sm"
               style={{textShadow: '0 1px 3px rgba(0,0,0,0.5)'}}
@@ -305,12 +299,21 @@ export default function Home() {
           </div>
           <div>
             <a
-              href="tel:0659012984"
+              href={`tel:${PHONE}`}
               className="text-white text-base md:text-lg font-medium hover:text-white/90 transition-colors underline-offset-4 hover:underline"
               style={{textShadow: '0 1px 4px rgba(0,0,0,0.9)'}}
             >
               {t('ctaCall')}
             </a>
+          </div>
+          <div className="mt-5 flex flex-col items-start gap-2">
+            <LineButton size="sm" />
+            <p
+              className="text-white/80 text-sm"
+              style={{ textShadow: '0 1px 3px rgba(0,0,0,0.6)' }}
+            >
+              Good land YAI · 065-901-2984
+            </p>
           </div>
           <p
             className="mt-6 text-white/85 text-sm md:text-base"
@@ -341,16 +344,18 @@ export default function Home() {
               {t('partialSaleNote')}
             </p>
             <p className="text-[#5C5247] text-xs mt-2 leading-relaxed">
-              {t('partialSaleCta')}{' '}
               <a
-                href={`https://wa.me/${PHONE}?text=${encodeURIComponent('Hi — I am interested in a partial purchase (1–2 rai) of the Soi 112 plot.')}`}
+                href={LINE_AGENT_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#C8973A] hover:underline underline-offset-2 font-medium"
+                className="text-[#06C755] hover:underline underline-offset-2 font-medium"
               >
-                {t('whatsappArrow')}
+                {t('partialSaleCta')}
               </a>
             </p>
+            <div className="mt-4">
+              <LineButton size="sm" />
+            </div>
           </div>
           <a
             href="https://data.hua-hin-land.com"
@@ -811,9 +816,13 @@ export default function Home() {
                   >
                     {formStatus === 'sending' ? t('contactSending') : `${t('contactSend')} →`}
                   </button>
-                  <p className="text-[#5C5247] text-xs text-center">WhatsApp: 080-140-6745</p>
+                  <p className="text-[#5C5247] text-xs text-center pt-2">{tc('lineNote')}</p>
                 </form>
               )}
+              <div className="mt-6 flex flex-col items-center gap-2 border-t border-[#E8E2D6] pt-6">
+                <LineButton size="sm" />
+                <p className="text-[#5C5247] text-sm text-center">Good land YAI · 065-901-2984</p>
+              </div>
             </div>
           </div>
         </div>
@@ -831,11 +840,7 @@ export default function Home() {
           </h2>
           <p className="text-white/90 text-lg mb-10 leading-relaxed" style={{textShadow: '0 1px 8px rgba(0,0,0,0.45)'}}>{t('urgency')}</p>
           <div className="flex flex-wrap items-center justify-center gap-3 mb-4">
-            <a href={`https://wa.me/${PHONE}`} target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center justify-center min-h-[52px] font-semibold px-8 py-3.5 rounded-[12px] text-lg transition-all shadow-lg hover:brightness-110"
-              style={{background: '#C8973A', color: '#ffffff'}}>
-              {t('cta')}
-            </a>
+            <LineButton size="lg" className="rounded-[12px]" />
             <a
               href="mailto:kleinjansmike@gmail.com?subject=Enquiry%20—%20Hua%20Hin%20Soi%20112%20land"
               className="inline-flex items-center justify-center min-h-[52px] font-semibold px-8 py-3.5 rounded-[12px] text-lg transition-all bg-white text-[#1A2744] border border-[#C8973A]"
@@ -843,7 +848,7 @@ export default function Home() {
               {t('ctaEmail')}
             </a>
           </div>
-          <a href="tel:0659012984" className="inline-block text-white text-sm hover:text-white/90 underline-offset-4 hover:underline mb-8" style={{textShadow: '0 1px 3px rgba(0,0,0,0.8)'}}>
+          <a href={`tel:${PHONE}`} className="inline-block text-white text-sm hover:text-white/90 underline-offset-4 hover:underline mb-8" style={{textShadow: '0 1px 3px rgba(0,0,0,0.8)'}}>
             {t('ctaCall')}
           </a>
           <div className="mt-4">
@@ -926,10 +931,18 @@ export default function Home() {
           </div>
           <div className="border-t border-white/10">
             <div className="max-w-5xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-white/50 text-sm text-center md:text-left">
-                Thap Tai, Soi 112, Hua Hin, Prachuap Khiri Khan 77110, Thailand<br/>
-                <span className="text-white/40 text-xs">080-140-6745 · Thai: 065-901-2984</span>
-              </p>
+              <div className="text-center md:text-left">
+                <p className="text-white/50 text-sm">
+                  Thap Tai, Soi 112, Hua Hin, Prachuap Khiri Khan 77110, Thailand<br/>
+                  <span className="text-white/40 text-xs">
+                    <a href={`tel:${PHONE}`} className="hover:text-[#C8973A] transition-colors">065-901-2984</a>
+                  </span>
+                </p>
+                <div className="mt-3 flex flex-col items-center md:items-start gap-2">
+                  <LineButton size="sm" />
+                  <p className="text-white/50 text-sm">Good land YAI · 065-901-2984</p>
+                </div>
+              </div>
               <div className="flex flex-col items-center md:items-end gap-1 text-center md:text-right">
                 <a href="https://allesis.nl" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-[#C8973A] transition-colors">
                   Webdesign by <span className="text-[#C8973A] font-medium">Allesis.nl</span>

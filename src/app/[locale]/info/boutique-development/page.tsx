@@ -2,6 +2,7 @@
 
 import ContactDisclaimerNote from '@/components/ContactDisclaimerNote'
 import DisclaimerFooter from '@/components/DisclaimerFooter'
+import LineButton from '@/components/LineButton'
 import LangSwitcher from '@/components/LangSwitcher'
 import { getBoutiqueDevelopmentContent } from '@/content/boutique-development'
 import { useSiteLang } from '@/lib/site-lang'
@@ -57,9 +58,12 @@ export default function BoutiqueDevelopmentPage() {
 
         <div className="text-center">
           <ContactDisclaimerNote />
-          <a href="/#contact" className="inline-flex items-center gap-2 bg-[#C8973A] hover:brightness-110 text-white font-bold px-8 py-4 rounded-[12px] transition-all">
+          <div className="flex flex-wrap items-center gap-3">
+            <a href="/#contact" className="inline-flex items-center gap-2 bg-[#C8973A] hover:brightness-110 text-white font-bold px-8 py-4 rounded-[12px] transition-all">
             {c.getInTouch}
           </a>
+            <LineButton size="md" />
+          </div>
         </div>
       </div>
       <div className="max-w-3xl mx-auto px-6 pb-12">
