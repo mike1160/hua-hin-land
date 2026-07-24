@@ -1,0 +1,213 @@
+import DisclaimerFooter from '@/components/DisclaimerFooter'
+import LangSwitcher from '@/components/LangSwitcher'
+
+const PHONE = '66801406745'
+const WA_URL = `https://wa.me/${PHONE}?text=${encodeURIComponent('Hallo — ich interessiere mich für das Grundstück Soi 112 Hua Hin.')}`
+
+export default function GermanPage() {
+  return (
+    <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]" lang="de">
+      <LangSwitcher />
+      <div className="relative h-72 md:h-80 flex items-end pb-10 px-6">
+        <div className="absolute inset-0">
+          <img
+            src="/neighbourhood.jpg"
+            alt="Hua Hin Nachbarschaft und Botanica"
+            className="w-full h-full object-cover"
+            style={{ objectPosition: 'center 40%' }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.35) 70%, #FAF7F0 100%)' }}
+          />
+        </div>
+        <div className="relative z-10 max-w-3xl">
+          <a href="/" className="text-[#C8973A] text-xs mb-4 inline-block hover:text-[#d4a84f] transition-colors">
+            ← Zurück zum Angebot
+          </a>
+          <p className="text-[#C8973A] text-xs uppercase tracking-widest font-medium mb-2" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}>
+            Für deutsche Käufer
+          </p>
+          <h1
+            className="text-white text-3xl md:text-5xl font-bold mt-1 leading-tight"
+            style={{ fontFamily: 'Playfair Display, serif', textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}
+          >
+            Hua Hin — Deutschlands beliebtestes Thailand-Ziel
+          </h1>
+        </div>
+      </div>
+
+      <div className="max-w-3xl mx-auto px-6 py-12 space-y-8">
+        <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6">
+          <p className="text-[#C8973A] text-xs uppercase tracking-widest font-medium mb-3">Die Community</p>
+          <h2 className="text-[#1A2744] text-xl md:text-2xl font-semibold mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
+            Deutsche Expats stark vertreten.
+          </h2>
+          <p className="text-[#5C5247] text-sm leading-relaxed mb-4">
+            Hua Hin zählt zu den beliebtesten Thailand-Zielen für deutsche Reisende und Langzeitexpats — ruhig, königlich und international, ohne den Partytourismus von Phuket oder Pattaya.
+          </p>
+          <p className="text-[#5C5247] text-sm leading-relaxed">
+            Direktflüge nach Bangkok mit Lufthansa und Thai Airways machen den Weg aus Deutschland unkompliziert — für Familie, Business und den Wechsel zwischen beiden Welten.
+          </p>
+        </div>
+
+        <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6">
+          <p className="text-[#C8973A] text-xs uppercase tracking-widest font-medium mb-3">Golf</p>
+          <h2 className="text-[#1A2744] text-xl md:text-2xl font-semibold mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
+            Über 10 Golfplätze — ideal für deutsche Golfer.
+          </h2>
+          <p className="text-[#5C5247] text-sm leading-relaxed mb-4">
+            Championship-Kurse innerhalb von 30 Minuten, darunter Majestic Creek (5 Min. vom Grundstück), Black Mountain und Royal Hua Hin. Hua Hin gilt als Golfauptstadt Südostasiens.
+          </p>
+          <a href="/nearby/golf" className="text-[#C8973A] hover:text-[#d4a84f] text-sm transition-colors">
+            Golf in der Nähe →
+          </a>
+        </div>
+
+        <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6">
+          <p className="text-[#C8973A] text-xs uppercase tracking-widest font-medium mb-3">Kosten</p>
+          <h2 className="text-[#1A2744] text-xl md:text-2xl font-semibold mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>
+            55–65% günstiger als Deutschland.
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {[
+              { value: '55–65%', label: 'günstiger als Leben in Deutschland' },
+              { value: '10+', label: 'Golfplätze in 30 Minuten' },
+              { value: '15 Min.', label: 'zum Bangkok Hospital Hua Hin' },
+              { value: '1 Rai+', label: 'Teilverkauf möglich' },
+            ].map((stat) => (
+              <div key={stat.label} className="bg-[#FAF7F0] p-4" style={{ border: '1px solid #E8E2D6', borderRadius: '12px' }}>
+                <p className="text-[#C8973A] text-xl font-bold" style={{ fontFamily: 'Playfair Display, serif' }}>{stat.value}</p>
+                <p className="text-[#5C5247] text-xs mt-1 leading-snug">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6">
+          <p className="text-[#C8973A] text-xs uppercase tracking-widest font-medium mb-3">Visum</p>
+          <h2 className="text-[#1A2744] text-xl md:text-2xl font-semibold mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
+            Langfristiger Aufenthalt für Deutsche
+          </h2>
+          <ul className="space-y-4 text-sm">
+            <li className="border-b border-[#E8E2D6] pb-4">
+              <p className="text-[#1A2744] font-semibold mb-1">Non-Immigrant O-A Rentenvisum</p>
+              <p className="text-[#5C5247] leading-relaxed mb-2">
+                1 Jahr, verlängerbar. Ab 50 Jahren. Einkommens- oder Sparnachweis erforderlich.
+              </p>
+              <a href="https://www.immigration.go.th" target="_blank" rel="noopener noreferrer" className="text-[#C8973A] hover:text-[#d4a84f] text-xs transition-colors">
+                → Offizielle Website Thai Immigration
+              </a>
+            </li>
+            <li className="border-b border-[#E8E2D6] pb-4">
+              <p className="text-[#1A2744] font-semibold mb-1">Thailand Privilege</p>
+              <p className="text-[#5C5247] leading-relaxed">
+                Mehrjährige Aufenthaltsprogramme — beliebt bei deutschen Langzeitgästen.
+              </p>
+            </li>
+            <li>
+              <p className="text-[#1A2744] font-semibold mb-1">LTR Visum (Long-Term Resident)</p>
+              <p className="text-[#5C5247] leading-relaxed mb-2">
+                Bis zu 10 Jahre — seit 2022, mit erweiterten Rechten.
+              </p>
+              <a href="https://ltr.boi.go.th" target="_blank" rel="noopener noreferrer" className="text-[#C8973A] hover:text-[#d4a84f] text-xs transition-colors">
+                → Offizielles LTR-Portal (Board of Investment)
+              </a>
+            </li>
+          </ul>
+          <p className="text-[#5C5247] text-xs mt-5 pt-4 border-t border-[#E8E2D6] leading-relaxed">
+            Bitte immer einen zugelassenen thailändischen Immigrationsanwalt konsultieren.{' '}
+            <a href="/life/retirees" className="text-[#C8973A] hover:text-[#d4a84f] transition-colors">
+              Ausführlicher Visa-Guide (EN) →
+            </a>
+          </p>
+        </div>
+
+        <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6">
+          <p className="text-[#C8973A] text-xs uppercase tracking-widest font-medium mb-3">Gesundheit</p>
+          <h2 className="text-[#1A2744] text-xl md:text-2xl font-semibold mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
+            Klinikniveau — 15 Minuten entfernt.
+          </h2>
+          <p className="text-[#5C5247] text-sm leading-relaxed mb-4">
+            Bangkok Hospital Hua Hin ist JCI-akkreditiert mit englischsprachigen Ärzten. Viele deutsche Expats nennen die Gesundheitsversorgung als Hauptgrund für Hua Hin.
+          </p>
+          <a href="https://www.bangkokhospital.com/en/huahin" target="_blank" rel="noopener noreferrer" className="text-[#C8973A] hover:text-[#d4a84f] text-sm transition-colors">
+            Bangkok Hospital Hua Hin →
+          </a>
+        </div>
+
+        <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6">
+          <p className="text-[#C8973A] text-xs uppercase tracking-widest font-medium mb-3">Eigentum</p>
+          <h2 className="text-[#1A2744] text-xl md:text-2xl font-semibold mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
+            Chanote — die stärkste Eigentumsform in Thailand.
+          </h2>
+          <p className="text-[#5C5247] text-sm leading-relaxed mb-4">
+            Ein Chanote (NS.4J) ist Freehold: GPS-vermessen, beim Land Department registriert, verkauf- und vererbbar. Teilverkauf ab 1 Rai ist möglich — mit abweichendem Preis pro Rai.
+          </p>
+          <div className="flex flex-wrap gap-4 text-sm">
+            <a href="/info/chanote" className="text-[#C8973A] hover:text-[#d4a84f] transition-colors">Chanote erklärt →</a>
+            <a href="https://data.hua-hin-land.com" target="_blank" rel="noopener noreferrer" className="text-[#C8973A] hover:text-[#d4a84f] transition-colors">
+              Thailändische Eigentumsregister prüfen →
+            </a>
+          </div>
+        </div>
+
+        <div className="bg-white p-6 md:p-8 text-center" style={{ border: '1px solid #E8E2D6', borderRadius: '16px' }}>
+          <p className="text-[#C8973A] text-xs uppercase tracking-widest font-medium mb-3">Ihr nächstes Kapitel</p>
+          <h2 className="text-[#1A2744] text-xl md:text-2xl font-semibold mb-4 leading-snug" style={{ fontFamily: 'Playfair Display, serif' }}>
+            Bauen Sie Ihr Zuhause auf Soi 112.
+          </h2>
+          <p className="text-[#5C5247] text-sm leading-relaxed mb-6 max-w-xl mx-auto">
+            4 Rai 2 Ngan ebenes Chanote-Land im begehrtesten Korridor Hua Hins. Ab $63.000/Rai. Teilverkauf ab 1 Rai möglich.
+          </p>
+          <a
+            href={WA_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center min-h-[48px] font-semibold px-8 py-3 text-white text-sm transition-all hover:brightness-110"
+            style={{ background: '#C8973A', borderRadius: '12px' }}
+          >
+            📲 WhatsApp 080-140-6745
+          </a>
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-4">
+            <a href="/" className="text-[#C8973A] hover:text-[#d4a84f] transition-colors text-sm font-medium">Zum Grundstück →</a>
+            <a href="https://data.hua-hin-land.com" target="_blank" rel="noopener noreferrer" className="text-[#C8973A] hover:text-[#d4a84f] transition-colors text-sm font-medium">
+              Eigentum prüfen →
+            </a>
+          </div>
+        </div>
+
+        <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-6">
+          <p className="text-[#C8973A] text-xs uppercase tracking-widest font-medium mb-4">Offizielle Quellen</p>
+          <ul className="space-y-2.5 text-sm">
+            {[
+              { label: 'Thai Immigration Department', href: 'https://www.immigration.go.th', display: 'immigration.go.th' },
+              { label: 'LTR-Visum (Board of Investment)', href: 'https://ltr.boi.go.th', display: 'ltr.boi.go.th' },
+              { label: 'Bangkok Hospital Hua Hin', href: 'https://www.bangkokhospital.com/en/huahin', display: 'bangkokhospital.com/en/huahin' },
+              { label: 'Thailändische Eigentumsregister', href: 'https://data.hua-hin-land.com', display: 'data.hua-hin-land.com' },
+              { label: 'Ausführlicher Renten-/Visa-Guide', href: '/life/retirees', display: 'hua-hin-land.com/life/retirees' },
+            ].map((link) => (
+              <li key={link.href} className="flex flex-col sm:flex-row sm:items-baseline sm:gap-2">
+                <span className="text-[#5C5247] text-xs sm:text-sm sm:min-w-[220px]">{link.label}</span>
+                <a
+                  href={link.href}
+                  {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  className="text-[#1A2744] hover:text-[#C8973A] transition-colors font-medium"
+                >
+                  {link.display}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <div className="max-w-3xl mx-auto px-6 pb-12">
+        <DisclaimerFooter />
+        <div className="text-center pt-4">
+          <a href="/" className="text-[#C8973A] hover:text-[#d4a84f] transition-colors text-sm">← Zurück zum Angebot</a>
+        </div>
+      </div>
+    </main>
+  )
+}

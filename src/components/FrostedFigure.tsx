@@ -19,7 +19,10 @@ export default function FrostedFigure({
 }: FrostedFigureProps) {
   return (
     <figure>
-      <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10">
+      <div
+        className="relative aspect-video overflow-hidden"
+        style={{ border: '1px solid #E8E2D6', borderRadius: '12px' }}
+      >
         <Image
           src={src}
           alt={alt}
@@ -33,7 +36,7 @@ export default function FrostedFigure({
           <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px]" aria-hidden="true" />
         )}
       </div>
-      <figcaption className="text-white/40 text-xs mt-2">{caption}</figcaption>
+      <figcaption className="text-[#5C5247] text-xs mt-2">{caption}</figcaption>
     </figure>
   )
 }

@@ -1,20 +1,17 @@
 'use client'
 
-import type { Lang } from '../lib/site-lang'
-import { useSiteLang } from '../lib/site-lang'
-import { ui } from '../lib/ui-strings'
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 
-export default function ContactDisclaimerNote({ lang: langProp }: { lang?: Lang }) {
-  const { lang: hookLang } = useSiteLang()
-  const lang = langProp ?? hookLang
-  const c = ui[lang]
+export default function ContactDisclaimerNote() {
+  const t = useTranslations('common')
 
   return (
-    <p className="text-white/40 text-xs text-center leading-relaxed mb-3">
-      {c.contactDisclaimer}{' '}
-      <a href="/legal/disclaimer" className="text-purple-300/70 hover:text-purple-200 hover:underline transition-colors">
-        {c.contactDisclaimerLink}
-      </a>
+    <p className="text-[#5C5247] text-xs text-center leading-relaxed mb-3">
+      {t('contactDisclaimer')}{' '}
+      <Link href="/legal/disclaimer" className="text-[#A67B2E] hover:text-[#8F6826] hover:underline transition-colors">
+        {t('contactDisclaimerLink')}
+      </Link>
       .
     </p>
   )

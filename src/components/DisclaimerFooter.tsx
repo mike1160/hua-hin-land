@@ -1,27 +1,25 @@
 'use client'
 
-import type { Lang } from '../lib/site-lang'
-import { useSiteLang } from '../lib/site-lang'
-import { ui } from '../lib/ui-strings'
+import { useLocale, useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 
-export default function DisclaimerFooter({ lang: langProp }: { lang?: Lang }) {
-  const { lang: hookLang } = useSiteLang()
-  const lang = langProp ?? hookLang
-  const c = ui[lang]
+export default function DisclaimerFooter() {
+  const t = useTranslations('common')
+  const locale = useLocale()
 
   return (
-    <div className="border-t border-white/10 pt-6">
-      <p className="text-white/35 text-xs leading-relaxed text-center break-words">
-        {c.disclaimerFooter}{' '}
-        <a href="/legal/disclaimer" className="text-white/50 hover:text-white/70 transition-colors underline underline-offset-2 whitespace-nowrap">
-          {c.disclaimerFooterLink}
-        </a>
-        {lang === 'TH' && (
+    <div className="border-t border-[#E8E2D6] pt-6">
+      <p className="text-[#5C5247] text-xs leading-relaxed text-center break-words">
+        {t('disclaimerFooter')}{' '}
+        <Link href="/legal/disclaimer" className="text-[#A67B2E] hover:text-[#8F6826] transition-colors underline underline-offset-2 whitespace-nowrap">
+          {t('disclaimerFooterLink')}
+        </Link>
+        {locale === 'th' && (
           <>
             {' · '}
-            <a href="/legal/privacy" className="text-white/50 hover:text-white/70 transition-colors underline underline-offset-2 whitespace-nowrap">
-              {c.legalFooterPrivacy}
-            </a>
+            <Link href="/legal/privacy" className="text-[#A67B2E] hover:text-[#8F6826] transition-colors underline underline-offset-2 whitespace-nowrap">
+              {t('legalFooterPrivacy')}
+            </Link>
           </>
         )}
       </p>
