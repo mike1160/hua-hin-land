@@ -32,7 +32,7 @@ const navGroups: NavGroup[] = [
     labelKey: 'forYouMenu',
     items: [
       { labelKey: 'forYou.europeans', href: '/life/european-retirees' },
-      { labelKey: 'forYou.americans', href: '/life/retirees' },
+      { labelKey: 'forYou.americans', href: '/life/usa-retirees' },
       { labelKey: 'forYou.dutch', href: '/life/dutch' },
       { labelKey: 'forYou.germanicScandi', href: '/life/scandinavians' },
       { labelKey: 'forYou.foreignBuyers', href: '/info/foreign-buyers' },

@@ -1,15 +1,8 @@
 import { getLocale } from 'next-intl/server'
 import { redirect } from '@/i18n/navigation'
-import AmericanRetireesPage from './AmericanRetireesPage'
 
-const EUROPEAN_LOCALES = new Set(['nl', 'de', 'sv', 'da'])
-
-export default async function RetireesPage() {
+/** Legacy URL — always send visitors to the canonical USA retirees page. */
+export default async function RetireesRedirectPage() {
   const locale = await getLocale()
-
-  if (EUROPEAN_LOCALES.has(locale)) {
-    redirect({ href: '/life/european-retirees', locale })
-  }
-
-  return <AmericanRetireesPage />
+  redirect({ href: '/life/usa-retirees', locale })
 }

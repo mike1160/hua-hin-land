@@ -64,7 +64,7 @@ const whyLinks = ['/info/chanote', '/info/terrain', '/info/water', '/nearby/blup
 const whyKeys = ['why1', 'why2', 'why3', 'why4', 'why5', 'why6'] as const
 
 const lifestyleItems = [
-  { icon: '🌅', key: 'lifeRetirees', href: '/life/retirees' },
+  { icon: '🌅', key: 'lifeRetirees', href: '/life/usa-retirees' },
   { icon: '🎵', key: 'lifeMusic', href: '/life/entertainment' },
   { icon: '⛳', key: 'lifeGolf', href: '/nearby/golf' },
   { icon: '🏖️', key: 'lifeBeach', href: '/nearby/beach' },
@@ -185,7 +185,7 @@ const nearbyHighlightCards = [
 
 const popularGuides = [
   { href: '/nearby/why-hua-hin', titleKey: 'guideWhy', desc: 'Royal history, golf capital, expat lifestyle' },
-  { href: '/life/retirees', titleKey: 'guideRetirees', desc: "Visas, costs, healthcare — the American's guide" },
+  { href: '/life/usa-retirees', titleKey: 'guideRetirees', desc: "Visas, costs, healthcare — the American's guide" },
   { href: 'https://data.hua-hin-land.com', titleKey: 'guideVerify', desc: 'Check ownership, title deeds & company records' },
 ]
 
@@ -343,7 +343,7 @@ export default function HomePageClient({ previewListings }: Props) {
             {t('learnMorePrefix')}{' '}
             <Link href="/nearby/why-hua-hin" className="text-white underline underline-offset-2 hover:text-[#C8973A] transition-colors">{t('learnWhy')}</Link>
             {' · '}
-            <Link href="/life/retirees" className="text-white underline underline-offset-2 hover:text-[#C8973A] transition-colors">{t('learnRetiring')}</Link>
+            <Link href="/life/usa-retirees" className="text-white underline underline-offset-2 hover:text-[#C8973A] transition-colors">{t('learnRetiring')}</Link>
             {' · '}
             <a href="https://data.hua-hin-land.com" target="_blank" rel="noopener noreferrer" className="text-white underline underline-offset-2 hover:text-[#C8973A] transition-colors">{t('learnVerify')}</a>
           </p>

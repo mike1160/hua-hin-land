@@ -153,7 +153,7 @@ export default function WhyHuaHinPage() {
             <Link href="/nearby/beach" className="hover:text-[#C8973A] transition-colors">
               {t('hero.linkBeaches')}
             </Link>
-            <Link href="/life/retirees" className="hover:text-[#C8973A] transition-colors">
+            <Link href="/life/usa-retirees" className="hover:text-[#C8973A] transition-colors">
               {t('hero.linkRetiring')}
             </Link>
             <Link href="/info/size" className="hover:text-[#C8973A] transition-colors">
@@ -519,7 +519,7 @@ export default function WhyHuaHinPage() {
           </div>
 
           <div className="flex flex-wrap gap-x-5 gap-y-3 text-sm">
-            <Link href="/life/retirees" className="text-[#C8973A] hover:text-[#d4a84f] font-medium transition-colors">
+            <Link href="/life/usa-retirees" className="text-[#C8973A] hover:text-[#d4a84f] font-medium transition-colors">
               {t('expats.linkRetirees')}
             </Link>
             <Link href="/life/european-retirees" className="text-[#C8973A] hover:text-[#d4a84f] font-medium transition-colors">

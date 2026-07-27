@@ -44,6 +44,7 @@ const PAGE_TITLE_KEYS: Record<string, string> = {
   town: 'pages.town',
   // life
   retirees: 'pages.retirees',
+  'usa-retirees': 'pages.retirees',
   'european-retirees': 'pages.europeanRetirees',
   dutch: 'pages.dutch',
   german: 'pages.german',
