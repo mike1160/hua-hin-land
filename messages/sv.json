@@ -30,7 +30,9 @@
       "dutch": "Voor Nederlanders",
       "germanicScandi": "Für Deutsche · För Svenskar · For Danskere",
       "foreignBuyers": "Guide för utländska köpare"
-    }
+    },
+    "listProperty": "Lista objekt",
+    "listings": "Objekt"
   },
   "languages": {
     "en": "English",
@@ -2469,5 +2471,52 @@
     "accept": "Acceptera",
     "decline": "Avvisa",
     "privacy": "Integritetspolicy →"
+  },
+  "listProperty": {
+    "pageTitle": "Lista ditt objekt",
+    "pageSubtitle": "Nå internationella köpare och expats som söker mark, bostäder och condos i Hua Hin.",
+    "sectionContact": "Dina kontaktuppgifter",
+    "name": "Fullständigt namn",
+    "email": "E-postadress",
+    "phone": "WhatsApp / Telefon",
+    "language": "Önskat språk",
+    "sectionProperty": "Objektdetaljer",
+    "type": "Objekttyp",
+    "typeLand": "Mark",
+    "typeHouse": "Hus",
+    "typeCondo": "Condo",
+    "typeVilla": "Villa",
+    "typeCommercial": "Kommersiell",
+    "transaction": "Till salu eller uthyrning?",
+    "transactionSale": "Till salu",
+    "transactionRent": "Att hyra",
+    "transactionBoth": "Båda",
+    "location": "Läge i Hua Hin",
+    "size": "Storlek (m² eller Rai)",
+    "price": "Begärt pris eller hyra (valfritt)",
+    "titleDeed": "Typ av ägarbevis",
+    "titleChanote": "Chanote",
+    "titleNorSor": "Nor Sor 3 Gor",
+    "titleOther": "Annat",
+    "titleUnknown": "Okänt",
+    "description": "Kort beskrivning (max 500 tecken)",
+    "consent": "Jag godkänner att min listning får publiceras på hua-hin-land.com",
+    "submit": "Skicka listning",
+    "submitting": "Skickar...",
+    "successTitle": "Tack!",
+    "successMessage": "Vi har mottagit din listning och återkommer snart.",
+    "errorMessage": "Något gick fel. Försök igen eller mejla oss direkt."
+  },
+  "listings": {
+    "pageTitle": "Fastighetsannonser",
+    "pageSubtitle": "Objekt till salu eller uthyrning i Hua Hin, inskickade av ägare och mäklare.",
+    "empty": "Inga objekt ännu. Bli först med att lista ditt objekt.",
+    "badgeSale": "Till salu",
+    "badgeRent": "Att hyra",
+    "badgeBoth": "Köp eller hyra",
+    "contact": "Kontakta om detta objekt",
+    "titleDeed": "Ägarbevis",
+    "size": "Storlek",
+    "price": "Pris / Hyra"
   }
 }

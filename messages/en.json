@@ -30,7 +30,9 @@
       "dutch": "Voor Nederlanders",
       "germanicScandi": "Für Deutsche · För Svenskar · For Danskere",
       "foreignBuyers": "Foreign buyers guide"
-    }
+    },
+    "listProperty": "List Property",
+    "listings": "Listings"
   },
   "languages": {
     "en": "English",
@@ -2469,5 +2471,52 @@
     "accept": "Accept",
     "decline": "Decline",
     "privacy": "Privacy policy →"
+  },
+  "listProperty": {
+    "pageTitle": "List Your Property",
+    "pageSubtitle": "Reach international buyers and expats looking for land, homes and condos in Hua Hin.",
+    "sectionContact": "Your contact details",
+    "name": "Full name",
+    "email": "Email address",
+    "phone": "WhatsApp / Phone",
+    "language": "Preferred language",
+    "sectionProperty": "Property details",
+    "type": "Property type",
+    "typeLand": "Land",
+    "typeHouse": "House",
+    "typeCondo": "Condo",
+    "typeVilla": "Villa",
+    "typeCommercial": "Commercial",
+    "transaction": "For sale or rent?",
+    "transactionSale": "For Sale",
+    "transactionRent": "For Rent",
+    "transactionBoth": "Both",
+    "location": "Location in Hua Hin",
+    "size": "Size (m² or Rai)",
+    "price": "Asking price or rent (optional)",
+    "titleDeed": "Title deed type",
+    "titleChanote": "Chanote",
+    "titleNorSor": "Nor Sor 3 Gor",
+    "titleOther": "Other",
+    "titleUnknown": "Unknown",
+    "description": "Short description (max 500 characters)",
+    "consent": "I agree that my listing may be published on hua-hin-land.com",
+    "submit": "Submit listing",
+    "submitting": "Sending...",
+    "successTitle": "Thank you!",
+    "successMessage": "We received your listing and will be in touch soon.",
+    "errorMessage": "Something went wrong. Please try again or email us directly."
+  },
+  "listings": {
+    "pageTitle": "Property Listings",
+    "pageSubtitle": "Properties for sale or rent in Hua Hin, submitted by owners and agents.",
+    "empty": "No listings yet. Be the first to list your property.",
+    "badgeSale": "For Sale",
+    "badgeRent": "For Rent",
+    "badgeBoth": "Sale or Rent",
+    "contact": "Contact about this listing",
+    "titleDeed": "Title deed",
+    "size": "Size",
+    "price": "Price / Rent"
   }
 }

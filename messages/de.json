@@ -30,7 +30,9 @@
       "dutch": "Voor Nederlanders",
       "germanicScandi": "Für Deutsche · För Svenskar · For Danskere",
       "foreignBuyers": "Leitfaden für ausländische Käufer"
-    }
+    },
+    "listProperty": "Objekt inserieren",
+    "listings": "Angebote"
   },
   "languages": {
     "en": "English",
@@ -2469,5 +2471,52 @@
     "accept": "Akzeptieren",
     "decline": "Ablehnen",
     "privacy": "Datenschutz →"
+  },
+  "listProperty": {
+    "pageTitle": "Ihr Objekt inserieren",
+    "pageSubtitle": "Erreichen Sie internationale Käufer und Expats, die nach Land, Häusern und Condos in Hua Hin suchen.",
+    "sectionContact": "Ihre Kontaktdaten",
+    "name": "Vollständiger Name",
+    "email": "E-Mail-Adresse",
+    "phone": "WhatsApp / Telefon",
+    "language": "Bevorzugte Sprache",
+    "sectionProperty": "Objektdetails",
+    "type": "Objektart",
+    "typeLand": "Grundstück",
+    "typeHouse": "Haus",
+    "typeCondo": "Condo",
+    "typeVilla": "Villa",
+    "typeCommercial": "Gewerbe",
+    "transaction": "Zum Verkauf oder zur Miete?",
+    "transactionSale": "Zum Verkauf",
+    "transactionRent": "Zur Miete",
+    "transactionBoth": "Beides",
+    "location": "Lage in Hua Hin",
+    "size": "Größe (m² oder Rai)",
+    "price": "Verkaufspreis oder Miete (optional)",
+    "titleDeed": "Art der Eigentumsurkunde",
+    "titleChanote": "Chanote",
+    "titleNorSor": "Nor Sor 3 Gor",
+    "titleOther": "Sonstiges",
+    "titleUnknown": "Unbekannt",
+    "description": "Kurzbeschreibung (max. 500 Zeichen)",
+    "consent": "Ich stimme zu, dass mein Inserat auf hua-hin-land.com veröffentlicht werden darf",
+    "submit": "Inserat absenden",
+    "submitting": "Wird gesendet...",
+    "successTitle": "Vielen Dank!",
+    "successMessage": "Wir haben Ihr Inserat erhalten und melden uns bald.",
+    "errorMessage": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt."
+  },
+  "listings": {
+    "pageTitle": "Immobilienangebote",
+    "pageSubtitle": "Objekte zum Kauf oder zur Miete in Hua Hin, eingereicht von Eigentümern und Maklern.",
+    "empty": "Noch keine Angebote. Listen Sie als Erster Ihr Objekt.",
+    "badgeSale": "Zum Verkauf",
+    "badgeRent": "Zur Miete",
+    "badgeBoth": "Kauf oder Miete",
+    "contact": "Kontakt zu diesem Angebot",
+    "titleDeed": "Eigentumsurkunde",
+    "size": "Größe",
+    "price": "Preis / Miete"
   }
 }

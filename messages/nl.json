@@ -30,7 +30,9 @@
       "dutch": "Voor Nederlanders",
       "germanicScandi": "Für Deutsche · För Svenskar · For Danskere",
       "foreignBuyers": "Gids voor buitenlandse kopers"
-    }
+    },
+    "listProperty": "Plaats object",
+    "listings": "Aanbod"
   },
   "languages": {
     "en": "English",
@@ -2469,5 +2471,52 @@
     "accept": "Accepteren",
     "decline": "Weigeren",
     "privacy": "Privacybeleid →"
+  },
+  "listProperty": {
+    "pageTitle": "Plaats uw object",
+    "pageSubtitle": "Bereik internationale kopers en expats die op zoek zijn naar grond, woningen en condo's in Hua Hin.",
+    "sectionContact": "Uw contactgegevens",
+    "name": "Volledige naam",
+    "email": "E-mailadres",
+    "phone": "WhatsApp / Telefoon",
+    "language": "Voorkeurstaal",
+    "sectionProperty": "Objectgegevens",
+    "type": "Type object",
+    "typeLand": "Grond",
+    "typeHouse": "Huis",
+    "typeCondo": "Condo",
+    "typeVilla": "Villa",
+    "typeCommercial": "Commercieel",
+    "transaction": "Te koop of te huur?",
+    "transactionSale": "Te koop",
+    "transactionRent": "Te huur",
+    "transactionBoth": "Beide",
+    "location": "Locatie in Hua Hin",
+    "size": "Oppervlakte (m² of Rai)",
+    "price": "Vraagprijs of huur (optioneel)",
+    "titleDeed": "Type eigendomsakte",
+    "titleChanote": "Chanote",
+    "titleNorSor": "Nor Sor 3 Gor",
+    "titleOther": "Anders",
+    "titleUnknown": "Onbekend",
+    "description": "Korte beschrijving (max. 500 tekens)",
+    "consent": "Ik ga ermee akkoord dat mijn listing op hua-hin-land.com mag worden gepubliceerd",
+    "submit": "Listing indienen",
+    "submitting": "Verzenden...",
+    "successTitle": "Bedankt!",
+    "successMessage": "We hebben uw listing ontvangen en nemen binnenkort contact op.",
+    "errorMessage": "Er ging iets mis. Probeer het opnieuw of mail ons rechtstreeks."
+  },
+  "listings": {
+    "pageTitle": "Vastgoedaanbod",
+    "pageSubtitle": "Objecten te koop of te huur in Hua Hin, aangeboden door eigenaren en makelaars.",
+    "empty": "Nog geen listings. Wees de eerste die een object plaatst.",
+    "badgeSale": "Te koop",
+    "badgeRent": "Te huur",
+    "badgeBoth": "Koop of huur",
+    "contact": "Contact over deze listing",
+    "titleDeed": "Eigendomsakte",
+    "size": "Oppervlakte",
+    "price": "Prijs / Huur"
   }
 }

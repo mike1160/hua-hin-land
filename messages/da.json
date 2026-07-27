@@ -30,7 +30,9 @@
       "dutch": "Voor Nederlanders",
       "germanicScandi": "Für Deutsche · För Svenskar · For Danskere",
       "foreignBuyers": "Guide til udenlandske købere"
-    }
+    },
+    "listProperty": "Annoncér ejendom",
+    "listings": "Annoncer"
   },
   "languages": {
     "en": "English",
@@ -2469,5 +2471,52 @@
     "accept": "Accepter",
     "decline": "Afvis",
     "privacy": "Privatlivspolitik →"
+  },
+  "listProperty": {
+    "pageTitle": "Annoncér din ejendom",
+    "pageSubtitle": "Nå internationale købere og expats, der leder efter jord, boliger og condo'er i Hua Hin.",
+    "sectionContact": "Dine kontaktoplysninger",
+    "name": "Fulde navn",
+    "email": "E-mailadresse",
+    "phone": "WhatsApp / Telefon",
+    "language": "Foretrukket sprog",
+    "sectionProperty": "Ejendomsoplysninger",
+    "type": "Ejendomstype",
+    "typeLand": "Jord",
+    "typeHouse": "Hus",
+    "typeCondo": "Condo",
+    "typeVilla": "Villa",
+    "typeCommercial": "Erhverv",
+    "transaction": "Til salg eller leje?",
+    "transactionSale": "Til salg",
+    "transactionRent": "Til leje",
+    "transactionBoth": "Begge",
+    "location": "Beliggenhed i Hua Hin",
+    "size": "Størrelse (m² eller Rai)",
+    "price": "Udbudspris eller leje (valgfrit)",
+    "titleDeed": "Type skøde",
+    "titleChanote": "Chanote",
+    "titleNorSor": "Nor Sor 3 Gor",
+    "titleOther": "Andet",
+    "titleUnknown": "Ukendt",
+    "description": "Kort beskrivelse (maks. 500 tegn)",
+    "consent": "Jeg accepterer, at min annonce må offentliggøres på hua-hin-land.com",
+    "submit": "Send annonce",
+    "submitting": "Sender...",
+    "successTitle": "Tak!",
+    "successMessage": "Vi har modtaget din annonce og vender snart tilbage.",
+    "errorMessage": "Noget gik galt. Prøv igen eller skriv direkte til os."
+  },
+  "listings": {
+    "pageTitle": "Ejendomsannoncer",
+    "pageSubtitle": "Ejendomme til salg eller leje i Hua Hin, indsendt af ejere og mæglere.",
+    "empty": "Ingen annoncer endnu. Vær den første til at annoncere din ejendom.",
+    "badgeSale": "Til salg",
+    "badgeRent": "Til leje",
+    "badgeBoth": "Salg eller leje",
+    "contact": "Kontakt om denne annonce",
+    "titleDeed": "Skøde",
+    "size": "Størrelse",
+    "price": "Pris / Leje"
   }
 }

@@ -30,7 +30,9 @@
       "dutch": "Voor Nederlanders",
       "germanicScandi": "Für Deutsche · För Svenskar · For Danskere",
       "foreignBuyers": "คู่มือผู้ซื้อต่างชาติ"
-    }
+    },
+    "listProperty": "ลงประกาศอสังหาฯ",
+    "listings": "รายการประกาศ"
   },
   "languages": {
     "en": "English",
@@ -2480,5 +2482,52 @@
     "accept": "ยอมรับ",
     "decline": "ปฏิเสธ",
     "privacy": "นโยบายความเป็นส่วนตัว →"
+  },
+  "listProperty": {
+    "pageTitle": "ลงประกาศอสังหาริมทรัพย์ของคุณ",
+    "pageSubtitle": "เข้าถึงผู้ซื้อและชาวต่างชาติที่มองหาที่ดิน บ้าน และคอนโดในหัวหิน",
+    "sectionContact": "ข้อมูลติดต่อของคุณ",
+    "name": "ชื่อ-นามสกุล",
+    "email": "อีเมล",
+    "phone": "WhatsApp / โทรศัพท์",
+    "language": "ภาษาที่ต้องการ",
+    "sectionProperty": "รายละเอียดทรัพย์สิน",
+    "type": "ประเภททรัพย์สิน",
+    "typeLand": "ที่ดิน",
+    "typeHouse": "บ้าน",
+    "typeCondo": "คอนโด",
+    "typeVilla": "วิลล่า",
+    "typeCommercial": "เชิงพาณิชย์",
+    "transaction": "ขายหรือเช่า?",
+    "transactionSale": "ขาย",
+    "transactionRent": "เช่า",
+    "transactionBoth": "ทั้งสองอย่าง",
+    "location": "ทำเลในหัวหิน",
+    "size": "ขนาด (ตร.ม. หรือ ไร่)",
+    "price": "ราคาขายหรือค่าเช่า (ไม่บังคับ)",
+    "titleDeed": "ประเภทโฉนด",
+    "titleChanote": "โฉนด (Chanote)",
+    "titleNorSor": "น.ส.3 ก.",
+    "titleOther": "อื่นๆ",
+    "titleUnknown": "ไม่ทราบ",
+    "description": "คำอธิบายสั้นๆ (สูงสุด 500 ตัวอักษร)",
+    "consent": "ฉันยินยอมให้ประกาศของฉันเผยแพร่บน hua-hin-land.com ได้",
+    "submit": "ส่งประกาศ",
+    "submitting": "กำลังส่ง...",
+    "successTitle": "ขอบคุณ!",
+    "successMessage": "เราได้รับประกาศของคุณแล้ว และจะติดต่อกลับในไม่ช้า",
+    "errorMessage": "เกิดข้อผิดพลาด กรุณาลองอีกครั้ง หรืออีเมลหาเราโดยตรง"
+  },
+  "listings": {
+    "pageTitle": "รายการอสังหาริมทรัพย์",
+    "pageSubtitle": "อสังหาริมทรัพย์ขายหรือเช่าในหัวหิน จากเจ้าของและนายหน้า",
+    "empty": "ยังไม่มีประกาศ เป็นคนแรกที่ลงประกาศอสังหาริมทรัพย์ของคุณ",
+    "badgeSale": "ขาย",
+    "badgeRent": "เช่า",
+    "badgeBoth": "ขายหรือเช่า",
+    "contact": "ติดต่อเกี่ยวกับประกาศนี้",
+    "titleDeed": "โฉนด",
+    "size": "ขนาด",
+    "price": "ราคา / ค่าเช่า"
   }
 }

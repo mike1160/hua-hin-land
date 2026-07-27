@@ -15,6 +15,8 @@ const nextConfig = {
       { source: '/legal/:path*', destination: '/en/legal/:path*' },
       { source: '/disclaimer', destination: '/en/disclaimer' },
       { source: '/privacy', destination: '/en/privacy' },
+      { source: '/list-property', destination: '/en/list-property' },
+      { source: '/listings', destination: '/en/listings' },
     ]
   },
   async redirects() {
