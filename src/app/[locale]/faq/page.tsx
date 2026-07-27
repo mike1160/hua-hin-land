@@ -14,6 +14,61 @@ const categories = [
   { key: 'cat4', itemCount: 2 },
 ] as const
 
+const faqPageLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Can foreigners buy land in Thailand?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Foreigners cannot directly own land in Thailand. The most common legal structures are leasehold (30 years, renewable to 90), purchasing via a registered Thai company, or via a Thai spouse. Always consult an independent Thai lawyer before any transaction.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is a Chanote title deed?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Chanote (NS.4J) is the strongest form of land ownership in Thailand. It is GPS-surveyed, registered at the Land Office, and freely transferable. Always insist on a Chanote when buying land in Thailand.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much does land cost in Hua Hin?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Land prices in Hua Hin vary by location. Soi 112 / Thap Tai: ฿2.0–3.5M per rai. Black Mountain: ฿3–6M per rai. This plot is priced at ฿2,300,000 per rai — below market for the Soi 112 corridor.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the total price of this plot?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The full plot of 4 Rai 2 Ngan is priced at ฿10,350,000 (approximately €270,000 or $285,000). Partial sale from 1 Rai is available — contact the agent for pricing.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is partial sale available?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. The plot can be purchased from 1 Rai upwards. Pricing per Rai for partial sale is available on request via LINE or WhatsApp: +66 65 901 2984.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the nominee crackdown in Thailand 2026?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'In 2026 Thailand tightened enforcement against nominee company structures used by foreigners to illegally hold land. Buyers using Thai company structures with no genuine business activity face increased legal risk. Always consult an independent lawyer about the safest legal structure for your situation.',
+      },
+    },
+  ],
+}
+
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false)
   const panelId = useId()
@@ -54,6 +109,10 @@ export default function FaqPage() {
 
   return (
     <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageLd) }}
+      />
       <BreadcrumbNav />
 
       {/* HERO */}
