@@ -1,7 +1,6 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import BreadcrumbNav from '@/components/BreadcrumbNav'
 import DisclaimerFooter from '@/components/DisclaimerFooter'
-import { Link } from '@/i18n/navigation'
 import { fetchApprovedListings, type PublicListing } from '@/lib/listings'
 
 type Props = {
@@ -44,12 +43,14 @@ export default async function ListingsPage({ params }: Props) {
           {listings.length === 0 ? (
             <div className="bg-white border border-[#E8E2D6] rounded-[12px] p-8 md:p-12 text-center">
               <p className="text-[#5C5247] text-sm md:text-base mb-6">{t('empty')}</p>
-              <Link
-                href="/list-property"
+              <a
+                href="https://www.thaiplot.com/list-property"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-semibold border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white transition-colors"
               >
                 {tn('listProperty')}
-              </Link>
+              </a>
             </div>
           ) : (
             <div className="grid gap-6 md:grid-cols-2">
@@ -109,12 +110,14 @@ export default async function ListingsPage({ params }: Props) {
                       <div className="flex-1" />
                     )}
 
-                    <Link
-                      href={`/?subject=${subject}#contact`}
+                    <a
+                      href={`https://www.thaiplot.com/contact?subject=${subject}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center justify-center w-full min-h-[44px] px-4 rounded-lg text-sm font-semibold bg-amber-600 hover:bg-amber-700 text-white transition-colors"
                     >
                       {t('contact')}
-                    </Link>
+                    </a>
                   </article>
                 )
               })}

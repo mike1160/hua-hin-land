@@ -309,12 +309,14 @@ export default function HomePageClient({ previewListings }: Props) {
             >
               {t('ctaEmail')}
             </a>
-            <Link
-              href="/listings"
+            <a
+              href="https://www.thaiplot.com/listings"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center min-h-[52px] font-semibold px-8 py-3.5 rounded-xl text-base md:text-lg transition-all bg-amber-600 hover:bg-amber-700 text-white border border-amber-600"
             >
               {t('viewAllListings')}
-            </Link>
+            </a>
           </div>
           <div>
             <a
@@ -382,12 +384,14 @@ export default function HomePageClient({ previewListings }: Props) {
           {previewListings.length === 0 ? (
             <div className="bg-[#FAF7F0] border border-[#E8E2D6] rounded-[12px] p-8 md:p-12 text-center">
               <p className="text-[#5C5247] text-sm md:text-base mb-6">{t('listingsPreviewEmpty')}</p>
-              <Link
-                href="/list-property"
+              <a
+                href="https://www.thaiplot.com/list-property"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-semibold bg-amber-600 hover:bg-amber-700 text-white transition-colors"
               >
                 {t('listingsPreviewEmptyCta')}
-              </Link>
+              </a>
             </div>
           ) : (
             <div className="grid gap-5 md:grid-cols-3">
@@ -433,12 +437,14 @@ export default function HomePageClient({ previewListings }: Props) {
                   ) : (
                     <div className="flex-1" />
                   )}
-                  <Link
-                    href="/listings"
+                  <a
+                    href="https://www.thaiplot.com/listings"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center text-sm font-semibold text-amber-700 hover:text-amber-800 transition-colors"
                   >
                     {t('listingsPreviewViewAll')}
-                  </Link>
+                  </a>
                 </article>
               ))}
             </div>
@@ -446,12 +452,14 @@ export default function HomePageClient({ previewListings }: Props) {
 
           <div className="mt-10 bg-[#1A2744] rounded-[12px] px-6 py-6 md:px-8 md:py-7 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <p className="text-white text-base md:text-lg font-medium">{t('listingsPreviewCtaTitle')}</p>
-            <Link
-              href="/list-property"
+            <a
+              href="https://www.thaiplot.com/list-property"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center min-h-[44px] px-5 rounded-lg text-sm font-semibold bg-amber-600 hover:bg-amber-700 text-white transition-colors whitespace-nowrap"
             >
               {t('listingsPreviewCtaButton')}
-            </Link>
+            </a>
           </div>
         </div>
       </section>

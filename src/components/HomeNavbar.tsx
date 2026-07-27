@@ -165,18 +165,22 @@ export default function HomeNavbar() {
             {navGroups.map((group) => (
               <DesktopNavDropdown key={group.labelKey} group={group} />
             ))}
-            <Link
-              href="/listings"
+            <a
+              href="https://www.thaiplot.com/listings"
+              target="_blank"
+              rel="noopener noreferrer"
               className="ml-2 px-3 py-2 text-[13px] font-medium text-[#5C5247] hover:text-[#1A2744] transition-colors duration-200"
             >
               {t('listings')}
-            </Link>
-            <Link
-              href="/list-property"
+            </a>
+            <a
+              href="https://www.thaiplot.com/list-property"
+              target="_blank"
+              rel="noopener noreferrer"
               className="ml-2 px-4 py-1.5 text-[13px] font-semibold rounded-lg border border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white transition-all duration-200"
             >
               {t('listProperty')}
-            </Link>
+            </a>
             <Link
               href="/#contact"
               className="ml-2 px-4 py-1.5 text-[13px] font-semibold rounded-lg bg-[#1A2744] hover:bg-[#C8973A] text-white border border-[#1A2744] hover:border-[#C8973A] transition-all duration-200"
@@ -236,20 +240,24 @@ export default function HomeNavbar() {
               onNavigate={closeMenu}
             />
           ))}
-          <Link
-            href="/listings"
+          <a
+            href="https://www.thaiplot.com/listings"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={closeMenu}
             className="flex items-center w-full px-6 min-h-[48px] text-[15px] font-semibold text-[#1A2744] border-b border-[#E8E2D6]"
           >
             {t('listings')}
-          </Link>
-          <Link
-            href="/list-property"
+          </a>
+          <a
+            href="https://www.thaiplot.com/list-property"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={closeMenu}
             className="flex items-center justify-center mx-4 mt-4 min-h-[48px] px-4 text-[15px] font-semibold rounded-lg border border-amber-600 text-amber-600"
           >
             {t('listProperty')}
-          </Link>
+          </a>
           <Link
             href="/#contact"
             onClick={closeMenu}
