@@ -1,6 +1,6 @@
 'use client'
 
-import BackButton from '@/components/BackButton'
+import BreadcrumbNav from '@/components/BreadcrumbNav'
 import LangSwitcher from '@/components/LangSwitcher'
 import type { DisclaimerSection } from './types'
 import { useTranslations } from 'next-intl'
@@ -60,9 +60,7 @@ export default function DisclaimerPage() {
 
   return (
     <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
-      <div className="px-6 pt-5 pb-3 max-w-5xl mx-auto w-full">
-        <BackButton />
-      </div>
+      <BreadcrumbNav />
 
       <LangSwitcher />
 

@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import BackButton from '@/components/BackButton'
+import BreadcrumbNav from '@/components/BreadcrumbNav'
 import DisclaimerFooter from '@/components/DisclaimerFooter'
 import { Link } from '@/i18n/navigation'
 
@@ -11,9 +11,7 @@ export default function Beach() {
 
   return (
     <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
-      <div className="px-6 pt-5 pb-3 max-w-5xl mx-auto w-full">
-        <BackButton />
-      </div>
+      <BreadcrumbNav />
 
       <div className="relative h-72 flex items-end pb-10 px-6">
         <div className="absolute inset-0">

@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from 'react'
 import { useTranslations } from 'next-intl'
-import BackButton from '@/components/BackButton'
+import BreadcrumbNav from '@/components/BreadcrumbNav'
 import DisclaimerFooter from '@/components/DisclaimerFooter'
 
 type FormStatus = 'idle' | 'loading' | 'success' | 'error'
@@ -74,9 +74,7 @@ export default function ListPropertyPage() {
 
   return (
     <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
-      <div className="px-6 pt-5 pb-3 max-w-5xl mx-auto w-full">
-        <BackButton />
-      </div>
+      <BreadcrumbNav />
 
       <section className="bg-[#1A2744] py-16 md:py-24 px-6">
         <div className="max-w-3xl mx-auto text-center">

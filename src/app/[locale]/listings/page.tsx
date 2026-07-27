@@ -1,8 +1,8 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server'
-import BackButton from '@/components/BackButton'
+import BreadcrumbNav from '@/components/BreadcrumbNav'
 import DisclaimerFooter from '@/components/DisclaimerFooter'
 import { Link } from '@/i18n/navigation'
-import { getSupabasePublic, type ListingRow } from '@/lib/supabase'
+import { fetchApprovedListings, type PublicListing } from '@/lib/listings'
 
 type Props = {
   params: { locale: string }
@@ -19,32 +19,11 @@ export default async function ListingsPage({ params }: Props) {
   setRequestLocale(params.locale)
   const t = await getTranslations('listings')
   const tn = await getTranslations('navigation')
-
-  let listings: ListingRow[] = []
-  try {
-    const supabase = getSupabasePublic()
-    const { data, error } = await supabase
-      .from('listings')
-      .select(
-        'id, created_at, status, property_type, transaction_type, location, size, price, title_deed, description, approved_at'
-      )
-      .eq('status', 'approved')
-      .order('approved_at', { ascending: false })
-
-    if (error) {
-      console.error(error)
-    } else {
-      listings = (data || []) as ListingRow[]
-    }
-  } catch (error) {
-    console.error(error)
-  }
+  const listings: PublicListing[] = await fetchApprovedListings()
 
   return (
     <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
-      <div className="px-6 pt-5 pb-3 max-w-5xl mx-auto w-full">
-        <BackButton />
-      </div>
+      <BreadcrumbNav />
 
       <section className="bg-[#1A2744] py-16 md:py-24 px-6">
         <div className="max-w-3xl mx-auto text-center">

@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import BackButton from '@/components/BackButton'
+import BreadcrumbNav from '@/components/BreadcrumbNav'
 import DisclaimerFooter from '@/components/DisclaimerFooter'
 import LineButton from '@/components/LineButton'
 import { Link } from '@/i18n/navigation'
@@ -23,9 +23,7 @@ export default function ForeignBuyersPage() {
 
   return (
     <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
-      <div className="px-6 pt-5 pb-3 max-w-5xl mx-auto w-full">
-        <BackButton />
-      </div>
+      <BreadcrumbNav />
 
       {/* HERO */}
       <section className="relative min-h-[75vh] md:min-h-[85vh] flex items-end">

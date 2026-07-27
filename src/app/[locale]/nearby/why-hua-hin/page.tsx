@@ -1,7 +1,7 @@
 'use client'
 
 import { useTranslations } from 'next-intl'
-import BackButton from '@/components/BackButton'
+import BreadcrumbNav from '@/components/BreadcrumbNav'
 import DisclaimerFooter from '@/components/DisclaimerFooter'
 import LineButton from '@/components/LineButton'
 import { Link } from '@/i18n/navigation'
@@ -115,9 +115,7 @@ export default function WhyHuaHinPage() {
 
   return (
     <main className="min-h-screen bg-[#FAF7F0] text-[#1A2744]">
-      <div className="px-6 pt-5 pb-3 max-w-5xl mx-auto w-full">
-        <BackButton />
-      </div>
+      <BreadcrumbNav />
 
       <section className="relative min-h-[88vh] md:min-h-[92vh] flex items-end">
         <div className="absolute inset-0">
