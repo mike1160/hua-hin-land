@@ -24,6 +24,10 @@ const PAGE_TITLE_KEYS: Record<string, string> = {
   'partial-sale': 'pages.partialSale',
   'foreign-buyers': 'pages.foreignBuyers',
   'soi-112': 'pages.soi112',
+  'soi-102': 'pages.soi102',
+  'hua-hin-villas': 'pages.huaHinVillas',
+  'farm-for-sale': 'pages.farmForSale',
+  'retiring-hua-hin': 'pages.retiringHuaHin',
   'nominee-crackdown': 'pages.nomineeCrackdown',
   // nearby
   'why-hua-hin': 'pages.whyHuaHin',
