@@ -5,7 +5,7 @@ type Props = { children: ReactNode }
 
 const realEstateListingLd = {
   '@context': 'https://schema.org',
-  '@type': 'RealEstateListing',
+  '@type': ['Product', 'RealEstateListing'],
   name: '4 Rai 2 Ngan Chanote Land — Soi 112, Hua Hin',
   description:
     "Flat buildable land with panoramic mountain views in Hua Hin's most prestigious villa corridor. 4 Rai 2 Ngan (7,200 m²). Chanote NS.4J title deed, ready for transfer. Water connected. Direct concrete road. Soi 112, Thap Tai, Hua Hin.",
